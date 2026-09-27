@@ -78,7 +78,8 @@ The disassembled/native code barrier can be crossed from both sides (ish):
 
  - When disassembled code calls disassembled code: just pass the winapp/cpu
    - e.g. almost all calls.
- - when disassembled code calls native code by "name": call the wrapper
+ - when disassembled code calls native code by dllimport: call the fancy pants wrapper
+   - every imported method gets wrapped into a fancy template that will unpack all arguments from the WinApp/CPU and pass it to the native function
    - e.g. the disassembled code calls CreateWindowA, CreateMutex, etc etc
  - when disassembled code calls native code by callback/direct jump: call WinApplication::nativeCall/rosemondNativeCall
    - e.g. GetProcAddress
