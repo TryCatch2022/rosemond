@@ -83,6 +83,8 @@ The disassembled/native code barrier can be crossed from both sides (ish):
    - e.g. the disassembled code calls CreateWindowA, CreateMutex, etc etc
  - when disassembled code calls native code by callback/direct jump: call WinApplication::nativeCall/rosemondNativeCall
    - e.g. GetProcAddress
+   - e.g. COM object's cursed "vtable". When the disassembled code calls a COM object's method then it goes through the native call path,
+     unpacks all arguments from the CPU structure and the stack, and pass them to the real DirectX DLL for an actual call.
  - when native code calls disassembled code: register a trampoline in the WinApplication, and use the "function pointer" as a callback argument
    - e.g. the callback of RegisterWindowClass, EnumDevices, WindowProc, etc.
 
