@@ -26,7 +26,17 @@ else()
 endif()
 
 if (MSVC)
-    add_compile_options(/W4 /WX /wd4201 /wd4245 /wd4310 /std:c++17)
+    # Cmake is cancer.
+    add_compile_options(
+        $<$<COMPILE_LANGUAGE:CXX>:/W4>
+        $<$<COMPILE_LANGUAGE:CXX>:/WX>
+        $<$<COMPILE_LANGUAGE:CXX>:/wd4201>
+        $<$<COMPILE_LANGUAGE:CXX>:/wd4245>
+        $<$<COMPILE_LANGUAGE:CXX>:/wd4310>
+        $<$<COMPILE_LANGUAGE:CXX>:/wd4702>
+        $<$<COMPILE_LANGUAGE:CXX>:/wd4996>
+        $<$<COMPILE_LANGUAGE:CXX>:/std:c++17>
+    )
 else()
     add_compile_options(-Wall -Wextra -Werror -Wstrict-aliasing=2 -msse4.2 -std=c++17)
     add_link_options(-static)
@@ -124,7 +134,8 @@ function(add_game_target name)
         # satisfied for real. binkw32/smackw32 are RAD's codecs rather than
         # system DLLs, so their import libraries ship in lib/.
         target_link_libraries(${name} PRIVATE
-            winmm ddraw dsound dinput gdi32 user32 kernel32
+            winmm ddraw dsound gdi32 user32 kernel32
+            ${CMAKE_SOURCE_DIR}/lib/dinput.lib
             ${CMAKE_SOURCE_DIR}/lib/binkw32.lib
             ${CMAKE_SOURCE_DIR}/lib/SMACKW32.LIB)
     endif()
