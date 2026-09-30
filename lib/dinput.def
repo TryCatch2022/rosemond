@@ -1,2 +1,3 @@
+LIBRARY dinput.dll
 EXPORTS
-DirectInputCreateA@16
+_DirectInputCreateA@16 == DirectInputCreateA
