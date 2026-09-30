@@ -1,0 +1,2 @@
+Open Ghidra from the projects window select File > Restore Project, then select the .gar file in this directory.
+If the Restore Project option is greyed out, make sure you close any existing projects that are open
