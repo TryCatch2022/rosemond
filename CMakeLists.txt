@@ -37,6 +37,7 @@ if (MSVC)
         $<$<COMPILE_LANGUAGE:CXX>:/wd4996>
         $<$<COMPILE_LANGUAGE:CXX>:/std:c++17>
     )
+    add_link_options($<$<COMPILE_LANGUAGE:CXX>:/SAFESEH:NO>)
 else()
     add_compile_options(-Wall -Wextra -Werror -Wstrict-aliasing=2 -msse4.2 -std=c++17)
     add_link_options(-static)

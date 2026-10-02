@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "name": "(Windows) Launch",
+        "type": "cppvsdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/${input:buildVariant}/game.exe",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "C:\\Program Files (x86)\\Twister\\The Legacy of Rosemond Hill",
+        "environment": [],
+        "console": "internalConsole"
+    }
+    ],
+    "inputs": [
+    {
+      "id": "buildVariant",
+      "type": "pickString",
+      "description": "Select build variant",
+      "options": [
+        "Debug",
+        "Release"
+      ],
+      "default": "Debug"
+    }
+    ]
+}

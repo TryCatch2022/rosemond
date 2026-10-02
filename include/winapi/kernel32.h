@@ -12,7 +12,7 @@
 #define InterlockedForward(name)                                          \
     inline LONG __stdcall name(LONG volatile *addend)                     \
     {                                                                     \
-        return _##name(reinterpret_cast<__LONG32 volatile *>(addend));    \
+        return _##name(reinterpret_cast<LONG volatile *>(addend));    \
     }
 
 namespace win32::kernel32
