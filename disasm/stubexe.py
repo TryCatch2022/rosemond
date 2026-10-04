@@ -115,8 +115,11 @@ def _import_table(rva, imports):
     for dll, functions in imports:
         lookup[dll] = at
         at += (len(functions) + 1) * 4
+    for dll, functions in imports:
         address[dll] = at
         at += (len(functions) + 1) * 4
+    iat_rva = address[imports[0][0]]
+    iat_size = sum((len(functions) + 1) * 4 for _, functions in imports)
 
     strings, hints = [], {}
     for dll, functions in imports:
@@ -138,9 +141,9 @@ def _import_table(rva, imports):
     for dll, functions in imports:
         blob += struct.pack('<IIIII', lookup[dll], 0, 0, names[dll], address[dll])
     blob += b'\x00' * 20                                 # terminating descriptor
-    for dll, functions in imports:
-        for table in (lookup[dll], address[dll]):
-            assert rva + len(blob) == table
+    for tables in (lookup, address):
+        for dll, functions in imports:
+            assert rva + len(blob) == tables[dll]
             for function in functions:
                 blob += struct.pack('<I', hints[(dll, function)])
             blob += b'\x00' * 4                          # terminating thunk
@@ -150,7 +153,7 @@ def _import_table(rva, imports):
     slots = {(dll, function): address[dll] + 4 * index
              for dll, functions in imports
              for index, function in enumerate(functions)}
-    return blob, descriptors_size, slots
+    return blob, descriptors_size, slots, iat_rva, iat_size
 
 
 def _entry_stub(image_base, slots, code_dll, entry_symbol):
@@ -195,7 +198,8 @@ def build(path, image_base, segments, code_dll, entry_symbol):
     imports_rva = top + SECTION_ALIGNMENT
 
     imports = [(code_dll, [entry_symbol]), ('kernel32.dll', ['ExitProcess'])]
-    import_blob, descriptors_size, slots = _import_table(imports_rva, imports)
+    import_blob, descriptors_size, slots, iat_rva, iat_size = _import_table(
+        imports_rva, imports)
     stub = _entry_stub(image_base, slots, code_dll, entry_symbol)
 
     sections.append(Section('.stub', stub_rva, len(stub), stub,
@@ -255,7 +259,7 @@ def build(path, image_base, segments, code_dll, entry_symbol):
                            16)
     directories = [(0, 0)] * 16
     directories[1] = (imports_rva, descriptors_size)
-    directories[12] = (slots[(code_dll, entry_symbol)] & ~0xf, 0)  # IAT, informational
+    directories[12] = (iat_rva, iat_size)
     optional += b''.join(struct.pack('<II', rva, size) for rva, size in directories)
     assert len(optional) == SIZE_OF_OPTIONAL_HEADER
 
