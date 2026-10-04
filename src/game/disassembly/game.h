@@ -4,6 +4,8 @@
 #include <lib/winapp.h>
 #include <map>
 
+#include <game/Types.h>
+
 namespace game
 {
 

@@ -4021,6 +4021,17 @@ void Application::sub_41f960(WinApplication* app, x86::CPU& cpu)
 /* align: skip  */
 void Application::sub_41f9b0(WinApplication* app, x86::CPU& cpu)
 {
+    [[maybe_unused]]char* entityPtr = reinterpret_cast<char*>(cpu.ecx);
+    [[maybe_unused]]HorseUserData* horseData = reinterpret_cast<HorseUserData*>(cpu.ecx + 0x2fc);
+    // if (entityPtr && horseData)
+    // {
+    //     horseData->interpolatingFloat1.interpolate(horseData->interpolationFactor);
+    //     horseData->interpolatingFloat2.interpolate(horseData->interpolationFactor);
+    //     horseData->interpolatingFloat3.interpolate(horseData->interpolationFactor);
+    // }
+    // cpu.esp += 4;
+    // return;
+
   NFS2_USE(cpu);
   NFS2_USE(app);
     // 0041f9b0  51                     -push ecx
@@ -4098,19 +4109,28 @@ L_0x0041f9e9:
 /* align: skip  */
 void Application::sub_41f9f0(WinApplication* app, x86::CPU& cpu)
 {
-  NFS2_USE(cpu);
-  NFS2_USE(app);
+    NFS2_USE(cpu);
+    NFS2_USE(app);
+
+    // ecx == InterpolatingFloat
+    // esp == interpolation factor
+    InterpolatingFloat* f = reinterpret_cast<InterpolatingFloat*>(cpu.ecx);
+    float* factor = reinterpret_cast<float*>(cpu.esp + 4);
+    f->interpolate(*factor);
+    app->getMemory<float>(cpu.ecx + x86::reg32(8) /* 0x8 */) = f->current;
+    
     // 0041f9f0  d94104                 -fld dword ptr [ecx + 4]
-    cpu.fpu.push(x86::Float(app->getMemory<float>(cpu.ecx + x86::reg32(4) /* 0x4 */)));
-    // 0041f9f3  d821                   -fsub dword ptr [ecx]
-    cpu.fpu.st(0) -= x86::Float(app->getMemory<float>(cpu.ecx));
-    // 0041f9f5  d84c2404               -fmul dword ptr [esp + 4]
-    cpu.fpu.st(0) *= x86::Float(app->getMemory<float>(cpu.esp + x86::reg32(4) /* 0x4 */));
-    // 0041f9f9  d801                   -fadd dword ptr [ecx]
-    cpu.fpu.st(0) += x86::Float(app->getMemory<float>(cpu.ecx));
-    // 0041f9fb  d95908                 -fstp dword ptr [ecx + 8]
-    app->getMemory<float>(cpu.ecx + x86::reg32(8) /* 0x8 */) = float(cpu.fpu.st(0));
-    cpu.fpu.pop();
+    // cpu.fpu.push(x86::Float(app->getMemory<float>(cpu.ecx + x86::reg32(4) /* 0x4 */)));
+    // // 0041f9f3  d821                   -fsub dword ptr [ecx]
+    // cpu.fpu.st(0) -= x86::Float(app->getMemory<float>(cpu.ecx));
+    // // 0041f9f5  d84c2404               -fmul dword ptr [esp + 4]
+    // cpu.fpu.st(0) *= x86::Float(app->getMemory<float>(cpu.esp + x86::reg32(4) /* 0x4 */));
+    // // 0041f9f9  d801                   -fadd dword ptr [ecx]
+    // cpu.fpu.st(0) += x86::Float(app->getMemory<float>(cpu.ecx));
+    // // 0041f9fb  d95908                 -fstp dword ptr [ecx + 8]
+    // app->getMemory<float>(cpu.ecx + x86::reg32(8) /* 0x8 */) = float(cpu.fpu.st(0));
+    // cpu.fpu.pop();
+
     // 0041f9fe  c20400                 -ret 4
     cpu.esp += 4+4 /*0x4*/;
     return;
