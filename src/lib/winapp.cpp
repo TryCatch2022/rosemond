@@ -1,6 +1,7 @@
 #include <x86.h>
 #include <lib/winapp.h>
 #include <lib/cbridge.h>
+#include <winapi/kernel32.h>
 #include <windows.h>
 #include <cstdio>
 
@@ -10,7 +11,7 @@ extern "C"
     struct NativeCallFrame
     {
         x86::reg32 target;
-        x86::reg32 esp;        // in: where to stand; out: where the callee left it
+        x86::reg32 esp; // in: where to stand; out: where the callee left it
         x86::reg32 eax;
         x86::reg32 ecx;
         x86::reg32 edx;
@@ -113,6 +114,8 @@ namespace win32
     {
         NFS2_ASSERT(!s_current);
         s_current = this;
+        ::win32::kernel32::OutputDebugStringA(::win32::kernel32::GetCommandLineA());
+        ::win32::kernel32::OutputDebugStringA("\n");
     }
 
     WinApplication::~WinApplication()
@@ -193,8 +196,8 @@ namespace win32
     }
 
     x86::reg32 WinApplication::callGuest(x86::reg32 address,
-                                        const x86::reg32 *arguments,
-                                        unsigned count)
+                                         const x86::reg32 *arguments,
+                                         unsigned count)
     {
         // A stack and an FS block of its own, for the same reasons runThread
         // gives the thread one, and taken from the same place -- this frame. A
@@ -208,8 +211,7 @@ namespace win32
 
         // The frame a translated routine expects: arguments above the
         // return-address slot that cg_call reserves and cg_ret pops.
-        x86::reg32 esp = x86::reg32(reinterpret_cast<uintptr_t>(stack + sizeof stack))
-                         - 4 * (count + 1);
+        x86::reg32 esp = x86::reg32(reinterpret_cast<uintptr_t>(stack + sizeof stack)) - 4 * (count + 1);
         for (unsigned i = 0; i < count; ++i)
         {
             getMemory<x86::reg32>(esp + 4 + 4 * i) = arguments[i];
