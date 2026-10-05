@@ -10,6 +10,7 @@
 #include <mmsystem.h>
 
 #include <cmath>
+#include <cstdarg>
 #include <cstdint>
 #include <cstring>
 #include <type_traits>

@@ -23,7 +23,6 @@ import re
 import sys
 sys.path.append('disasm')
 from disasm import ghidra
-from disasm import cstubs
 
 
 FUNCTION_MAP = 'afrh/functions.json'
@@ -51,18 +50,14 @@ def clear_generated(application_name):
 
 if __name__ == '__main__':
     clear_generated('game')
-    # Functions moved to C++ (ExportDecompiled.java) are not translated; a stub
-    # takes their place, and every translated routine gets a C++ entry point.
-    c_functions = cstubs.CFunctions()
     function_map = ghidra.FunctionMap(FUNCTION_MAP)
-    function_names = function_map.function_names()
     application = ghidra.disassemble('game', 'afrh/game.exe', function_map,
                                      thread_routines=THREAD_ROUTINES)
+    # Routines are named after their address, not after Ghidra's names, so that
+    # renaming a function in Ghidra changes nothing here. The names, and which
+    # routines are decompiled, only matter to the entry points and stubs the
+    # build generates (disasm/cstubs.py).
     application.write(THREAD_SEGMENTS,
                       skip_instructions=SKIP_INSTRUCTIONS,
                       dlls=[],
-                      function_names=function_names,
-                      decompiled=c_functions.owned_entries())
-    c_functions.write('src/game/disassembly/game.cstubs.cpp', 'game',
-                      set(s.get_entry_point() for s in application.subroutines),
-                      function_names)
+                      function_names={})

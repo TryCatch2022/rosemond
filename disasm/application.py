@@ -6,8 +6,7 @@ class Application(Module):
     def __init__(self, application_name, exe_path, rebase_after):
         Module.__init__(self, application_name, exe_path, rebase_after)
 
-    def write(self, thread_segments=[], skip_instructions=[], dlls=[], function_names={},
-              decompiled=frozenset()):
+    def write(self, thread_segments=[], skip_instructions=[], dlls=[], function_names={}):
         try:
             os.makedirs('src/%s/disassembly' % (self.application_name))
         except OSError:
@@ -47,8 +46,8 @@ class Application(Module):
                         'public:\n'
                         '    Application();\n'
                         '    void execute();\n'
-                        '    // Public so the stubs to and from decompiled functions\n'
-                        '    // (%s.cstubs.cpp) can reach them.\n' % app_name)
+                        '    // Public so the generated entry points and the stubs to and\n'
+                        '    // from decompiled functions can reach them.\n')
                 self.build_stub_exe()
                 src.write('Application::Application()\n'
                             '{\n')
@@ -113,21 +112,21 @@ class Application(Module):
                             for instruction in subroutine.instructions)
                         function_entry = subroutine.get_entry_point()
                         name = function_names.get(function_entry, 'sub_%x' % function_entry)
-                        if function_entry in decompiled:
-                            # Decompiled: the routine under this name is the stub
-                            # into the C++ function, in the cstubs file.
-                            h.write('    static void %s(WinApplication* app, x86::CPU& cpu);\n' % name)
-                            methods.write('/* 0x%08x %s: decompiled, see %s.cstubs.cpp */\n\n'
-                                          % (function_entry, name, app_name))
-                            continue
                         fallthrough = False
                         methods.write('/* align: skip %s */\n' % (' '.join(['0x%02x'%c for c in subroutine.skipped_blob])))
                         if subroutine.data_blob:
                             methods.write('/* data blob: %s */\n' % (''.join(['%02x'%c for c in subroutine.data_blob])))
                         for jump_entry in subroutine.jump_table:
                             methods.write('/* jump table: 0x%08x */\n' % jump_entry)
+                        # Every call goes to the routine's entry point, `name`;
+                        # the translation itself is `asm_name`. The entry points
+                        # are generated at build time (disasm/cstubs.py): each
+                        # runs the translation, or the decompiled C++ function
+                        # when there is one, so moving a routine to C++ never
+                        # touches these files.
                         h.write('    static void %s(WinApplication* app, x86::CPU& cpu);\n' % name)
-                        methods.write('void Application::%s(WinApplication* app, x86::CPU& cpu)\n'
+                        h.write('    static void asm_%s(WinApplication* app, x86::CPU& cpu);\n' % name)
+                        methods.write('void Application::asm_%s(WinApplication* app, x86::CPU& cpu)\n'
                                       '{\n'
                                       '  NFS2_USE(cpu);\n'
                                       '  NFS2_USE(app);\n' % name)
@@ -177,5 +176,8 @@ class Application(Module):
                 h.write('};\n\n'
                         '}\n\n'
                         '#endif /* !%s_H_ */\n' % (APP_NAME))
+        # The routines the entry points are generated for, read at build time.
+        with open('src/%s/disassembly/%s.routines.json' % (self.application_name, self.application_name), 'w') as routines:
+            routines.write('[\n%s\n]\n' % ',\n'.join('  %d' % s.get_entry_point() for s in self.subroutines))
         for dll in dlls:
             dll.write(self.application_name, thread_segments, function_names)

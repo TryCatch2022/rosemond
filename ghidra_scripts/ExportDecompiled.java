@@ -6,14 +6,20 @@
 //     src/game/decomp/<name>_<address>.cpp and records it in
 //     src/game/decomp/registry.json. From then on the disassembler emits a stub
 //     for that address instead of translating its body. The .cpp belongs to the
-//     project: a later run overwrites it only while it has no uncommitted
-//     changes in git, and otherwise writes <file>.ghidra beside it to diff.
+//     project: a later run overwrites it only while it is still what the last
+//     export wrote. Once edited, the GUI asks first; headless, the fresh
+//     decompilation goes to <file>.ghidra beside it, unless --force is given.
 //
 //  2. Regenerates, wholesale, what stays Ghidra's: src/game/ghidra/types.h
 //     (structures, unions, enums, typedefs), globals.h (every defined data item
 //     as a reference to its address in the loaded image), functions.h (a C++
 //     prototype for every function) and prototypes.json (where each function's
 //     parameters and return value live, which the stub generator reads).
+//
+// Every run also brings the decompiled files already in the registry up to
+// date: one still exactly as an export wrote it is written again, and in one
+// that has been edited, whatever was renamed in Ghidra since the last run
+// (functions, globals, types; names.json remembers them) is renamed too.
 //
 // From the GUI it exports the function under the cursor; bind it to a key in
 // the Script Manager. Headless, it takes the entry points as arguments, or
@@ -24,7 +30,9 @@
 //   analyzeHeadless <projdir> <projname> -process game.exe -noanalysis -readOnly \
 //       -scriptPath ghidra_scripts -postScript ExportDecompiled.java 0x409840
 //
-// decompile.py in the repository root wraps that and reruns the disassembler.
+// decompile.py in the repository root wraps that. Then build: the entry points
+// and stubs between translated and decompiled code are generated at build time
+// from what this writes, so the disassembler need not run again.
 //
 //@category Rosemond
 //@keybinding
@@ -34,7 +42,6 @@
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -161,13 +168,19 @@ public class ExportDecompiled extends GhidraScript {
     // Whether a decompiled function is written with its machine code in
     // comments, for checking the C against it. --no-asm leaves them out.
     private boolean withAssembly = true;
+    // Overwrite a decompiled file even if it was edited since its export.
+    private boolean force = false;
     private Map<Address, String> globalNames = new HashMap<>();
     private Set<String> taken = new HashSet<>();
     private List<String> warnings = new ArrayList<>();
 
     @Override
     public void run() throws Exception {
-        root = getSourceFile().getParentFile().getParentFile().getFile(false);
+        // The repository is the directory above this script's own. Resolved,
+        // so that reaching the script through a link (~/ghidra_scripts linked
+        // to the repository's, or a junction on Windows) still finds the
+        // repository, not the home.
+        root = getSourceFile().getFile(false).toPath().toRealPath().getParent().getParent().toFile();
         dtm = currentProgram.getDataTypeManager();
 
         List<Function> targets = new ArrayList<>();
@@ -175,6 +188,9 @@ public class ExportDecompiled extends GhidraScript {
         for (String arg : getScriptArgs()) {
             if (arg.equals("--no-asm")) {
                 withAssembly = false;
+            }
+            else if (arg.equals("--force")) {
+                force = true;
             }
             else {
                 args.add(arg);
@@ -247,11 +263,45 @@ public class ExportDecompiled extends GhidraScript {
         }
         writeFunctions();
 
+        // The decompiled files follow Ghidra too. One still exactly as an export
+        // wrote it is simply written again; one that has been edited keeps the
+        // edits, and only has the functions, globals and types renamed in Ghidra
+        // since the last run renamed in it as well.
+        Map<String, String> renames = renames();
+        writeNames();
+        JsonObject functions = registry.getAsJsonObject("functions");
+        int refreshed = 0;
+        for (Function f : owned) {
+            String entry = String.format("0x%08x", f.getEntryPoint().getOffset());
+            if (targets.contains(f) || !functions.has(entry)) {
+                continue;
+            }
+            JsonObject item = functions.getAsJsonObject(entry);
+            File file = new File(root, item.get("file").getAsString());
+            if (!file.exists()) {
+                warnings.add(item.get("file").getAsString() + " is in the registry but missing");
+                continue;
+            }
+            String content = Files.readString(file.toPath(), StandardCharsets.UTF_8);
+            if (item.has("hash") && item.get("hash").getAsString().equals(sha256(content))) {
+                exportFunction(f, results.get(f.getEntryPoint()), registry);
+                refreshed++;
+            }
+            else {
+                String renamed = applyRenames(content, renames);
+                if (!renamed.equals(content)) {
+                    Files.writeString(file.toPath(), renamed, StandardCharsets.UTF_8);
+                    println("renamed in " + item.get("file").getAsString() + " (edited, so not re-exported)");
+                }
+                item.addProperty("name", functionNames.get(f.getEntryPoint()));
+            }
+        }
         for (Function f : targets) {
             exportFunction(f, results.get(f.getEntryPoint()), registry);
         }
-        if (!targets.isEmpty()) {
-            writeRegistry(registry);
+        writeRegistry(registry);
+        if (refreshed > 0) {
+            println("refreshed " + refreshed + " unedited decompiled file(s)");
         }
 
         for (String warning : warnings) {
@@ -877,8 +927,12 @@ public class ExportDecompiled extends GhidraScript {
             paramDecls.add(decl(param.type, pname, -1));
         }
         if (f.hasVarArgs()) {
+            // The stubs pass a fixed number of dwords for "...", which is what
+            // the stack holds for any cdecl variadic call on 32-bit x86.
             paramDecls.add("...");
-            problems.add("takes variable arguments");
+            if (parameters.isEmpty()) {
+                problems.add("takes only variable arguments, which C++ cannot reach");
+            }
         }
         json.add("params", params);
         json.add("problems", problems);
@@ -938,7 +992,7 @@ public class ExportDecompiled extends GhidraScript {
         for (Function f : currentProgram.getFunctionManager().getFunctions(true)) {
             Prototype p = prototype(f);
             all.add(p.json);
-            out.append(f.hasVarArgs() ? "// " : "").append(p.declaration).append(";  // 0x")
+            out.append(p.declaration).append(";  // 0x")
                 .append(f.getEntryPoint().toString(false)).append("\n");
         }
         out.append("\n}\n\n#endif /* !GHIDRA_FUNCTIONS_H_ */\n");
@@ -983,6 +1037,22 @@ public class ExportDecompiled extends GhidraScript {
 
         Map<String, String> locals = new LinkedHashMap<>();  // untyped globals the body touches
         List<ClangLine> lines = DecompilerUtils.toLines(results.getCCodeMarkup());
+        // Where the "..." of a variadic function starts on the stack, which is
+        // where the decompiler's &stack0x... for the va_list points.
+        int vaOffset = -1;
+        String lastNamed = null;
+        boolean usesVaList = false;
+        if (f.hasVarArgs()) {
+            vaOffset = 4;
+            for (HighSymbol param : paramSymbols(results.getHighFunction())) {
+                lastNamed = param.getName();
+                for (Varnode v : param.getStorage().getVarnodes()) {
+                    if (v.getAddress().isStackAddress()) {
+                        vaOffset = Math.max(vaOffset, (int) v.getOffset() + ((v.getSize() + 3) & ~3));
+                    }
+                }
+            }
+        }
         List<String> rendered = new ArrayList<>();
         for (ClangLine line : lines) {
             List<String> parts = new ArrayList<>();
@@ -1027,6 +1097,16 @@ public class ExportDecompiled extends GhidraScript {
                         }
                     }
                 }
+                if (vaOffset >= 0 && t.equals(String.format("stack0x%08x", vaOffset))) {
+                    // The address of the first variable argument: what va_start
+                    // gives. The decompiler takes it with & and casts it.
+                    if (last(parts).equals("&")) {
+                        parts.remove(parts.size() - 1);
+                    }
+                    parts.add("variadic");
+                    usesVaList = true;
+                    continue;
+                }
                 parts.add(render(token, f, locals));
             }
             rendered.add(line.getIndentString() + String.join("", parts));
@@ -1044,6 +1124,11 @@ public class ExportDecompiled extends GhidraScript {
             body.append(rendered.get(i)).append("\n");
         }
 
+        if (usesVaList && lastNamed != null) {
+            String name = RESERVED.contains(lastNamed) ? lastNamed + "_" : lastNamed;
+            locals.put(" va", "va_list variadic;\n  va_start(variadic, " + name + ");");
+        }
+
         // Globals Ghidra has no data item for have no definition in globals.h.
         // They are declared right inside the function instead, with the type the
         // decompiler gave them, so that typing the item in Ghidra later (which
@@ -1051,11 +1136,17 @@ public class ExportDecompiled extends GhidraScript {
         String code = body.toString();
         if (!locals.isEmpty()) {
             StringBuilder decls = new StringBuilder();
-            decls.append("  // Untyped in Ghidra, so not in globals.h; typed as the decompiler saw them.\n");
-            for (String d : locals.values()) {
-                decls.append("  ").append(d).append("\n");
+            String va = locals.remove(" va");
+            if (va != null) {
+                decls.append("  ").append(va).append("\n\n");
             }
-            decls.append("\n");
+            if (!locals.isEmpty()) {
+                decls.append("  // Untyped in Ghidra, so not in globals.h; typed as the decompiler saw them.\n");
+                for (String d : locals.values()) {
+                    decls.append("  ").append(d).append("\n");
+                }
+                decls.append("\n");
+            }
             int brace = code.indexOf("\n{\n");
             if (brace >= 0) {
                 code = code.substring(0, brace + 3) + decls + code.substring(brace + 3);
@@ -1072,25 +1163,53 @@ public class ExportDecompiled extends GhidraScript {
 
         StringBuilder out = new StringBuilder();
         out.append("// ").append(f.getName()).append(" at ").append(entry).append(", decompiled by Ghidra.\n");
-        out.append("//\n// This file belongs to the project now: edit it freely. Re-exporting the\n"
-            + "// function overwrites it only while it has no uncommitted changes. Its\n"
-            + "// signature still belongs to Ghidra (functions.h, and the stub that\n"
-            + "// translated code calls it through), so change that in Ghidra.\n\n");
+        out.append("//\n// This file belongs to the project now: edit it freely. Until you do, every\n"
+            + "// export rewrites it, so it follows what changes in Ghidra; once edited, an\n"
+            + "// export only renames in it what was renamed in Ghidra. Its signature still\n"
+            + "// belongs to Ghidra (functions.h, and the stub translated code calls it\n"
+            + "// through), so change that in Ghidra.\n\n");
         out.append("#include <decomp.h>\n\nnamespace game\n{\n\n");
         out.append(code.trim()).append("\n\n}\n");
 
+        // The file is the project's once written, so it is only replaced while
+        // it is still exactly what the last export wrote (the registry keeps a
+        // hash of that). That keeps the loop of fixing types and names in
+        // Ghidra and exporting again friction-free, without ever losing an edit
+        // made to the file: those get asked about in the GUI, and headless the
+        // fresh decompilation goes beside the file unless --force is given.
+        String content = out.toString();
         File target = new File(root, path);
+        JsonObject previous = functions.has(entry) ? functions.getAsJsonObject(entry) : null;
+        String lastHash = previous != null && previous.has("hash") ? previous.get("hash").getAsString() : null;
         String written = path;
-        if (target.exists() && !gitClean(path)) {
-            written = path + ".ghidra";
-            target = new File(root, written);
-            warnings.add(path + " has uncommitted changes; wrote " + written + " instead");
+        if (target.exists() && !force) {
+            String current = sha256(Files.readString(target.toPath(), StandardCharsets.UTF_8));
+            if (!current.equals(lastHash) && !current.equals(sha256(content))) {
+                String why = lastHash == null
+                    ? path + " was not written by this version of the export, so edits to it cannot be told apart"
+                    : path + " has been edited since it was exported";
+                boolean overwrite = !isRunningHeadless()
+                    && askYesNo("Overwrite " + target.getName() + "?", why + ".\n\nOverwrite it with the fresh "
+                        + "decompilation? (No writes it to " + target.getName() + ".ghidra instead.)");
+                if (!overwrite) {
+                    written = path + ".ghidra";
+                    warnings.add(why + "; wrote " + written + " instead (--force overwrites)");
+                }
+            }
         }
-        write(written, out.toString());
+        write(written, content);
 
         JsonObject item = new JsonObject();
         item.addProperty("name", name);
         item.addProperty("file", path);
+        if (written.equals(path)) {
+            item.addProperty("hash", sha256(content));
+            // A side file left by an earlier refusal is stale now.
+            new File(root, path + ".ghidra").delete();
+        }
+        else if (lastHash != null) {
+            item.addProperty("hash", lastHash);
+        }
         functions.add(entry, item);
         println("exported " + f.getName() + " -> " + written);
     }
@@ -1175,6 +1294,15 @@ public class ExportDecompiled extends GhidraScript {
         }
         return String.format("%s  %-22s %s", instruction.getAddress().toString(false), bytes,
             instruction.toString());
+    }
+
+    private static List<HighSymbol> paramSymbols(HighFunction high) {
+        List<HighSymbol> result = new ArrayList<>();
+        FunctionPrototype proto = high.getFunctionPrototype();
+        for (int i = 0; i < proto.getNumParams(); i++) {
+            result.add(proto.getParam(i));
+        }
+        return result;
     }
 
     private String render(ClangToken token, Function current, Map<String, String> locals) {
@@ -1319,18 +1447,91 @@ public class ExportDecompiled extends GhidraScript {
     // Files
     // ------------------------------------------------------------------
 
-    private boolean gitClean(String path) {
-        try {
-            Process git = new ProcessBuilder("git", "status", "--porcelain", "--", path)
-                .directory(root).redirectErrorStream(true).start();
-            String output;
-            try (InputStream in = git.getInputStream()) {
-                output = new String(in.readAllBytes(), StandardCharsets.UTF_8).trim();
-            }
-            return git.waitFor() == 0 && output.isEmpty();
+    // ------------------------------------------------------------------
+    // Renames
+    // ------------------------------------------------------------------
+
+    private static final String NAMES = GENERATED_DIR + "/names.json";
+
+    // The C++ name of everything that has an identity Ghidra keeps across a
+    // rename: functions and globals by address, types by their universal ID.
+    private JsonObject currentNames() {
+        JsonObject names = new JsonObject();
+        for (Map.Entry<Address, String> e : functionNames.entrySet()) {
+            names.addProperty("f" + e.getKey().toString(false), e.getValue());
         }
-        catch (IOException | InterruptedException e) {
-            return false;  // when in doubt, do not overwrite
+        for (Map.Entry<Address, String> e : globalNames.entrySet()) {
+            names.addProperty("g" + e.getKey().toString(false), e.getValue());
+        }
+        for (DataType dt : userTypes) {
+            if (dt.getUniversalID() != null) {
+                names.addProperty("t" + dt.getUniversalID().getValue(), typeNames.get(dt.getPathName()));
+            }
+        }
+        return names;
+    }
+
+    // Old name -> new name, for everything renamed since the last run.
+    private Map<String, String> renames() throws IOException {
+        Map<String, String> result = new HashMap<>();
+        File file = new File(root, NAMES);
+        if (!file.exists()) {
+            return result;
+        }
+        JsonObject previous;
+        try (FileReader reader = new FileReader(file, StandardCharsets.UTF_8)) {
+            previous = JsonParser.parseReader(reader).getAsJsonObject();
+        }
+        JsonObject current = currentNames();
+        for (Map.Entry<String, JsonElement> e : previous.entrySet()) {
+            if (current.has(e.getKey())) {
+                String before = e.getValue().getAsString();
+                String after = current.get(e.getKey()).getAsString();
+                if (!before.equals(after)) {
+                    result.put(before, after);
+                }
+            }
+        }
+        return result;
+    }
+
+    private void writeNames() throws IOException {
+        write(NAMES, gson().toJson(currentNames()) + "\n");
+    }
+
+    // Renames whole identifiers only, all at once, so that two names trading
+    // places come out right.
+    private static String applyRenames(String content, Map<String, String> renames) {
+        if (renames.isEmpty()) {
+            return content;
+        }
+        List<String> names = new ArrayList<>(renames.keySet());
+        names.sort((a, b) -> b.length() - a.length());
+        StringBuilder alternation = new StringBuilder();
+        for (String name : names) {
+            alternation.append(alternation.length() == 0 ? "" : "|").append(Pattern.quote(name));
+        }
+        Matcher m = Pattern.compile("(?<![A-Za-z0-9_])(" + alternation + ")(?![A-Za-z0-9_])").matcher(content);
+        StringBuilder out = new StringBuilder();
+        while (m.find()) {
+            m.appendReplacement(out, Matcher.quoteReplacement(renames.get(m.group(1))));
+        }
+        m.appendTail(out);
+        return out.toString();
+    }
+
+    private static String sha256(String text) {
+        try {
+            byte[] digest = java.security.MessageDigest.getInstance("SHA-256")
+                .digest(text.getBytes(StandardCharsets.UTF_8));
+            StringBuilder hex = new StringBuilder();
+            for (byte b : digest) {
+                hex.append(String.format("%02x", b & 0xff));
+            }
+            return hex.toString();
+        }
+        catch (java.security.NoSuchAlgorithmException e) {
+            throw new IllegalStateException(e);
         }
     }
 

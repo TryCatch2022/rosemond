@@ -1,3 +1,29 @@
 {
-  "functions": {}
+  "functions": {
+    "0x00424c10": {
+      "name": "logError",
+      "file": "src/game/decomp/logError_00424c10.cpp",
+      "hash": "e176181073e9d77918799d04dd9f70c688c35bd3b999ee37c65e0e77440954d8"
+    },
+    "0x00465040": {
+      "name": "_WinMain",
+      "file": "src/game/decomp/_WinMain_00465040.cpp",
+      "hash": "d0f612ac360d5e66a215de066b12c0f69c23e03da51b35c4d3455bc51e353dcb"
+    },
+    "0x00465570": {
+      "name": "CreateWindowClass",
+      "file": "src/game/decomp/createWindowClass_00465570.cpp",
+      "hash": "2724117372268b6c26eb087842b465890aacff664bb3caf6039439283cd6131f"
+    },
+    "0x004655d0": {
+      "name": "CreateGameWindow",
+      "file": "src/game/decomp/CreateGameWindow_004655d0.cpp",
+      "hash": "5b33d95453a2cd42487edf5641c2c1ffcbaf7f1bb315e61b6408a55fd6f580c5"
+    },
+    "0x0047a031": {
+      "name": "crt_WinMainCRTStartup",
+      "file": "src/game/decomp/crt_WinMainCRTStartup_0047a031.cpp",
+      "hash": "b025643fd19e338a10f949ce076ccd4c58072ec23042eb878ceb3320a8fc42c8"
+    }
+  }
 }

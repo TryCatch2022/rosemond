@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
 project(nfs_recompiled LANGUAGES C CXX ASM)
 
+# Generates the entry points of the translated routines at build time.
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+
 # options
 option(WITH_PEDANTIC_FPU "Compile pedantic FPU implementation" OFF)
 option(WITH_MMX "Enable MMX support" ON)
@@ -117,8 +120,33 @@ function(add_game_target name)
     # until someone has cleaned it up, so warnings are not errors there.
     file(GLOB DECOMP_SOURCES CONFIGURE_DEPENDS "${game_src_dir}/decomp/*.cpp")
     set(DECOMP_BRIDGE_SOURCES ${DECOMP_SOURCES})
-    if(EXISTS "${game_src_dir}/disassembly/${name}.cstubs.cpp")
-        list(APPEND DECOMP_BRIDGE_SOURCES "${game_src_dir}/disassembly/${name}.cstubs.cpp")
+
+    # The entry point of every translated routine, which runs either its
+    # translation or its decompiled C++ function, and the C++ side of every
+    # routine still in assembly. Generated here rather than by the disassembler
+    # because it follows what Ghidra says (names, signatures, what is
+    # decompiled), which changes all the time: an export from Ghidra and a build
+    # are all a change there needs.
+    set(routines "${game_src_dir}/disassembly/${name}.routines.json")
+    if(EXISTS ${routines})
+        set(stubs "${CMAKE_CURRENT_BINARY_DIR}/${name}.cstubs.cpp")
+        set(registry "${game_src_dir}/decomp/registry.json")
+        set(prototypes "${game_src_dir}/ghidra/prototypes.json")
+        set(stub_inputs ${routines} "${CMAKE_SOURCE_DIR}/disasm/cstubs.py")
+        foreach(input ${registry} ${prototypes})
+            if(EXISTS ${input})
+                list(APPEND stub_inputs ${input})
+            endif()
+        endforeach()
+        add_custom_command(
+            OUTPUT ${stubs}
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/disasm/cstubs.py"
+                    ${routines} ${registry} ${prototypes} ${stubs}
+            DEPENDS ${stub_inputs}
+            COMMENT "Generating the entry points and stubs to decompiled C++"
+            VERBATIM)
+        list(APPEND DECOMP_BRIDGE_SOURCES ${stubs})
+        list(APPEND DECOMP_SOURCES ${stubs})
     endif()
     if(DECOMP_BRIDGE_SOURCES)
         if(MSVC)
