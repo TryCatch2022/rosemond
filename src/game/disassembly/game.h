@@ -17,7 +17,8 @@ class Application : public win32::WinApplication
 public:
     Application();
     void execute();
-private:
+    // Public so the stubs to and from decompiled functions
+    // (game.cstubs.cpp) can reach them.
     static void sub_401000(WinApplication* app, x86::CPU& cpu);
     static void sub_401010(WinApplication* app, x86::CPU& cpu);
     static void sub_401050(WinApplication* app, x86::CPU& cpu);

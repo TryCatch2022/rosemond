@@ -6,7 +6,8 @@ class Application(Module):
     def __init__(self, application_name, exe_path, rebase_after):
         Module.__init__(self, application_name, exe_path, rebase_after)
 
-    def write(self, thread_segments=[], skip_instructions=[], dlls=[], function_names={}):
+    def write(self, thread_segments=[], skip_instructions=[], dlls=[], function_names={},
+              decompiled=frozenset()):
         try:
             os.makedirs('src/%s/disassembly' % (self.application_name))
         except OSError:
@@ -46,7 +47,8 @@ class Application(Module):
                         'public:\n'
                         '    Application();\n'
                         '    void execute();\n'
-                        'private:\n')
+                        '    // Public so the stubs to and from decompiled functions\n'
+                        '    // (%s.cstubs.cpp) can reach them.\n' % app_name)
                 self.build_stub_exe()
                 src.write('Application::Application()\n'
                             '{\n')
@@ -111,6 +113,13 @@ class Application(Module):
                             for instruction in subroutine.instructions)
                         function_entry = subroutine.get_entry_point()
                         name = function_names.get(function_entry, 'sub_%x' % function_entry)
+                        if function_entry in decompiled:
+                            # Decompiled: the routine under this name is the stub
+                            # into the C++ function, in the cstubs file.
+                            h.write('    static void %s(WinApplication* app, x86::CPU& cpu);\n' % name)
+                            methods.write('/* 0x%08x %s: decompiled, see %s.cstubs.cpp */\n\n'
+                                          % (function_entry, name, app_name))
+                            continue
                         fallthrough = False
                         methods.write('/* align: skip %s */\n' % (' '.join(['0x%02x'%c for c in subroutine.skipped_blob])))
                         if subroutine.data_blob:

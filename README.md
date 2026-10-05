@@ -89,10 +89,79 @@ The disassembled/native code barrier can be crossed from both sides (ish):
    - e.g. the callback of RegisterWindowClass, EnumDevices, WindowProc, etc.
 
 
+Decompiling functions to C++:
+=============================
+
+Functions move from translated assembly to C++ one at a time, using Ghidra's
+decompiler on the annotated project (`ghidra project/RosemondHill`):
+
+```
+python decompile.py 0x407690 0x4098a0   # decompile these, refresh everything else
+python decompile.py                     # only refresh what Ghidra owns
+```
+
+This runs `ghidra_scripts/ExportDecompiled.java` headless (read-only; nothing is
+saved to the project) and then `disassemble_ghidra.py`. Headless Ghidra cannot
+open a project the GUI has open: either close the GUI, or run
+ExportDecompiled.java from the GUI's Script Manager (it exports the function
+under the cursor; bind it to a key) and then run `python disassemble_ghidra.py`.
+
+Each exported function carries its machine code in comments: the
+instructions each line came from, above that line, every instruction listed
+once. That is what to check the C against. Pass `--no-asm` to leave them out.
+
+Who owns what:
+
+ - `src/game/decomp/<name>_<address>.cpp`: the decompiled function. It belongs
+   to the project: fix it up, rename things, edit it freely. Exporting the
+   function again overwrites it only while it has no uncommitted changes in git;
+   otherwise the fresh decompilation is written to `<file>.ghidra` to diff.
+ - `src/game/decomp/registry.json`: which functions are C++. The disassembler
+   does not translate those. To give a function back to the translator, delete
+   its file and its entry -- also the quickest way to find which decompiled
+   function broke something.
+ - `src/game/ghidra/`: types (`types.h`), globals (`globals.h`), a prototype
+   for every function (`functions.h`, `prototypes.json`). These belong to
+   Ghidra and are rewritten on every run, so fix types and signatures in Ghidra.
+   That includes the signatures of decompiled functions.
+
+How the two worlds call each other (`disasm/cstubs.py`, generated into
+`src/game/disassembly/game.cstubs.cpp`):
+
+ - Translated code calling a decompiled function still calls `sub_xxx(app, cpu)`;
+   that is now a stub which reads the arguments from the emulated registers and
+   stack, calls the C++ function, puts the result in eax/edx:eax/st0, restores
+   the other registers, and pops what the original pops.
+ - Decompiled code calling a translated routine calls an ordinary C++ function
+   with Ghidra's prototype; that is a stub which puts the arguments where the
+   routine expects them and runs it on the CPU of the current thread
+   (`win32::currentCpu()`, see `include/lib/cbridge.h`).
+ - Where each argument lives comes from Ghidra's parameter storage, not from the
+   calling convention's name. Fastcall with stack arguments, thiscall and so on
+   all work, provided the signature in Ghidra is right.
+ - Globals are references to their address in the image
+   (`inline int &g_X = *reinterpret_cast<int *>(0x4abb20);`); the sections are
+   mapped where the game expects them, so C++ and translated code share them.
+ - A routine's address used as a value (a callback stored in a structure) is
+   written `ghidra::code_address(0x401010)`: the address translated code calls
+   through `dynamic_call`, not a C++ function pointer. Indirect calls the other
+   way (`(**(code **)(*p + 8))(p)`) go through `win32::guestCall` /
+   `win32::guestCallThis`.
+
+Decompiled code is built with `-fpermissive -fno-strict-aliasing` and without
+`-Werror`, because Ghidra's C converts between integers and pointers and
+reinterprets memory the way the machine code did. With MSVC, which has no
+`-fpermissive`, those conversions have to be cleaned up by hand.
+
+The project is owned by its creator in `project.prp`; Ghidra refuses to open
+someone else's project. Change OWNER there, or run headless with
+`GHIDRA_HEADLESS_JAVA_OPTIONS=-Duser.name=<owner>`.
+
+
 Current status:
 ===============
 
 Ghidra export function ranges and data (jump tables, etc) into the disassembler.
-No source export just yet.
+Functions can be moved to decompiled C++ one at a time (see above).
 Game appears to run.
 Next step is converting assembly to C/C++ while still ensuring the game compiles and runs.

@@ -109,6 +109,27 @@ function(add_game_target name)
     # collect sources
     file(GLOB GAME_SOURCES "${game_src_dir}/*.cpp")
 
+    # Functions moved from translated assembly to C++ (see
+    # ghidra_scripts/ExportDecompiled.java), and the stubs between the two.
+    # Decompiled code reinterprets memory freely, the way the machine code
+    # did, so it is built without strict aliasing; it converts between integers
+    # and pointers the way C lets it (-fpermissive); and it is not warning-free
+    # until someone has cleaned it up, so warnings are not errors there.
+    file(GLOB DECOMP_SOURCES CONFIGURE_DEPENDS "${game_src_dir}/decomp/*.cpp")
+    set(DECOMP_BRIDGE_SOURCES ${DECOMP_SOURCES})
+    if(EXISTS "${game_src_dir}/disassembly/${name}.cstubs.cpp")
+        list(APPEND DECOMP_BRIDGE_SOURCES "${game_src_dir}/disassembly/${name}.cstubs.cpp")
+    endif()
+    if(DECOMP_BRIDGE_SOURCES)
+        if(MSVC)
+            set_source_files_properties(${DECOMP_BRIDGE_SOURCES} PROPERTIES
+                COMPILE_OPTIONS "/WX-")
+        else()
+            set_source_files_properties(${DECOMP_BRIDGE_SOURCES} PROPERTIES
+                COMPILE_OPTIONS "-fno-strict-aliasing;-fpermissive;-Wno-error;-Wno-unused-variable;-Wno-unused-but-set-variable;-Wno-unused-label;-Wno-unused-parameter")
+        endif()
+    endif()
+
     # pick the hardcoded disasm set for this game
     if(name STREQUAL "game")
         set(DISASM_SOURCES ${GAME_DISASM_SOURCES})
@@ -120,13 +141,14 @@ function(add_game_target name)
 
     # adding the headers to the executable source list is what makes CMake
     # aware that the custom command must run before compilation starts.
-    add_library(${name} SHARED ${GAME_SOURCES} ${DISASM_SOURCES} ${DISASM_HEADERS})
+    add_library(${name} SHARED ${GAME_SOURCES} ${DECOMP_SOURCES} ${DISASM_SOURCES} ${DISASM_HEADERS})
     # The stub imports this by name, so the file name is fixed.
     set_target_properties(${name} PROPERTIES PREFIX "" OUTPUT_NAME "${name}_code")
     set_source_files_properties(${DISASM_HEADERS} PROPERTIES HEADER_FILE_ONLY TRUE)
     target_include_directories(${name} PRIVATE
         ${game_src_dir}
         ${CMAKE_SOURCE_DIR}/src/${name}/disassembly
+        ${CMAKE_SOURCE_DIR}/src/${name}/ghidra
         ${CMAKE_SOURCE_DIR}/include)
     target_link_libraries(${name} PRIVATE game_core)
     if(TARGET_WINDOWS)

@@ -9,10 +9,10 @@
 #undef InterlockedDecrement
 #endif
 
-#define InterlockedForward(name)                                          \
-    inline LONG __stdcall name(LONG volatile *addend)                     \
-    {                                                                     \
-        return _##name(reinterpret_cast<LONG volatile *>(addend));    \
+#define InterlockedForward(name)                      \
+    inline LONG __stdcall name(LONG volatile *addend) \
+    {                                                 \
+        return _##name(addend);                       \
     }
 
 namespace win32::kernel32
@@ -90,8 +90,7 @@ namespace win32::kernel32
     // cannot resolve. Forward to the intrinsic through one concrete signature
     // -- the one kernel32.dll actually exports.
     InterlockedForward(InterlockedDecrement)
-    InterlockedForward(InterlockedIncrement)
-    using ::IsBadCodePtr;
+        InterlockedForward(InterlockedIncrement) using ::IsBadCodePtr;
     using ::IsBadReadPtr;
     using ::IsBadWritePtr;
     using ::LCMapStringA;

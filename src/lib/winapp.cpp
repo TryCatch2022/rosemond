@@ -1,5 +1,6 @@
 #include <x86.h>
 #include <lib/winapp.h>
+#include <lib/cbridge.h>
 #include <windows.h>
 #include <cstdio>
 
@@ -86,6 +87,26 @@ namespace win32
     WinApplication *WinApplication::current()
     {
         return s_current;
+    }
+
+    // The CPU translated code is running on in this thread, for a decompiled
+    // function that calls back into translated code (see lib/cbridge.h).
+    static thread_local x86::CPU *t_cpu = nullptr;
+
+    x86::CPU &currentCpu()
+    {
+        NFS2_ASSERT(t_cpu);
+        return *t_cpu;
+    }
+
+    CpuScope::CpuScope(x86::CPU &cpu) : m_previous(t_cpu)
+    {
+        t_cpu = &cpu;
+    }
+
+    CpuScope::~CpuScope()
+    {
+        t_cpu = m_previous;
     }
 
     WinApplication::WinApplication()
@@ -196,6 +217,7 @@ namespace win32
         getMemory<x86::reg32>(esp) = cpu.ip;
         cpu.esp = esp;
 
+        CpuScope scope(cpu);
         dynamic_call(address, cpu);
         return cpu.eax;
     }
@@ -222,6 +244,7 @@ namespace win32
         getMemory<x86::reg32>(cpu.esp + 4) = parameter;
         getMemory<x86::reg32>(cpu.esp) = cpu.ip;
 
+        CpuScope scope(cpu);
         dynamic_call(entryPoint, cpu);
         return int(cpu.eax);
     }
