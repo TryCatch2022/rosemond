@@ -994,6 +994,9 @@
 #ifdef _errno
 #undef _errno
 #endif
+#ifdef _except_handler3
+#undef _except_handler3
+#endif
 #ifdef _exit_0047865f
 #undef _exit_0047865f
 #endif

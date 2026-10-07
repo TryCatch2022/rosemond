@@ -1,9 +1,29 @@
 {
   "functions": {
+    "0x0041f9b0": {
+      "name": "unk_InterpolateHorseData",
+      "file": "src/game/decomp/unk_InterpolateHorseData_0041f9b0.cpp",
+      "hash": "bfa2732e36f5189b21fafe461ff01b3ef59ff2f06d9b3bcbab3d7687ae04a73a"
+    },
+    "0x0041f9f0": {
+      "name": "Lerp",
+      "file": "src/game/decomp/Lerp_0041f9f0.cpp",
+      "hash": "9faee6eb0dc7e32cfb653c277c4f71aad14ac6c4dab6d6f85305a8e407b3b908"
+    },
     "0x00424c10": {
       "name": "logError",
       "file": "src/game/decomp/logError_00424c10.cpp",
       "hash": "e176181073e9d77918799d04dd9f70c688c35bd3b999ee37c65e0e77440954d8"
+    },
+    "0x004646a0": {
+      "name": "terminateBlackExe",
+      "file": "src/game/decomp/terminateBlackExe_004646a0.cpp",
+      "hash": "15d222fef6fa276c092657e2274b7a3daa056907c29cfac10a184b67e3d9b8b9"
+    },
+    "0x004646c0": {
+      "name": "CreateBlackExe",
+      "file": "src/game/decomp/CreateBlackExe_004646c0.cpp",
+      "hash": "de3c39c185e00b389f0f09bbe94de194c89e10e9c80eec292b4cada1355015fc"
     },
     "0x00465040": {
       "name": "_WinMain",

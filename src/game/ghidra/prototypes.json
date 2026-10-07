@@ -1754,7 +1754,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -1811,7 +1811,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00405b60(int param_1, undefined1 param_2, float param_3, float param_4, float param_5)"
+      "declaration": "undefined4 FUN_00405b60(Entity *param_1, undefined1 param_2, float param_3, float param_4, float param_5)"
     },
     {
       "entry": 4218464,
@@ -2008,7 +2008,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -2065,7 +2065,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00406340(int param_1, undefined1 param_2, float param_3, float param_4, float param_5)"
+      "declaration": "undefined4 FUN_00406340(Entity *param_1, undefined1 param_2, float param_3, float param_4, float param_5)"
     },
     {
       "entry": 4220496,
@@ -2180,7 +2180,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -2237,7 +2237,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004069a0(int param_1, undefined1 param_2, float param_3, float param_4, float param_5)"
+      "declaration": "undefined4 FUN_004069a0(Entity *param_1, undefined1 param_2, float param_3, float param_4, float param_5)"
     },
     {
       "entry": 4222112,
@@ -2352,7 +2352,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -2409,7 +2409,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00406ff0(int param_1, undefined1 param_2, float param_3, float param_4, float param_5)"
+      "declaration": "undefined4 FUN_00406ff0(Entity *param_1, undefined1 param_2, float param_3, float param_4, float param_5)"
     },
     {
       "entry": 4223728,
@@ -2813,7 +2813,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -2848,7 +2848,7 @@
         }
       ],
       "problems": [],
-      "declaration": "byte *GetAIList(byte *param_1, int param_2, int *param_3)"
+      "declaration": "byte *GetAIList(char *param_1, int param_2, int *param_3)"
     },
     {
       "entry": 4225840,
@@ -2871,7 +2871,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "void *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -2895,7 +2895,7 @@
         }
       ],
       "problems": [],
-      "declaration": "byte *GetSpawnList(void *param_1, int *param_2)"
+      "declaration": "byte *GetSpawnList(char *param_1, int *param_2)"
     },
     {
       "entry": 4225968,
@@ -2918,7 +2918,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "void *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -2930,7 +2930,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00407bb0(void *param_1)"
+      "declaration": "undefined4 FUN_00407bb0(char *param_1)"
     },
     {
       "entry": 4226064,
@@ -2988,7 +2988,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -3012,7 +3012,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00407cb0(byte *param_1, int param_2)"
+      "declaration": "undefined4 FUN_00407cb0(char *param_1, int param_2)"
     },
     {
       "entry": 4226304,
@@ -3035,7 +3035,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -3081,7 +3081,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00407d00(byte *param_1, int param_2, undefined4 param_3, float param_4)"
+      "declaration": "undefined4 FUN_00407d00(char *param_1, int param_2, undefined4 param_3, float param_4)"
     },
     {
       "entry": 4226784,
@@ -3104,7 +3104,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -3161,7 +3161,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00407ee0(byte *param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5)"
+      "declaration": "undefined4 FUN_00407ee0(char *param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5)"
     },
     {
       "entry": 4226880,
@@ -3184,7 +3184,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -3241,7 +3241,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00407f40(byte *param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5)"
+      "declaration": "undefined4 FUN_00407f40(char *param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5)"
     },
     {
       "entry": 4226976,
@@ -4071,7 +4071,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "Player *",
           "size": 4,
           "storage": [
             {
@@ -4083,7 +4083,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 SetAIGuard_004093d0(int *param_1)"
+      "declaration": "undefined4 SetAIGuard_004093d0(Player *param_1)"
     },
     {
       "entry": 4232848,
@@ -4106,7 +4106,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "Player *",
           "size": 4,
           "storage": [
             {
@@ -4118,7 +4118,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 SetAIGuard_00409690(int *param_1)"
+      "declaration": "undefined4 SetAIGuard_00409690(Player *param_1)"
     },
     {
       "entry": 4232864,
@@ -4618,7 +4618,7 @@
         },
         {
           "name": "param_3",
-          "type": "int",
+          "type": "undefined4",
           "size": 4,
           "storage": [
             {
@@ -4651,7 +4651,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 CreateAI(char *param_1, char param_2, int param_3, int routeCount, int unk_positionsArray)"
+      "declaration": "undefined4 CreateAI(char *param_1, char param_2, undefined4 param_3, int routeCount, int unk_positionsArray)"
     },
     {
       "entry": 4236144,
@@ -4686,7 +4686,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -4698,7 +4698,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 SaveAIPlayerInfo(int param_1, int *param_2)"
+      "declaration": "undefined4 SaveAIPlayerInfo(int param_1, FILE *param_2)"
     },
     {
       "entry": 4236304,
@@ -6418,7 +6418,7 @@
         },
         {
           "name": "param_2",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -6430,7 +6430,7 @@
         }
       ],
       "problems": [],
-      "declaration": "bool FUN_0040cfb0(undefined4 param_1, int param_2)"
+      "declaration": "bool FUN_0040cfb0(undefined4 param_1, Entity *param_2)"
     },
     {
       "entry": 4248096,
@@ -6993,7 +6993,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "undefined4 *",
           "size": 4,
           "storage": [
             {
@@ -7005,7 +7005,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0040df90(int param_1)"
+      "declaration": "undefined4 FUN_0040df90(undefined4 *param_1)"
     },
     {
       "entry": 4251664,
@@ -7666,7 +7666,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "void *",
+          "type": "int",
           "size": 4,
           "storage": [
             {
@@ -7690,7 +7690,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0040e620(void *param_1, int param_2)"
+      "declaration": "undefined4 FUN_0040e620(int param_1, int param_2)"
     },
     {
       "entry": 4253280,
@@ -9058,7 +9058,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -9070,7 +9070,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0040f040(int param_1, byte *param_2)"
+      "declaration": "undefined4 FUN_0040f040(int param_1, char *param_2)"
     },
     {
       "entry": 4256032,
@@ -9140,7 +9140,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -9152,7 +9152,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0040f170(int param_1, int *param_2)"
+      "declaration": "undefined4 FUN_0040f170(int param_1, FILE *param_2)"
     },
     {
       "entry": 4256192,
@@ -9175,7 +9175,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -9187,7 +9187,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -9199,7 +9199,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0040f1c0(int param_1, int *param_2)"
+      "declaration": "undefined4 FUN_0040f1c0(Entity *param_1, char *param_2)"
     },
     {
       "entry": 4256320,
@@ -9292,7 +9292,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -9404,7 +9404,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0040f4b0(int param_1, undefined1 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined1 param_8, int param_9, int param_10)"
+      "declaration": "undefined4 FUN_0040f4b0(Entity *param_1, undefined1 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined1 param_8, int param_9, int param_10)"
     },
     {
       "entry": 4257152,
@@ -10097,7 +10097,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -10109,7 +10109,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004108b0(int param_1)"
+      "declaration": "undefined4 FUN_004108b0(Entity *param_1)"
     },
     {
       "entry": 4263360,
@@ -10295,7 +10295,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -10307,7 +10307,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00411170(int *param_1)"
+      "declaration": "undefined4 FUN_00411170(Entity *param_1)"
     },
     {
       "entry": 4264576,
@@ -10522,6 +10522,7 @@
       "cc": "__fastcall",
       "varargs": false,
       "decompiled": false,
+      "purge": 0,
       "ret": {
         "type": "undefined4",
         "size": 4,
@@ -12148,6 +12149,7 @@
       "cc": "__fastcall",
       "varargs": false,
       "decompiled": false,
+      "purge": 0,
       "ret": {
         "type": "undefined4",
         "size": 4,
@@ -12162,7 +12164,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -12174,7 +12176,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadUIThings(int *param_1)"
+      "declaration": "undefined4 LoadUIThings(char *param_1)"
     },
     {
       "entry": 4278960,
@@ -12232,7 +12234,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "char *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -12244,7 +12246,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -12256,7 +12258,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00414ad0(char *param_1, int *param_2)"
+      "declaration": "undefined4 FUN_00414ad0(void *param_1, FILE *param_2)"
     },
     {
       "entry": 4279072,
@@ -12279,7 +12281,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -12291,7 +12293,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00414b20(int *param_1)"
+      "declaration": "undefined4 FUN_00414b20(FILE *param_1)"
     },
     {
       "entry": 4279152,
@@ -12314,7 +12316,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -12326,7 +12328,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00414b70(int *param_1)"
+      "declaration": "undefined4 FUN_00414b70(FILE *param_1)"
     },
     {
       "entry": 4279200,
@@ -12505,7 +12507,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -12517,7 +12519,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00415050(int *param_1)"
+      "declaration": "undefined4 FUN_00415050(char *param_1)"
     },
     {
       "entry": 4280432,
@@ -12609,7 +12611,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -12621,7 +12623,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004150e0(int *param_1)"
+      "declaration": "undefined4 FUN_004150e0(FILE *param_1)"
     },
     {
       "entry": 4280576,
@@ -12818,7 +12820,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "int",
+        "type": "undefined1 **",
         "size": 4,
         "storage": [
           {
@@ -12843,7 +12845,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int unk_getInterfaceField(int param_1)"
+      "declaration": "undefined1 **unk_getInterfaceField(int param_1)"
     },
     {
       "entry": 4280864,
@@ -13951,7 +13953,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "ItemData *",
         "size": 4,
         "storage": [
           {
@@ -13976,7 +13978,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00417420(int param_1)"
+      "declaration": "ItemData *FUN_00417420(int param_1)"
     },
     {
       "entry": 4289600,
@@ -16208,7 +16210,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -16220,7 +16222,7 @@
         },
         {
           "name": "param_3",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -16231,7 +16233,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004196b0(void *param_1, byte *param_2, byte *param_3)"
+      "declaration": "undefined4 FUN_004196b0(void *param_1, char *param_2, char *param_3)"
     },
     {
       "entry": 4298464,
@@ -17461,7 +17463,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -17473,7 +17475,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0041b0b0(int *param_1)"
+      "declaration": "undefined4 FUN_0041b0b0(FILE *param_1)"
     },
     {
       "entry": 4305168,
@@ -17496,7 +17498,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -17508,7 +17510,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadStaticAdvText(int *param_1)"
+      "declaration": "undefined4 LoadStaticAdvText(char *param_1)"
     },
     {
       "entry": 4305248,
@@ -18799,7 +18801,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "LPCSTR",
           "size": 4,
           "storage": [
             {
@@ -18810,7 +18812,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0041d130(byte *param_1)"
+      "declaration": "undefined4 FUN_0041d130(LPCSTR param_1)"
     },
     {
       "entry": 4313440,
@@ -19138,7 +19140,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -19150,7 +19152,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0041e0b0(int *param_1)"
+      "declaration": "undefined4 FUN_0041e0b0(FILE *param_1)"
     },
     {
       "entry": 4317408,
@@ -19850,7 +19852,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "char *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -19874,7 +19876,7 @@
         },
         {
           "name": "param_3",
-          "type": "uint",
+          "type": "size_t",
           "size": 4,
           "storage": [
             {
@@ -19885,7 +19887,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0041ea50(char *param_1, LPCSTR param_2, uint param_3)"
+      "declaration": "undefined4 FUN_0041ea50(void *param_1, LPCSTR param_2, size_t param_3)"
     },
     {
       "entry": 4319888,
@@ -20037,7 +20039,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -20049,7 +20051,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0041ebd0(int param_1, int *param_2)"
+      "declaration": "undefined4 FUN_0041ebd0(int param_1, FILE *param_2)"
     },
     {
       "entry": 4320288,
@@ -20084,7 +20086,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -20096,7 +20098,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0041ec20(int param_1, int *param_2)"
+      "declaration": "undefined4 FUN_0041ec20(int param_1, FILE *param_2)"
     },
     {
       "entry": 4320384,
@@ -20245,7 +20247,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined4 *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -20269,7 +20271,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0041ee40(undefined4 *param_1, int *param_2)"
+      "declaration": "undefined4 FUN_0041ee40(Entity *param_1, int *param_2)"
     },
     {
       "entry": 4320976,
@@ -20433,8 +20435,42 @@
       "declaration": "undefined4 *SetUpHorse(int param_1, Entity *entity)"
     },
     {
+      "entry": 4321792,
+      "name": "FUN_0041f200",
+      "cc": "__fastcall",
+      "varargs": false,
+      "decompiled": false,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "undefined4 *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "reg": "ecx",
+              "shift": 0
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_0041f200(undefined4 *param_1)"
+    },
+    {
       "entry": 4321847,
-      "name": "FUN_0041f237",
+      "name": "caseD_6",
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
@@ -20452,11 +20488,11 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_0041f237(void)"
+      "declaration": "undefined4 caseD_6(void)"
     },
     {
       "entry": 4321865,
-      "name": "FUN_0041f249",
+      "name": "caseD_9",
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
@@ -20474,11 +20510,11 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_0041f249(void)"
+      "declaration": "undefined4 caseD_9(void)"
     },
     {
       "entry": 4321883,
-      "name": "FUN_0041f25b",
+      "name": "caseD_a",
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
@@ -20496,11 +20532,11 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_0041f25b(void)"
+      "declaration": "undefined4 caseD_a(void)"
     },
     {
       "entry": 4321901,
-      "name": "FUN_0041f26d",
+      "name": "caseD_c",
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
@@ -20518,11 +20554,11 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_0041f26d(void)"
+      "declaration": "undefined4 caseD_c(void)"
     },
     {
       "entry": 4321916,
-      "name": "FUN_0041f27c",
+      "name": "caseD_d",
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
@@ -20540,11 +20576,11 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_0041f27c(void)"
+      "declaration": "undefined4 caseD_d(void)"
     },
     {
       "entry": 4321933,
-      "name": "FUN_0041f28d",
+      "name": "caseD_e",
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
@@ -20562,11 +20598,11 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_0041f28d(void)"
+      "declaration": "undefined4 caseD_e(void)"
     },
     {
       "entry": 4321950,
-      "name": "FUN_0041f29e",
+      "name": "caseD_f",
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
@@ -20584,11 +20620,11 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_0041f29e(void)"
+      "declaration": "undefined4 caseD_f(void)"
     },
     {
       "entry": 4321967,
-      "name": "FUN_0041f2af",
+      "name": "caseD_1",
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
@@ -20606,11 +20642,11 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_0041f2af(void)"
+      "declaration": "undefined4 caseD_1(void)"
     },
     {
       "entry": 4321993,
-      "name": "FUN_0041f2c9",
+      "name": "caseD_7",
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
@@ -20628,11 +20664,11 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_0041f2c9(void)"
+      "declaration": "undefined4 caseD_7(void)"
     },
     {
       "entry": 4322010,
-      "name": "FUN_0041f2da",
+      "name": "caseD_4",
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
@@ -20650,7 +20686,7 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_0041f2da(void)"
+      "declaration": "undefined4 caseD_4(void)"
     },
     {
       "entry": 4322224,
@@ -20927,7 +20963,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Task *",
           "size": 4,
           "storage": [
             {
@@ -20939,7 +20975,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0041f6d0(int param_1)"
+      "declaration": "undefined4 FUN_0041f6d0(Task *param_1)"
     },
     {
       "entry": 4323040,
@@ -21202,40 +21238,21 @@
           }
         ]
       },
-      "params": [
-        {
-          "name": "this_",
-          "type": "void *",
-          "size": 4,
-          "storage": [
-            {
-              "size": 4,
-              "reg": "ecx",
-              "shift": 0
-            }
-          ]
-        }
-      ],
+      "params": [],
       "problems": [],
-      "declaration": "int FUN_0041f960(void *this_)"
+      "declaration": "int FUN_0041f960(void)"
     },
     {
       "entry": 4323760,
       "name": "unk_InterpolateHorseData",
       "cc": "__fastcall",
       "varargs": false,
-      "decompiled": false,
+      "decompiled": true,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
-        "size": 4,
-        "storage": [
-          {
-            "reg": "eax",
-            "shift": 0,
-            "size": 4
-          }
-        ]
+        "type": "void",
+        "size": 0,
+        "storage": []
       },
       "params": [
         {
@@ -21252,25 +21269,19 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 unk_InterpolateHorseData(Entity *param_1)"
+      "declaration": "void unk_InterpolateHorseData(Entity *param_1)"
     },
     {
       "entry": 4323824,
       "name": "Lerp",
       "cc": "__thiscall",
       "varargs": false,
-      "decompiled": false,
+      "decompiled": true,
       "purge": 4,
       "ret": {
-        "type": "undefined4",
-        "size": 4,
-        "storage": [
-          {
-            "reg": "eax",
-            "shift": 0,
-            "size": 4
-          }
-        ]
+        "type": "void",
+        "size": 0,
+        "storage": []
       },
       "params": [
         {
@@ -21298,7 +21309,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 Lerp(InterpolatingFloat *this_, float lerpT)"
+      "declaration": "void Lerp(InterpolatingFloat *this_, float lerpT)"
     },
     {
       "entry": 4323856,
@@ -21356,7 +21367,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined4",
+          "type": "int",
           "size": 4,
           "storage": [
             {
@@ -21368,7 +21379,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0041fb10(undefined4 param_1)"
+      "declaration": "undefined4 FUN_0041fb10(int param_1)"
     },
     {
       "entry": 4324128,
@@ -21530,7 +21541,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "HorseUserData *",
         "size": 4,
         "storage": [
           {
@@ -21542,7 +21553,7 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_0041fc90(void)"
+      "declaration": "HorseUserData *FUN_0041fc90(void)"
     },
     {
       "entry": 4324512,
@@ -21860,7 +21871,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "Entity *",
         "size": 4,
         "storage": [
           {
@@ -21885,7 +21896,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004200e0(int param_1)"
+      "declaration": "Entity *FUN_004200e0(int param_1)"
     },
     {
       "entry": 4325632,
@@ -21895,7 +21906,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "HorseUserData *",
         "size": 4,
         "storage": [
           {
@@ -21920,7 +21931,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00420100(int param_1)"
+      "declaration": "HorseUserData *FUN_00420100(int param_1)"
     },
     {
       "entry": 4325680,
@@ -21930,7 +21941,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "HorseUserData *",
         "size": 4,
         "storage": [
           {
@@ -21955,7 +21966,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00420130(int param_1)"
+      "declaration": "HorseUserData *FUN_00420130(int param_1)"
     },
     {
       "entry": 4325728,
@@ -22013,7 +22024,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Task *",
           "size": 4,
           "storage": [
             {
@@ -22025,7 +22036,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004201b0(int param_1)"
+      "declaration": "undefined4 FUN_004201b0(Task *param_1)"
     },
     {
       "entry": 4325840,
@@ -22048,7 +22059,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "HorseUserData *",
           "size": 4,
           "storage": [
             {
@@ -22060,7 +22071,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004201d0(int param_1)"
+      "declaration": "undefined4 FUN_004201d0(HorseUserData *param_1)"
     },
     {
       "entry": 4325920,
@@ -22220,7 +22231,7 @@
       "decompiled": false,
       "purge": 4,
       "ret": {
-        "type": "undefined4",
+        "type": "Task *",
         "size": 4,
         "storage": [
           {
@@ -22233,7 +22244,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined4",
+          "type": "Task *",
           "size": 4,
           "storage": [
             {
@@ -22257,7 +22268,7 @@
         },
         {
           "name": "param_3",
-          "type": "int",
+          "type": "Task *",
           "size": 4,
           "storage": [
             {
@@ -22268,7 +22279,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004203c0(undefined4 param_1, int param_2, int param_3)"
+      "declaration": "Task *FUN_004203c0(Task *param_1, int param_2, Task *param_3)"
     },
     {
       "entry": 4326416,
@@ -23357,7 +23368,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -23369,7 +23380,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 SaveMissions(int *param_1)"
+      "declaration": "undefined4 SaveMissions(FILE *param_1)"
     },
     {
       "entry": 4328912,
@@ -23392,7 +23403,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -23404,7 +23415,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00420dd0(int *param_1)"
+      "declaration": "undefined4 FUN_00420dd0(char *param_1)"
     },
     {
       "entry": 4328976,
@@ -23427,7 +23438,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -23439,7 +23450,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 SaveHorseDB(int *param_1)"
+      "declaration": "undefined4 SaveHorseDB(FILE *param_1)"
     },
     {
       "entry": 4329200,
@@ -23462,7 +23473,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -23474,7 +23485,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadHorseDB(int *param_1)"
+      "declaration": "undefined4 LoadHorseDB(Entity *param_1)"
     },
     {
       "entry": 4329440,
@@ -23497,7 +23508,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "char *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -23509,7 +23520,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -23521,7 +23532,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00420fe0(char *param_1, int *param_2)"
+      "declaration": "undefined4 FUN_00420fe0(void *param_1, FILE *param_2)"
     },
     {
       "entry": 4329488,
@@ -23544,7 +23555,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -23556,7 +23567,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 SaveActiveHorseUserData(int *param_1)"
+      "declaration": "undefined4 SaveActiveHorseUserData(FILE *param_1)"
     },
     {
       "entry": 4329568,
@@ -23579,7 +23590,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -23591,7 +23602,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 SaveOtherHorseUserData(int *param_1)"
+      "declaration": "undefined4 SaveOtherHorseUserData(FILE *param_1)"
     },
     {
       "entry": 4329648,
@@ -23614,7 +23625,7 @@
       "params": [
         {
           "name": "horse",
-          "type": "char *",
+          "type": "HorseUserData *",
           "size": 4,
           "storage": [
             {
@@ -23638,7 +23649,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004210b0(char *horse, int *stream)"
+      "declaration": "undefined4 FUN_004210b0(HorseUserData *horse, int *stream)"
     },
     {
       "entry": 4329696,
@@ -24146,6 +24157,7 @@
       "cc": "__fastcall",
       "varargs": false,
       "decompiled": false,
+      "purge": 0,
       "ret": {
         "type": "undefined4",
         "size": 4,
@@ -24451,7 +24463,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "int",
+        "type": "Entity *",
         "size": 4,
         "storage": [
           {
@@ -24476,7 +24488,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int unk_findNearestInteractable(int param_1)"
+      "declaration": "Entity *unk_findNearestInteractable(int param_1)"
     },
     {
       "entry": 4334784,
@@ -24511,7 +24523,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -24523,7 +24535,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004224c0(int param_1, byte *param_2)"
+      "declaration": "undefined4 FUN_004224c0(int param_1, char *param_2)"
     },
     {
       "entry": 4334912,
@@ -24790,7 +24802,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -24802,7 +24814,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00422a00(byte *param_1)"
+      "declaration": "undefined4 FUN_00422a00(char *param_1)"
     },
     {
       "entry": 4336192,
@@ -25263,6 +25275,7 @@
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
+      "purge": 0,
       "ret": {
         "type": "undefined4",
         "size": 4,
@@ -25361,7 +25374,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -25373,7 +25386,7 @@
         },
         {
           "name": "param_3",
-          "type": "undefined4",
+          "type": "float",
           "size": 4,
           "storage": [
             {
@@ -25384,7 +25397,7 @@
         },
         {
           "name": "param_4",
-          "type": "undefined4",
+          "type": "float",
           "size": 4,
           "storage": [
             {
@@ -25395,7 +25408,7 @@
         },
         {
           "name": "param_5",
-          "type": "undefined4",
+          "type": "float",
           "size": 4,
           "storage": [
             {
@@ -25417,7 +25430,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 unk_AddBriefing(byte *param_1, byte *param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, int param_6)"
+      "declaration": "undefined4 unk_AddBriefing(byte *param_1, char *param_2, float param_3, float param_4, float param_5, int param_6)"
     },
     {
       "entry": 4345280,
@@ -25531,7 +25544,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -25543,7 +25556,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint FUN_004250d0(byte *param_1)"
+      "declaration": "uint FUN_004250d0(char *param_1)"
     },
     {
       "entry": 4346288,
@@ -25825,7 +25838,7 @@
       "params": [
         {
           "name": "file",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -25837,7 +25850,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 unk_saveHorseAndScore(int *file)"
+      "declaration": "undefined4 unk_saveHorseAndScore(FILE *file)"
     },
     {
       "entry": 4348720,
@@ -25860,7 +25873,7 @@
       "params": [
         {
           "name": "stream",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -25872,7 +25885,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 unk_somethingWithActiveHorseStrings(int *stream)"
+      "declaration": "undefined4 unk_somethingWithActiveHorseStrings(char *stream)"
     },
     {
       "entry": 4348928,
@@ -25892,22 +25905,9 @@
           }
         ]
       },
-      "params": [
-        {
-          "name": "param_1",
-          "type": "void *",
-          "size": 4,
-          "storage": [
-            {
-              "size": 4,
-              "reg": "ecx",
-              "shift": 0
-            }
-          ]
-        }
-      ],
+      "params": [],
       "problems": [],
-      "declaration": "undefined4 unk_deleteTempFiles(void *param_1)"
+      "declaration": "undefined4 unk_deleteTempFiles(void)"
     },
     {
       "entry": 4349008,
@@ -26118,22 +26118,16 @@
       "name": "spawnMenuExe",
       "cc": "__stdcall",
       "varargs": false,
-      "decompiled": false,
+      "decompiled": true,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
-        "size": 4,
-        "storage": [
-          {
-            "reg": "eax",
-            "shift": 0,
-            "size": 4
-          }
-        ]
+        "type": "void",
+        "size": 0,
+        "storage": []
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 spawnMenuExe(void)"
+      "declaration": "void spawnMenuExe(void)"
     },
     {
       "entry": 4349920,
@@ -26220,7 +26214,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined1 *",
+          "type": "undefined4 *",
           "size": 4,
           "storage": [
             {
@@ -26232,7 +26226,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 unk_connectToServer(undefined1 *param_1)"
+      "declaration": "undefined4 unk_connectToServer(undefined4 *param_1)"
     },
     {
       "entry": 4350832,
@@ -27719,6 +27713,7 @@
       "cc": "__fastcall",
       "varargs": false,
       "decompiled": false,
+      "purge": 0,
       "ret": {
         "type": "undefined4",
         "size": 4,
@@ -27745,7 +27740,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -27757,7 +27752,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004274a0(int param_1, byte *param_2)"
+      "declaration": "undefined4 FUN_004274a0(int param_1, char *param_2)"
     },
     {
       "entry": 4355312,
@@ -27792,7 +27787,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -27815,7 +27810,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004274f0(int param_1, byte *param_2, undefined4 *param_3)"
+      "declaration": "undefined4 FUN_004274f0(int param_1, char *param_2, undefined4 *param_3)"
     },
     {
       "entry": 4355408,
@@ -27907,7 +27902,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -27919,7 +27914,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00427570(int param_1, byte *param_2)"
+      "declaration": "undefined4 FUN_00427570(int param_1, char *param_2)"
     },
     {
       "entry": 4355456,
@@ -27954,7 +27949,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -27966,7 +27961,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00427580(int param_1, byte *param_2)"
+      "declaration": "undefined4 FUN_00427580(int param_1, char *param_2)"
     },
     {
       "entry": 4355760,
@@ -28036,7 +28031,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -28059,7 +28054,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004276f0(int param_1, byte *param_2, undefined4 *param_3)"
+      "declaration": "undefined4 FUN_004276f0(int param_1, char *param_2, undefined4 *param_3)"
     },
     {
       "entry": 4355888,
@@ -28551,7 +28546,7 @@
       "decompiled": false,
       "purge": 4,
       "ret": {
-        "type": "undefined1 *",
+        "type": "char *",
         "size": 4,
         "storage": [
           {
@@ -28564,7 +28559,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined1 *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -28576,7 +28571,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined1 *FUN_00427e90(undefined1 *param_1)"
+      "declaration": "char *FUN_00427e90(char *param_1)"
     },
     {
       "entry": 4357888,
@@ -29796,7 +29791,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined2 *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -29842,7 +29837,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00428a10(undefined2 *param_1, int param_2, int param_3, undefined2 param_4)"
+      "declaration": "undefined4 FUN_00428a10(char *param_1, int param_2, int param_3, undefined2 param_4)"
     },
     {
       "entry": 4360768,
@@ -31064,7 +31059,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -31076,7 +31071,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00429770(int *param_1)"
+      "declaration": "undefined4 FUN_00429770(FILE *param_1)"
     },
     {
       "entry": 4364240,
@@ -31099,7 +31094,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -31111,7 +31106,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadHighScore(int *param_1)"
+      "declaration": "undefined4 LoadHighScore(char *param_1)"
     },
     {
       "entry": 4364416,
@@ -31156,7 +31151,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -31168,7 +31163,7 @@
         }
       ],
       "problems": [],
-      "declaration": "char *unk_readCompInfo(int *param_1)"
+      "declaration": "char *unk_readCompInfo(char *param_1)"
     },
     {
       "entry": 4364704,
@@ -31213,7 +31208,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -31225,7 +31220,7 @@
         },
         {
           "name": "param_2",
-          "type": "char *",
+          "type": "undefined4 *",
           "size": 4,
           "storage": [
             {
@@ -31237,7 +31232,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00429a20(int *param_1, char *param_2)"
+      "declaration": "undefined4 FUN_00429a20(FILE *param_1, undefined4 *param_2)"
     },
     {
       "entry": 4364928,
@@ -31374,7 +31369,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -31386,7 +31381,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00429b10(int *param_1)"
+      "declaration": "undefined4 FUN_00429b10(FILE *param_1)"
     },
     {
       "entry": 4365168,
@@ -31466,7 +31461,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -31478,7 +31473,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadCompetition(int *param_1)"
+      "declaration": "undefined4 LoadCompetition(char *param_1)"
     },
     {
       "entry": 4365424,
@@ -31501,7 +31496,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -31513,7 +31508,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00429c70(int *param_1)"
+      "declaration": "undefined4 FUN_00429c70(FILE *param_1)"
     },
     {
       "entry": 4365456,
@@ -31536,7 +31531,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -31548,7 +31543,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00429c90(int *param_1)"
+      "declaration": "undefined4 FUN_00429c90(char *param_1)"
     },
     {
       "entry": 4365488,
@@ -32201,7 +32196,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "char *",
+          "type": "byte *",
           "size": 4,
           "storage": [
             {
@@ -32258,7 +32253,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0042b210(char *param_1, int *param_2, int param_3, int param_4, int param_5)"
+      "declaration": "undefined4 FUN_0042b210(byte *param_1, int *param_2, int param_3, int param_4, int param_5)"
     },
     {
       "entry": 4371264,
@@ -33342,7 +33337,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -33354,7 +33349,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0042d510(int *param_1)"
+      "declaration": "undefined4 FUN_0042d510(FILE *param_1)"
     },
     {
       "entry": 4379984,
@@ -33377,7 +33372,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -33389,7 +33384,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0042d550(int *param_1)"
+      "declaration": "undefined4 FUN_0042d550(char *param_1)"
     },
     {
       "entry": 4380080,
@@ -33763,7 +33758,7 @@
         },
         {
           "name": "param_3",
-          "type": "undefined *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -33774,7 +33769,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0042d8a0(undefined4 param_1, int param_2, undefined *param_3)"
+      "declaration": "undefined4 FUN_0042d8a0(undefined4 param_1, int param_2, void *param_3)"
     },
     {
       "entry": 4380912,
@@ -34715,7 +34710,7 @@
       "params": [
         {
           "name": "objectName",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -34727,7 +34722,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int GetWorldObjectId(byte *objectName)"
+      "declaration": "int GetWorldObjectId(char *objectName)"
     },
     {
       "entry": 4383152,
@@ -34806,7 +34801,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -34840,7 +34835,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0042e320(int *param_1, byte *param_2, int param_3, undefined4 *param_4)"
+      "declaration": "undefined4 FUN_0042e320(int *param_1, char *param_2, int param_3, undefined4 *param_4)"
     },
     {
       "entry": 4383680,
@@ -35389,7 +35384,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -35401,7 +35396,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0042e730(byte *param_1)"
+      "declaration": "undefined4 FUN_0042e730(char *param_1)"
     },
     {
       "entry": 4384672,
@@ -35786,7 +35781,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -35810,7 +35805,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0042ed20(undefined *param_1, int param_2)"
+      "declaration": "undefined4 FUN_0042ed20(void *param_1, int param_2)"
     },
     {
       "entry": 4386128,
@@ -36255,7 +36250,7 @@
         },
         {
           "name": "param_3",
-          "type": "undefined *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -36266,7 +36261,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int FUN_0042ef90(int param_1, int param_2, undefined *param_3)"
+      "declaration": "int FUN_0042ef90(int param_1, int param_2, void *param_3)"
     },
     {
       "entry": 4386816,
@@ -36615,7 +36610,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -36627,7 +36622,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0042f310(int param_1)"
+      "declaration": "undefined4 FUN_0042f310(Entity *param_1)"
     },
     {
       "entry": 4387888,
@@ -36906,7 +36901,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -36918,7 +36913,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0042f6b0(int param_1)"
+      "declaration": "undefined4 FUN_0042f6b0(Entity *param_1)"
     },
     {
       "entry": 4388704,
@@ -36941,7 +36936,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -36953,7 +36948,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0042f760(int param_1)"
+      "declaration": "undefined4 FUN_0042f760(Entity *param_1)"
     },
     {
       "entry": 4388912,
@@ -37306,7 +37301,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -37318,7 +37313,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0042fcb0(int param_1)"
+      "declaration": "undefined4 FUN_0042fcb0(Entity *param_1)"
     },
     {
       "entry": 4390240,
@@ -37433,7 +37428,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -37445,7 +37440,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0042fe50(int *param_1)"
+      "declaration": "undefined4 FUN_0042fe50(Entity *param_1)"
     },
     {
       "entry": 4390864,
@@ -37767,7 +37762,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -37779,7 +37774,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004301b0(undefined *param_1)"
+      "declaration": "undefined4 FUN_004301b0(void *param_1)"
     },
     {
       "entry": 4391376,
@@ -37802,7 +37797,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -37814,7 +37809,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004301d0(undefined *param_1)"
+      "declaration": "undefined4 FUN_004301d0(void *param_1)"
     },
     {
       "entry": 4391408,
@@ -37837,7 +37832,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -37861,7 +37856,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004301f0(int *param_1, char *param_2)"
+      "declaration": "undefined4 FUN_004301f0(FILE *param_1, char *param_2)"
     },
     {
       "entry": 4391504,
@@ -37884,7 +37879,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -37896,7 +37891,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 SaveAllDependencyStatus(int *param_1)"
+      "declaration": "undefined4 SaveAllDependencyStatus(FILE *param_1)"
     },
     {
       "entry": 4391680,
@@ -37919,7 +37914,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -37931,7 +37926,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 SaveAllWorldStatus(int *param_1)"
+      "declaration": "undefined4 SaveAllWorldStatus(FILE *param_1)"
     },
     {
       "entry": 4391920,
@@ -37954,7 +37949,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -37966,7 +37961,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 SaveAllObjects(int *param_1)"
+      "declaration": "undefined4 SaveAllObjects(FILE *param_1)"
     },
     {
       "entry": 4392048,
@@ -37989,7 +37984,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -38001,7 +37996,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00430470(int *param_1)"
+      "declaration": "undefined4 FUN_00430470(FILE *param_1)"
     },
     {
       "entry": 4392160,
@@ -38024,7 +38019,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -38036,7 +38031,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004304e0(int *param_1)"
+      "declaration": "undefined4 FUN_004304e0(FILE *param_1)"
     },
     {
       "entry": 4392304,
@@ -38059,7 +38054,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -38083,7 +38078,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00430570(int *param_1, char *param_2)"
+      "declaration": "undefined4 FUN_00430570(char *param_1, char *param_2)"
     },
     {
       "entry": 4392384,
@@ -38128,7 +38123,7 @@
       "decompiled": false,
       "purge": 4,
       "ret": {
-        "type": "undefined *",
+        "type": "void *",
         "size": 4,
         "storage": [
           {
@@ -38141,7 +38136,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -38176,7 +38171,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined *FUN_004305e0(undefined *param_1, int param_2, undefined4 *param_3)"
+      "declaration": "void *FUN_004305e0(void *param_1, int param_2, undefined4 *param_3)"
     },
     {
       "entry": 4392512,
@@ -38199,7 +38194,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -38211,7 +38206,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadAllWorldStatus(int *param_1)"
+      "declaration": "undefined4 LoadAllWorldStatus(char *param_1)"
     },
     {
       "entry": 4392896,
@@ -38234,7 +38229,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -38246,7 +38241,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadAllDependencyStatus(int *param_1)"
+      "declaration": "undefined4 LoadAllDependencyStatus(char *param_1)"
     },
     {
       "entry": 4393152,
@@ -38256,7 +38251,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "void *",
+        "type": "int",
         "size": 4,
         "storage": [
           {
@@ -38269,7 +38264,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "void *",
+          "type": "int",
           "size": 4,
           "storage": [
             {
@@ -38281,7 +38276,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -38293,7 +38288,7 @@
         }
       ],
       "problems": [],
-      "declaration": "void *FUN_004308c0(void *param_1, byte *param_2)"
+      "declaration": "int FUN_004308c0(int param_1, char *param_2)"
     },
     {
       "entry": 4393200,
@@ -38303,7 +38298,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "byte *",
+        "type": "char *",
         "size": 4,
         "storage": [
           {
@@ -38316,7 +38311,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -38328,7 +38323,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -38340,7 +38335,7 @@
         }
       ],
       "problems": [],
-      "declaration": "byte *FUN_004308f0(byte *param_1, byte *param_2)"
+      "declaration": "char *FUN_004308f0(char *param_1, char *param_2)"
     },
     {
       "entry": 4393248,
@@ -38350,7 +38345,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "byte *",
+        "type": "char *",
         "size": 4,
         "storage": [
           {
@@ -38363,7 +38358,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -38375,7 +38370,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -38387,7 +38382,7 @@
         }
       ],
       "problems": [],
-      "declaration": "byte *FUN_00430920(byte *param_1, byte *param_2)"
+      "declaration": "char *FUN_00430920(char *param_1, char *param_2)"
     },
     {
       "entry": 4393296,
@@ -38410,7 +38405,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -38422,7 +38417,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00430950(int *param_1)"
+      "declaration": "undefined4 FUN_00430950(char *param_1)"
     },
     {
       "entry": 4393440,
@@ -38445,7 +38440,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -38457,7 +38452,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadAllActiveDepList(int *param_1)"
+      "declaration": "undefined4 LoadAllActiveDepList(char *param_1)"
     },
     {
       "entry": 4393616,
@@ -38480,7 +38475,7 @@
       "params": [
         {
           "name": "stream",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -38492,7 +38487,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00430a90(int *stream)"
+      "declaration": "undefined4 FUN_00430a90(char *stream)"
     },
     {
       "entry": 4393872,
@@ -38515,7 +38510,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -38527,7 +38522,7 @@
         }
       ],
       "problems": [],
-      "declaration": "char FUN_00430b90(int param_1)"
+      "declaration": "char FUN_00430b90(Entity *param_1)"
     },
     {
       "entry": 4394032,
@@ -38550,7 +38545,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -38574,7 +38569,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00430c30(int param_1, int param_2)"
+      "declaration": "undefined4 FUN_00430c30(Entity *param_1, int param_2)"
     },
     {
       "entry": 4394176,
@@ -38792,7 +38787,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "Entity *",
         "size": 4,
         "storage": [
           {
@@ -38829,7 +38824,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00430e90(int param_1, int param_2)"
+      "declaration": "Entity *FUN_00430e90(int param_1, int param_2)"
     },
     {
       "entry": 4394672,
@@ -38852,7 +38847,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -38876,7 +38871,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int FUN_00430eb0(int param_1, int param_2)"
+      "declaration": "int FUN_00430eb0(Entity *param_1, int param_2)"
     },
     {
       "entry": 4394960,
@@ -40009,7 +40004,7 @@
       "decompiled": false,
       "purge": 12,
       "ret": {
-        "type": "undefined4 *",
+        "type": "Entity *",
         "size": 4,
         "storage": [
           {
@@ -40079,7 +40074,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 *FUN_00431e20(int type, undefined4 param_2, float x, float y, float z)"
+      "declaration": "Entity *FUN_00431e20(int type, undefined4 param_2, float x, float y, float z)"
     },
     {
       "entry": 4398880,
@@ -40295,7 +40290,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "Entity *",
         "size": 4,
         "storage": [
           {
@@ -40307,7 +40302,7 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_00432a50(void)"
+      "declaration": "Entity *FUN_00432a50(void)"
     },
     {
       "entry": 4401792,
@@ -40387,7 +40382,7 @@
       "params": [
         {
           "name": "stream",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -40399,7 +40394,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadWorldObjects(int *stream)"
+      "declaration": "undefined4 LoadWorldObjects(char *stream)"
     },
     {
       "entry": 4402192,
@@ -40422,7 +40417,7 @@
       "params": [
         {
           "name": "stream",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -40434,7 +40429,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 unk_saveCheckpoints(int *stream)"
+      "declaration": "undefined4 unk_saveCheckpoints(FILE *stream)"
     },
     {
       "entry": 4402320,
@@ -40444,7 +40439,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "char *",
+        "type": "undefined1 *",
         "size": 4,
         "storage": [
           {
@@ -40469,7 +40464,7 @@
         }
       ],
       "problems": [],
-      "declaration": "char *FUN_00432c90(int param_1)"
+      "declaration": "undefined1 *FUN_00432c90(int param_1)"
     },
     {
       "entry": 4402384,
@@ -40479,7 +40474,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "int",
+        "type": "Checkpoint *",
         "size": 4,
         "storage": [
           {
@@ -40504,7 +40499,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int FUN_00432cd0(int param_1)"
+      "declaration": "Checkpoint *FUN_00432cd0(int param_1)"
     },
     {
       "entry": 4402416,
@@ -40514,7 +40509,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4 *",
+        "type": "float *",
         "size": 4,
         "storage": [
           {
@@ -40551,7 +40546,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 *FUN_00432cf0(char *param_1, int *param_2)"
+      "declaration": "float *FUN_00432cf0(char *param_1, int *param_2)"
     },
     {
       "entry": 4402880,
@@ -40937,9 +40932,21 @@
           }
         ]
       },
-      "params": [],
+      "params": [
+        {
+          "name": "param_1",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
       "problems": [],
-      "declaration": "undefined4 FUN_0043cac0(void)"
+      "declaration": "undefined4 FUN_0043cac0(int param_1)"
     },
     {
       "entry": 4442864,
@@ -44285,7 +44292,7 @@
         },
         {
           "name": "param_3",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -44307,7 +44314,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int *FUN_00447750(undefined4 *param_1, LPCSTR param_2, byte *param_3, uint param_4)"
+      "declaration": "int *FUN_00447750(undefined4 *param_1, LPCSTR param_2, char *param_3, uint param_4)"
     },
     {
       "entry": 4488784,
@@ -44330,7 +44337,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -44354,7 +44361,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00447e50(byte *param_1, LPCSTR param_2)"
+      "declaration": "undefined4 FUN_00447e50(char *param_1, LPCSTR param_2)"
     },
     {
       "entry": 4488912,
@@ -44563,7 +44570,7 @@
         },
         {
           "name": "param_2",
-          "type": "char *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -44597,7 +44604,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004484f0(LPCSTR param_1, char *param_2, int param_3, int param_4)"
+      "declaration": "undefined4 FUN_004484f0(LPCSTR param_1, void *param_2, int param_3, int param_4)"
     },
     {
       "entry": 4490656,
@@ -44655,7 +44662,7 @@
         },
         {
           "name": "param_4",
-          "type": "uint",
+          "type": "size_t",
           "size": 4,
           "storage": [
             {
@@ -44677,7 +44684,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004485a0(LPCSTR param_1, int param_2, uint param_3, uint param_4, int param_5)"
+      "declaration": "undefined4 FUN_004485a0(LPCSTR param_1, int param_2, uint param_3, size_t param_4, int param_5)"
     },
     {
       "entry": 4490928,
@@ -44862,7 +44869,7 @@
         },
         {
           "name": "param_3",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -44873,7 +44880,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 *FUN_00448830(undefined4 *param_1, LPCSTR param_2, byte *param_3)"
+      "declaration": "undefined4 *FUN_00448830(undefined4 *param_1, LPCSTR param_2, char *param_3)"
     },
     {
       "entry": 4491352,
@@ -45044,7 +45051,7 @@
         },
         {
           "name": "param_4",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -45099,7 +45106,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00448e80(int param_1, int param_2, int param_3, int *param_4, int param_5, int param_6, int param_7, float param_8)"
+      "declaration": "undefined4 FUN_00448e80(int param_1, int param_2, int param_3, Entity *param_4, int param_5, int param_6, int param_7, float param_8)"
     },
     {
       "entry": 4495120,
@@ -45213,7 +45220,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -45248,7 +45255,7 @@
         },
         {
           "name": "param_4",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -45281,7 +45288,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint FUN_004499f0(int *param_1, int param_2, int param_3, int *param_4, int param_5, int param_6)"
+      "declaration": "uint FUN_004499f0(Entity *param_1, int param_2, int param_3, Entity *param_4, int param_5, int param_6)"
     },
     {
       "entry": 4496624,
@@ -45304,7 +45311,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -45316,7 +45323,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -45328,7 +45335,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00449cf0(int *param_1, int *param_2)"
+      "declaration": "undefined4 FUN_00449cf0(Entity *param_1, Entity *param_2)"
     },
     {
       "entry": 4498304,
@@ -45351,7 +45358,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -45363,7 +45370,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -45375,7 +45382,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0044a380(int *param_1, int *param_2)"
+      "declaration": "undefined4 FUN_0044a380(Entity *param_1, Entity *param_2)"
     },
     {
       "entry": 4498720,
@@ -46247,10 +46254,22 @@
               "shift": 0
             }
           ]
+        },
+        {
+          "name": "param_2",
+          "type": "undefined4",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "reg": "edx",
+              "shift": 0
+            }
+          ]
         }
       ],
       "problems": [],
-      "declaration": "undefined4 MakeUnitVectorR(int param_1)"
+      "declaration": "undefined4 MakeUnitVectorR(int param_1, undefined4 param_2)"
     },
     {
       "entry": 4508384,
@@ -46282,10 +46301,22 @@
               "shift": 0
             }
           ]
+        },
+        {
+          "name": "param_2",
+          "type": "undefined4",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "reg": "edx",
+              "shift": 0
+            }
+          ]
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0044cae0(int param_1)"
+      "declaration": "undefined4 FUN_0044cae0(int param_1, undefined4 param_2)"
     },
     {
       "entry": 4508528,
@@ -47118,7 +47149,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -47130,7 +47161,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0044e080(int param_1)"
+      "declaration": "undefined4 FUN_0044e080(Entity *param_1)"
     },
     {
       "entry": 4514112,
@@ -47153,7 +47184,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -47165,7 +47196,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0044e140(int param_1)"
+      "declaration": "undefined4 FUN_0044e140(Entity *param_1)"
     },
     {
       "entry": 4514592,
@@ -48522,7 +48553,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -48534,7 +48565,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 unk_SaveScriptEvents(int *param_1)"
+      "declaration": "undefined4 unk_SaveScriptEvents(FILE *param_1)"
     },
     {
       "entry": 4526224,
@@ -48557,7 +48588,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -48569,7 +48600,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadScriptEvents(int *param_1)"
+      "declaration": "undefined4 LoadScriptEvents(char *param_1)"
     },
     {
       "entry": 4526304,
@@ -49479,7 +49510,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "undefined4 *",
           "size": 4,
           "storage": [
             {
@@ -49503,7 +49534,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00453440(int param_1, int param_2)"
+      "declaration": "undefined4 FUN_00453440(undefined4 *param_1, int param_2)"
     },
     {
       "entry": 4536224,
@@ -50136,7 +50167,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -50148,7 +50179,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00454210(int param_1)"
+      "declaration": "undefined4 FUN_00454210(Entity *param_1)"
     },
     {
       "entry": 4539552,
@@ -50205,7 +50236,7 @@
         },
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -50216,7 +50247,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 DetectCollision(void *this_, int *param_1)"
+      "declaration": "undefined4 DetectCollision(void *this_, Entity *param_1)"
     },
     {
       "entry": 4540176,
@@ -50239,7 +50270,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -50263,7 +50294,7 @@
         },
         {
           "name": "param_3",
-          "type": "int *",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -50296,7 +50327,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 CheckLandFace(int *param_1, int *ace, int *param_3, float param_4, char param_5)"
+      "declaration": "undefined4 CheckLandFace(Entity *param_1, int *ace, Entity *param_3, float param_4, char param_5)"
     },
     {
       "entry": 4541248,
@@ -50465,7 +50496,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "void *",
         "size": 4,
         "storage": [
           {
@@ -50477,8 +50508,8 @@
       },
       "params": [
         {
-          "name": "this_",
-          "type": "void *",
+          "name": "param_1_00",
+          "type": "undefined4",
           "size": 4,
           "storage": [
             {
@@ -50489,8 +50520,8 @@
           ]
         },
         {
-          "name": "param_1",
-          "type": "byte *",
+          "name": "param_2",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -50500,7 +50531,7 @@
           ]
         },
         {
-          "name": "param_2",
+          "name": "param_3",
           "type": "undefined4 *",
           "size": 4,
           "storage": [
@@ -50512,7 +50543,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00454e00(void *this_, byte *param_1, undefined4 *param_2)"
+      "declaration": "void *FUN_00454e00(undefined4 param_1_00, char *param_2, undefined4 *param_3)"
     },
     {
       "entry": 4542016,
@@ -50547,7 +50578,7 @@
         },
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -50558,7 +50589,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint FUN_00454e40(void *this_, byte *param_1)"
+      "declaration": "uint FUN_00454e40(void *this_, char *param_1)"
     },
     {
       "entry": 4542064,
@@ -52269,7 +52300,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -52281,7 +52312,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00458440(int param_1, int *param_2)"
+      "declaration": "undefined4 FUN_00458440(int param_1, FILE *param_2)"
     },
     {
       "entry": 4555904,
@@ -52316,7 +52347,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -52328,7 +52359,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 readVec3FromStream(int param_1, int *param_2)"
+      "declaration": "undefined4 readVec3FromStream(int param_1, char *param_2)"
     },
     {
       "entry": 4555968,
@@ -52351,7 +52382,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "Entity *",
           "size": 4,
           "storage": [
             {
@@ -52363,7 +52394,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -52386,7 +52417,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004584c0(int param_1, int *param_2, int param_3)"
+      "declaration": "undefined4 FUN_004584c0(Entity *param_1, FILE *param_2, int param_3)"
     },
     {
       "entry": 4556160,
@@ -52421,7 +52452,7 @@
         },
         {
           "name": "stream",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -52444,7 +52475,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 readTransformFromStream(int dest, int *stream, int readPosition)"
+      "declaration": "undefined4 readTransformFromStream(int dest, char *stream, int readPosition)"
     },
     {
       "entry": 4556272,
@@ -52665,7 +52696,7 @@
       "params": [
         {
           "name": "stream",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -52677,7 +52708,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 SaveAllPlayers(int *stream)"
+      "declaration": "undefined4 SaveAllPlayers(FILE *stream)"
     },
     {
       "entry": 4559856,
@@ -53422,7 +53453,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "int",
+        "type": "Entity *",
         "size": 4,
         "storage": [
           {
@@ -53447,7 +53478,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int FUN_0045ac10(char *param_1)"
+      "declaration": "Entity *FUN_0045ac10(char *param_1)"
     },
     {
       "entry": 4566768,
@@ -53650,7 +53681,7 @@
       "params": [
         {
           "name": "file",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -53674,7 +53705,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 writeTypeToFile(int *file, undefined4 param_2)"
+      "declaration": "undefined4 writeTypeToFile(FILE *file, undefined4 param_2)"
     },
     {
       "entry": 4568704,
@@ -53697,7 +53728,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -53709,7 +53740,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -53721,7 +53752,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 Load_CtrlOrder(int *param_1, int *param_2)"
+      "declaration": "undefined4 Load_CtrlOrder(char *param_1, char *param_2)"
     },
     {
       "entry": 4568752,
@@ -56433,7 +56464,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -56445,7 +56476,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0045f780(byte *param_1)"
+      "declaration": "undefined4 FUN_0045f780(char *param_1)"
     },
     {
       "entry": 4585488,
@@ -56783,7 +56814,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "undefined4",
           "size": 4,
           "storage": [
             {
@@ -56795,7 +56826,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int FUN_00460b60(int param_1)"
+      "declaration": "int FUN_00460b60(undefined4 param_1)"
     },
     {
       "entry": 4590496,
@@ -57165,7 +57196,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "undefined4",
           "size": 4,
           "storage": [
             {
@@ -57177,7 +57208,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int MallocNewProject(int param_1)"
+      "declaration": "int MallocNewProject(undefined4 param_1)"
     },
     {
       "entry": 4594848,
@@ -57892,7 +57923,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "LPDIRECTSOUND **",
         "size": 4,
         "storage": [
           {
@@ -57904,7 +57935,7 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 FUN_00462df0(void)"
+      "declaration": "LPDIRECTSOUND **FUN_00462df0(void)"
     },
     {
       "entry": 4599296,
@@ -58146,7 +58177,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -58158,7 +58189,7 @@
         },
         {
           "name": "param_2",
-          "type": "void *",
+          "type": "uint",
           "size": 4,
           "storage": [
             {
@@ -58170,7 +58201,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int LoadFX(byte *param_1, void *param_2)"
+      "declaration": "int LoadFX(char *param_1, uint param_2)"
     },
     {
       "entry": 4601024,
@@ -58262,7 +58293,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -58274,7 +58305,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004635e0(undefined *param_1)"
+      "declaration": "undefined4 FUN_004635e0(void *param_1)"
     },
     {
       "entry": 4601408,
@@ -58355,7 +58386,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -58366,7 +58397,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00463690(byte *param_1)"
+      "declaration": "undefined4 FUN_00463690(char *param_1)"
     },
     {
       "entry": 4601632,
@@ -58491,7 +58522,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -58548,7 +58579,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 unk_PlaySound(byte *param_1, undefined4 *param_2, float param_3, undefined4 param_4, byte param_5)"
+      "declaration": "undefined4 unk_PlaySound(char *param_1, undefined4 *param_2, float param_3, undefined4 param_4, byte param_5)"
     },
     {
       "entry": 4602192,
@@ -58571,7 +58602,7 @@
       "params": [
         {
           "name": "name",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -58595,7 +58626,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00463950(byte *name, int param_2)"
+      "declaration": "undefined4 FUN_00463950(char *name, int param_2)"
     },
     {
       "entry": 4602320,
@@ -58618,7 +58649,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -58653,7 +58684,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 unk_soundSomething2(byte *param_1, int param_2, int param_3)"
+      "declaration": "undefined4 unk_soundSomething2(char *param_1, int param_2, int param_3)"
     },
     {
       "entry": 4602448,
@@ -59044,7 +59075,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -59056,7 +59087,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 SaveGame_Sound(int *param_1)"
+      "declaration": "undefined4 SaveGame_Sound(FILE *param_1)"
     },
     {
       "entry": 4605232,
@@ -59079,7 +59110,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -59091,7 +59122,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadSounds(int *param_1)"
+      "declaration": "undefined4 LoadSounds(char *param_1)"
     },
     {
       "entry": 4605488,
@@ -59120,7 +59151,7 @@
       "name": "terminateBlackExe",
       "cc": "__stdcall",
       "varargs": false,
-      "decompiled": false,
+      "decompiled": true,
       "purge": 0,
       "ret": {
         "type": "undefined4",
@@ -59142,7 +59173,7 @@
       "name": "CreateBlackExe",
       "cc": "__stdcall",
       "varargs": false,
-      "decompiled": false,
+      "decompiled": true,
       "purge": 0,
       "ret": {
         "type": "undefined4",
@@ -59246,7 +59277,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined4 *",
+          "type": "int *",
           "size": 4,
           "storage": [
             {
@@ -59254,10 +59285,21 @@
               "stack": 4
             }
           ]
+        },
+        {
+          "name": "param_2",
+          "type": "undefined4",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004648d0(undefined4 *param_1)"
+      "declaration": "undefined4 FUN_004648d0(int *param_1, undefined4 param_2)"
     },
     {
       "entry": 4607792,
@@ -60819,7 +60861,7 @@
       "params": [
         {
           "name": "functionName",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -60831,7 +60873,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined *VM_GetNativeFunctionBindingByName(byte *functionName)"
+      "declaration": "undefined *VM_GetNativeFunctionBindingByName(char *functionName)"
     },
     {
       "entry": 4615184,
@@ -60854,7 +60896,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -60878,7 +60920,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int unk_getScriptByName(byte *param_1, int param_2)"
+      "declaration": "int unk_getScriptByName(char *param_1, int param_2)"
     },
     {
       "entry": 4615264,
@@ -61051,7 +61093,7 @@
         },
         {
           "name": "param_3",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -61062,7 +61104,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00466d60(int *param_1, undefined4 param_2, int *param_3)"
+      "declaration": "undefined4 FUN_00466d60(int *param_1, undefined4 param_2, FILE *param_3)"
     },
     {
       "entry": 4615696,
@@ -61085,7 +61127,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -61097,7 +61139,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadScriptEvent(int *param_1)"
+      "declaration": "undefined4 LoadScriptEvent(char *param_1)"
     },
     {
       "entry": 4616112,
@@ -61259,7 +61301,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "int",
         "size": 4,
         "storage": [
           {
@@ -61296,7 +61338,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_004673a0(undefined4 param_1, int param_2)"
+      "declaration": "int FUN_004673a0(undefined4 param_1, int param_2)"
     },
     {
       "entry": 4617248,
@@ -61354,7 +61396,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "undefined4 *",
           "size": 4,
           "storage": [
             {
@@ -61366,7 +61408,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00467680(int param_1)"
+      "declaration": "undefined4 FUN_00467680(undefined4 *param_1)"
     },
     {
       "entry": 4618480,
@@ -61737,7 +61779,7 @@
         },
         {
           "name": "file",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -61749,7 +61791,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00467b40(int param_1, int *file)"
+      "declaration": "undefined4 FUN_00467b40(int param_1, FILE *file)"
     },
     {
       "entry": 4619200,
@@ -61772,7 +61814,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int",
+          "type": "undefined4 *",
           "size": 4,
           "storage": [
             {
@@ -61784,7 +61826,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -61796,7 +61838,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 LoadScriptState(int param_1, int *param_2)"
+      "declaration": "undefined4 LoadScriptState(undefined4 *param_1, char *param_2)"
     },
     {
       "entry": 4619424,
@@ -61889,7 +61931,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -61901,7 +61943,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 *FUN_00467f50(int param_1, byte *param_2)"
+      "declaration": "undefined4 *FUN_00467f50(int param_1, char *param_2)"
     },
     {
       "entry": 4620192,
@@ -61924,7 +61966,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -61936,7 +61978,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 *FUN_00467fa0(byte *param_1)"
+      "declaration": "undefined4 *FUN_00467fa0(char *param_1)"
     },
     {
       "entry": 4620256,
@@ -62304,7 +62346,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -62316,7 +62358,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00468600(byte *param_1)"
+      "declaration": "undefined4 FUN_00468600(char *param_1)"
     },
     {
       "entry": 4621920,
@@ -62339,7 +62381,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -62351,7 +62393,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 *FUN_00468660(byte *param_1)"
+      "declaration": "undefined4 *FUN_00468660(char *param_1)"
     },
     {
       "entry": 4621968,
@@ -69280,7 +69322,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "LPCSTR",
           "size": 4,
           "storage": [
             {
@@ -69291,7 +69333,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0046fd80(undefined4 param_1, byte *param_2)"
+      "declaration": "undefined4 FUN_0046fd80(undefined4 param_1, LPCSTR param_2)"
     },
     {
       "entry": 4652464,
@@ -69325,7 +69367,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "LPCSTR",
           "size": 4,
           "storage": [
             {
@@ -69336,7 +69378,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 AI_Error(undefined4 param_1, byte *param_2)"
+      "declaration": "undefined4 AI_Error(undefined4 param_1, LPCSTR param_2)"
     },
     {
       "entry": 4652528,
@@ -69359,7 +69401,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "byte *",
+          "type": "LPCSTR",
           "size": 4,
           "storage": [
             {
@@ -69370,7 +69412,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0046fdf0(byte *param_1)"
+      "declaration": "undefined4 FUN_0046fdf0(LPCSTR param_1)"
     },
     {
       "entry": 4652560,
@@ -72895,7 +72937,7 @@
       "entry": 4681208,
       "name": "_sprintf",
       "cc": "__cdecl",
-      "varargs": false,
+      "varargs": true,
       "decompiled": false,
       "purge": 0,
       "ret": {
@@ -72911,8 +72953,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "undefined1 *",
+          "name": "_Dest",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -72922,8 +72964,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "byte *",
+          "name": "_Format",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -72934,7 +72976,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int _sprintf(undefined1 *param_1, byte *param_2)"
+      "declaration": "int _sprintf(char *_Dest, char *_Format, ...)"
     },
     {
       "entry": 4681290,
@@ -73454,7 +73496,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "uint",
+        "type": "int",
         "size": 4,
         "storage": [
           {
@@ -73466,8 +73508,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "uint",
+          "name": "_C",
+          "type": "int",
           "size": 4,
           "storage": [
             {
@@ -73478,7 +73520,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint _tolower(uint param_1)"
+      "declaration": "int _tolower(int _C)"
     },
     {
       "entry": 4683020,
@@ -73534,7 +73576,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "int",
         "size": 4,
         "storage": [
           {
@@ -73546,7 +73588,7 @@
       },
       "params": [
         {
-          "name": "param_1",
+          "name": "_File",
           "type": "FILE *",
           "size": 4,
           "storage": [
@@ -73558,7 +73600,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _fclose(FILE *param_1)"
+      "declaration": "int _fclose(FILE *_File)"
     },
     {
       "entry": 4683272,
@@ -73714,7 +73756,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "uint",
+        "type": "size_t",
         "size": 4,
         "storage": [
           {
@@ -73726,8 +73768,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "char *",
+          "name": "_DstBuf",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -73737,8 +73779,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "uint",
+          "name": "_ElementSize",
+          "type": "size_t",
           "size": 4,
           "storage": [
             {
@@ -73748,8 +73790,8 @@
           ]
         },
         {
-          "name": "param_3",
-          "type": "uint",
+          "name": "_Count",
+          "type": "size_t",
           "size": 4,
           "storage": [
             {
@@ -73759,8 +73801,8 @@
           ]
         },
         {
-          "name": "param_4",
-          "type": "int *",
+          "name": "_File",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -73771,7 +73813,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint _fread(char *param_1, uint param_2, uint param_3, int *param_4)"
+      "declaration": "size_t _fread(void *_DstBuf, size_t _ElementSize, size_t _Count, FILE *_File)"
     },
     {
       "entry": 4683679,
@@ -73781,7 +73823,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "uint",
+        "type": "size_t",
         "size": 4,
         "storage": [
           {
@@ -73794,7 +73836,7 @@
       "params": [
         {
           "name": "buffer",
-          "type": "char *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -73805,7 +73847,7 @@
         },
         {
           "name": "size",
-          "type": "uint",
+          "type": "size_t",
           "size": 4,
           "storage": [
             {
@@ -73816,7 +73858,7 @@
         },
         {
           "name": "count",
-          "type": "uint",
+          "type": "size_t",
           "size": 4,
           "storage": [
             {
@@ -73827,7 +73869,7 @@
         },
         {
           "name": "stream",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -73838,7 +73880,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint writeToFile(char *buffer, uint size, uint count, int *stream)"
+      "declaration": "size_t writeToFile(void *buffer, size_t size, size_t count, FILE *stream)"
     },
     {
       "entry": 4683726,
@@ -73848,7 +73890,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "uint",
+        "type": "size_t",
         "size": 4,
         "storage": [
           {
@@ -73860,8 +73902,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "char *",
+          "name": "_Str",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -73871,8 +73913,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "uint",
+          "name": "_Size",
+          "type": "size_t",
           "size": 4,
           "storage": [
             {
@@ -73882,8 +73924,8 @@
           ]
         },
         {
-          "name": "param_3",
-          "type": "uint",
+          "name": "_Count",
+          "type": "size_t",
           "size": 4,
           "storage": [
             {
@@ -73893,8 +73935,8 @@
           ]
         },
         {
-          "name": "param_4",
-          "type": "int *",
+          "name": "_File",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -73905,7 +73947,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint _fwrite(char *param_1, uint param_2, uint param_3, int *param_4)"
+      "declaration": "size_t _fwrite(void *_Str, size_t _Size, size_t _Count, FILE *_File)"
     },
     {
       "entry": 4683992,
@@ -73927,7 +73969,7 @@
       },
       "params": [
         {
-          "name": "param_1",
+          "name": "_Buf",
           "type": "char *",
           "size": 4,
           "storage": [
@@ -73938,7 +73980,7 @@
           ]
         },
         {
-          "name": "param_2",
+          "name": "_MaxCount",
           "type": "int",
           "size": 4,
           "storage": [
@@ -73949,8 +73991,8 @@
           ]
         },
         {
-          "name": "param_3",
-          "type": "undefined4 *",
+          "name": "_File",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -73961,7 +74003,7 @@
         }
       ],
       "problems": [],
-      "declaration": "char *_fgets(char *param_1, int param_2, undefined4 *param_3)"
+      "declaration": "char *_fgets(char *_Buf, int _MaxCount, FILE *_File)"
     },
     {
       "entry": 4684090,
@@ -73984,7 +74026,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -74006,7 +74048,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int FUN_0047793a(int *param_1, byte *param_2)"
+      "declaration": "int FUN_0047793a(FILE *param_1, byte *param_2)"
     },
     {
       "entry": 4684135,
@@ -74028,8 +74070,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "int *",
+          "name": "_File",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -74040,7 +74082,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int _fflush(int *param_1)"
+      "declaration": "int _fflush(FILE *_File)"
     },
     {
       "entry": 4684182,
@@ -74218,20 +74260,14 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
-        "size": 4,
-        "storage": [
-          {
-            "reg": "eax",
-            "shift": 0,
-            "size": 4
-          }
-        ]
+        "type": "void",
+        "size": 0,
+        "storage": []
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "uint",
+          "name": "_File",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -74242,7 +74278,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _lock_file(uint param_1)"
+      "declaration": "void _lock_file(FILE *_File)"
     },
     {
       "entry": 4684728,
@@ -74252,19 +74288,13 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
-        "size": 4,
-        "storage": [
-          {
-            "reg": "eax",
-            "shift": 0,
-            "size": 4
-          }
-        ]
+        "type": "void",
+        "size": 0,
+        "storage": []
       },
       "params": [
         {
-          "name": "param_1",
+          "name": "_Index",
           "type": "int",
           "size": 4,
           "storage": [
@@ -74275,8 +74305,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "int",
+          "name": "_File",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -74287,7 +74317,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _lock_file2(int param_1, int param_2)"
+      "declaration": "void _lock_file2(int _Index, void *_File)"
     },
     {
       "entry": 4684763,
@@ -74297,20 +74327,14 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
-        "size": 4,
-        "storage": [
-          {
-            "reg": "eax",
-            "shift": 0,
-            "size": 4
-          }
-        ]
+        "type": "void",
+        "size": 0,
+        "storage": []
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "uint",
+          "name": "_File",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -74321,7 +74345,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _unlock_file(uint param_1)"
+      "declaration": "void _unlock_file(FILE *_File)"
     },
     {
       "entry": 4684810,
@@ -74331,19 +74355,13 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
-        "size": 4,
-        "storage": [
-          {
-            "reg": "eax",
-            "shift": 0,
-            "size": 4
-          }
-        ]
+        "type": "void",
+        "size": 0,
+        "storage": []
       },
       "params": [
         {
-          "name": "param_1",
+          "name": "_Index",
           "type": "int",
           "size": 4,
           "storage": [
@@ -74354,8 +74372,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "int",
+          "name": "_File",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -74366,7 +74384,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _unlock_file2(int param_1, int param_2)"
+      "declaration": "void _unlock_file2(int _Index, void *_File)"
     },
     {
       "entry": 4684845,
@@ -74489,8 +74507,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "int *",
+          "name": "_File",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -74500,8 +74518,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "int",
+          "name": "_Offset",
+          "type": "long",
           "size": 4,
           "storage": [
             {
@@ -74511,8 +74529,8 @@
           ]
         },
         {
-          "name": "param_3",
-          "type": "DWORD",
+          "name": "_Origin",
+          "type": "int",
           "size": 4,
           "storage": [
             {
@@ -74523,7 +74541,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int _fseek(int *param_1, int param_2, DWORD param_3)"
+      "declaration": "int _fseek(FILE *_File, long _Offset, int _Origin)"
     },
     {
       "entry": 4684957,
@@ -74658,7 +74676,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined *",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -74669,7 +74687,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00477d6d(undefined *param_1)"
+      "declaration": "undefined4 FUN_00477d6d(void *param_1)"
     },
     {
       "entry": 4685176,
@@ -74827,7 +74845,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined1 *",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -74849,7 +74867,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int FUN_00477ebe(undefined1 *param_1, short *param_2)"
+      "declaration": "int FUN_00477ebe(char *param_1, short *param_2)"
     },
     {
       "entry": 4685613,
@@ -75061,7 +75079,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "int",
         "size": 4,
         "storage": [
           {
@@ -75073,8 +75091,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "LPCSTR",
+          "name": "_Filename",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -75085,7 +75103,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _remove(LPCSTR param_1)"
+      "declaration": "int _remove(char *_Filename)"
     },
     {
       "entry": 4686130,
@@ -75095,7 +75113,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "uint",
+        "type": "size_t",
         "size": 4,
         "storage": [
           {
@@ -75107,8 +75125,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "LPSTR",
+          "name": "_Dest",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -75118,8 +75136,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "LPCWSTR",
+          "name": "_Source",
+          "type": "wchar_t *",
           "size": 4,
           "storage": [
             {
@@ -75129,8 +75147,8 @@
           ]
         },
         {
-          "name": "param_3",
-          "type": "uint",
+          "name": "_MaxCount",
+          "type": "size_t",
           "size": 4,
           "storage": [
             {
@@ -75141,7 +75159,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint _wcstombs(LPSTR param_1, LPCWSTR param_2, uint param_3)"
+      "declaration": "size_t _wcstombs(char *_Dest, wchar_t *_Source, size_t _MaxCount)"
     },
     {
       "entry": 4686223,
@@ -75308,7 +75326,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "int",
+        "type": "long",
         "size": 4,
         "storage": [
           {
@@ -75320,8 +75338,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "char *",
+          "name": "_File",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -75332,7 +75350,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int _ftell(char *param_1)"
+      "declaration": "long _ftell(FILE *_File)"
     },
     {
       "entry": 4686816,
@@ -75389,7 +75407,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -75411,7 +75429,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int FUN_00478541(int *param_1, byte *param_2)"
+      "declaration": "int FUN_00478541(FILE *param_1, byte *param_2)"
     },
     {
       "entry": 4687229,
@@ -75484,47 +75502,25 @@
     {
       "entry": 4687410,
       "name": "_cinit",
-      "cc": "__stdcall",
-      "varargs": false,
-      "decompiled": false,
-      "purge": 0,
-      "ret": {
-        "type": "undefined4",
-        "size": 4,
-        "storage": [
-          {
-            "reg": "eax",
-            "shift": 0,
-            "size": 4
-          }
-        ]
-      },
-      "params": [],
-      "problems": [],
-      "declaration": "undefined4 _cinit(void)"
-    },
-    {
-      "entry": 4687455,
-      "name": "_exit_0047865f",
       "cc": "__cdecl",
       "varargs": false,
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "int",
         "size": 4,
         "storage": [
           {
+            "size": 4,
             "reg": "eax",
-            "shift": 0,
-            "size": 4
+            "shift": 0
           }
         ]
       },
       "params": [
         {
           "name": "param_1",
-          "type": "UINT",
+          "type": "int",
           "size": 4,
           "storage": [
             {
@@ -75535,7 +75531,35 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _exit_0047865f(UINT param_1)"
+      "declaration": "int _cinit(int param_1)"
+    },
+    {
+      "entry": 4687455,
+      "name": "_exit_0047865f",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "void",
+        "size": 0,
+        "storage": []
+      },
+      "params": [
+        {
+          "name": "_Code",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "void _exit_0047865f(int _Code)"
     },
     {
       "entry": 4687472,
@@ -75731,7 +75755,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined4 *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -75742,7 +75766,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint FUN_00478752(undefined4 *param_1)"
+      "declaration": "uint FUN_00478752(FILE *param_1)"
     },
     {
       "entry": 4687747,
@@ -75752,7 +75776,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "int",
         "size": 4,
         "storage": [
           {
@@ -75764,8 +75788,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "uint",
+          "name": "_FileHandle",
+          "type": "int",
           "size": 4,
           "storage": [
             {
@@ -75776,7 +75800,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _close(uint param_1)"
+      "declaration": "int _close(int _FileHandle)"
     },
     {
       "entry": 4687840,
@@ -75832,8 +75856,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "uint",
+          "name": "_FileHandle",
+          "type": "int",
           "size": 4,
           "storage": [
             {
@@ -75843,8 +75867,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "char *",
+          "name": "_DstBuf",
+          "type": "void *",
           "size": 4,
           "storage": [
             {
@@ -75854,8 +75878,8 @@
           ]
         },
         {
-          "name": "param_3",
-          "type": "char *",
+          "name": "_MaxCharCount",
+          "type": "uint",
           "size": 4,
           "storage": [
             {
@@ -75866,7 +75890,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int _read(uint param_1, char *param_2, char *param_3)"
+      "declaration": "int _read(int _FileHandle, void *_DstBuf, uint _MaxCharCount)"
     },
     {
       "entry": 4688072,
@@ -75932,7 +75956,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "DWORD",
+        "type": "long",
         "size": 4,
         "storage": [
           {
@@ -75944,8 +75968,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "uint",
+          "name": "_FileHandle",
+          "type": "int",
           "size": 4,
           "storage": [
             {
@@ -75956,30 +75980,30 @@
         }
       ],
       "problems": [],
-      "declaration": "DWORD _filelength(uint param_1)"
+      "declaration": "long _filelength(int _FileHandle)"
     },
     {
       "entry": 4688683,
       "name": "_open",
       "cc": "__cdecl",
-      "varargs": false,
+      "varargs": true,
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "int",
         "size": 4,
         "storage": [
           {
+            "size": 4,
             "reg": "eax",
-            "shift": 0,
-            "size": 4
+            "shift": 0
           }
         ]
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "LPCSTR",
+          "name": "_Filename",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -75989,8 +76013,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "uint",
+          "name": "_OpenFlag",
+          "type": "int",
           "size": 4,
           "storage": [
             {
@@ -75998,21 +76022,10 @@
               "stack": 8
             }
           ]
-        },
-        {
-          "name": "param_3",
-          "type": "uint",
-          "size": 4,
-          "storage": [
-            {
-              "size": 4,
-              "stack": 12
-            }
-          ]
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _open(LPCSTR param_1, uint param_2, uint param_3)"
+      "declaration": "int _open(char *_Filename, int _OpenFlag, ...)"
     },
     {
       "entry": 4688706,
@@ -76085,23 +76098,23 @@
       "entry": 4689425,
       "name": "_spawnl",
       "cc": "__cdecl",
-      "varargs": false,
+      "varargs": true,
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "intptr_t",
         "size": 4,
         "storage": [
           {
+            "size": 4,
             "reg": "eax",
-            "shift": 0,
-            "size": 4
+            "shift": 0
           }
         ]
       },
       "params": [
         {
-          "name": "param_1",
+          "name": "_Mode",
           "type": "int",
           "size": 4,
           "storage": [
@@ -76112,8 +76125,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "uint *",
+          "name": "_Filename",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -76121,10 +76134,21 @@
               "stack": 8
             }
           ]
+        },
+        {
+          "name": "_ArgList",
+          "type": "char *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 12
+            }
+          ]
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _spawnl(int param_1, uint *param_2)"
+      "declaration": "intptr_t _spawnl(int _Mode, char *_Filename, char *_ArgList, ...)"
     },
     {
       "entry": 4689449,
@@ -76439,8 +76463,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "byte *",
+          "name": "_Str1",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -76450,8 +76474,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "byte *",
+          "name": "_Str2",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -76461,8 +76485,8 @@
           ]
         },
         {
-          "name": "param_3",
-          "type": "void *",
+          "name": "_MaxCount",
+          "type": "size_t",
           "size": 4,
           "storage": [
             {
@@ -76473,7 +76497,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int _strnicoll(byte *param_1, byte *param_2, void *param_3)"
+      "declaration": "int _strnicoll(char *_Str1, char *_Str2, size_t _MaxCount)"
     },
     {
       "entry": 4691290,
@@ -77119,7 +77143,7 @@
     },
     {
       "entry": 4693072,
-      "name": "FUN_00479c50",
+      "name": "_except_handler3",
       "cc": "__cdecl",
       "varargs": false,
       "decompiled": false,
@@ -77171,7 +77195,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_00479c50(int param_1, PVOID param_2, undefined4 param_3)"
+      "declaration": "undefined4 _except_handler3(int param_1, PVOID param_2, undefined4 param_3)"
     },
     {
       "entry": 4693261,
@@ -78953,7 +78977,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "int",
         "size": 4,
         "storage": [
           {
@@ -78965,8 +78989,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "undefined4 *",
+          "name": "_File",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -78977,7 +79001,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _stbuf(undefined4 *param_1)"
+      "declaration": "int _stbuf(FILE *_File)"
     },
     {
       "entry": 4696785,
@@ -78987,19 +79011,13 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
-        "size": 4,
-        "storage": [
-          {
-            "reg": "eax",
-            "shift": 0,
-            "size": 4
-          }
-        ]
+        "type": "void",
+        "size": 0,
+        "storage": []
       },
       "params": [
         {
-          "name": "param_1",
+          "name": "_Flag",
           "type": "int",
           "size": 4,
           "storage": [
@@ -79010,8 +79028,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "int *",
+          "name": "_File",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -79022,7 +79040,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _ftbuf(int param_1, int *param_2)"
+      "declaration": "void _ftbuf(int _Flag, FILE *_File)"
     },
     {
       "entry": 4696827,
@@ -79045,7 +79063,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -79078,7 +79096,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int _output(int *param_1, byte *param_2, undefined4 *param_3)"
+      "declaration": "int _output(FILE *param_1, byte *param_2, undefined4 *param_3)"
     },
     {
       "entry": 4698684,
@@ -79112,7 +79130,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -79134,7 +79152,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0047b23c(uint param_1, int *param_2, int *param_3)"
+      "declaration": "undefined4 FUN_0047b23c(uint param_1, FILE *param_2, int *param_3)"
     },
     {
       "entry": 4698737,
@@ -79179,7 +79197,7 @@
         },
         {
           "name": "param_3",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -79201,7 +79219,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0047b271(uint param_1, int param_2, int *param_3, int *param_4)"
+      "declaration": "undefined4 FUN_0047b271(uint param_1, int param_2, FILE *param_3, int *param_4)"
     },
     {
       "entry": 4698786,
@@ -79246,7 +79264,7 @@
         },
         {
           "name": "param_3",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -79268,7 +79286,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0047b2a2(char *param_1, int param_2, int *param_3, int *param_4)"
+      "declaration": "undefined4 FUN_0047b2a2(char *param_1, int param_2, FILE *param_3, int *param_4)"
     },
     {
       "entry": 4698842,
@@ -79336,7 +79354,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -79347,17 +79365,17 @@
         }
       ],
       "problems": [],
-      "declaration": "uint FUN_0047b2e8(uint param_1, int *param_2)"
+      "declaration": "uint FUN_0047b2e8(uint param_1, FILE *param_2)"
     },
     {
       "entry": 4699136,
       "name": "_mtinit",
-      "cc": "__stdcall",
+      "cc": "__cdecl",
       "varargs": false,
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "int",
         "size": 4,
         "storage": [
           {
@@ -79369,7 +79387,7 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 _mtinit(void)"
+      "declaration": "int _mtinit(void)"
     },
     {
       "entry": 4699220,
@@ -80448,19 +80466,13 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
-        "size": 4,
-        "storage": [
-          {
-            "reg": "eax",
-            "shift": 0,
-            "size": 4
-          }
-        ]
+        "type": "void",
+        "size": 0,
+        "storage": []
       },
       "params": [
         {
-          "name": "param_1",
+          "name": "_File",
           "type": "int",
           "size": 4,
           "storage": [
@@ -80472,7 +80484,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _lock(int param_1)"
+      "declaration": "void _lock(int _File)"
     },
     {
       "entry": 4705066,
@@ -80482,19 +80494,13 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
-        "size": 4,
-        "storage": [
-          {
-            "reg": "eax",
-            "shift": 0,
-            "size": 4
-          }
-        ]
+        "type": "void",
+        "size": 0,
+        "storage": []
       },
       "params": [
         {
-          "name": "param_1",
+          "name": "_File",
           "type": "int",
           "size": 4,
           "storage": [
@@ -80506,7 +80512,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _unlock(int param_1)"
+      "declaration": "void _unlock(int _File)"
     },
     {
       "entry": 4705087,
@@ -80696,7 +80702,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "int",
+        "type": "LPCWSTR",
         "size": 4,
         "storage": [
           {
@@ -80797,7 +80803,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int FUN_0047d065(LCID param_1, uint param_2, char *param_3, int param_4, LPWSTR param_5, int param_6, UINT param_7, int param_8)"
+      "declaration": "LPCWSTR FUN_0047d065(LCID param_1, uint param_2, char *param_3, int param_4, LPWSTR param_5, int param_6, UINT param_7, int param_8)"
     },
     {
       "entry": 4706677,
@@ -81026,7 +81032,7 @@
         },
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -81059,7 +81065,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int _input(void *this_, int *param_1, byte *param_2, undefined4 *param_3)"
+      "declaration": "int _input(void *this_, FILE *param_1, byte *param_2, undefined4 *param_3)"
     },
     {
       "entry": 4709710,
@@ -81128,7 +81134,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "undefined4 *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -81139,7 +81145,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint FUN_0047dd85(undefined4 *param_1)"
+      "declaration": "uint FUN_0047dd85(FILE *param_1)"
     },
     {
       "entry": 4709791,
@@ -81218,7 +81224,7 @@
         },
         {
           "name": "param_2",
-          "type": "undefined4 *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -81229,7 +81235,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint FUN_0047ddb6(int *param_1, undefined4 *param_2)"
+      "declaration": "uint FUN_0047ddb6(int *param_1, FILE *param_2)"
     },
     {
       "entry": 4709856,
@@ -81273,7 +81279,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "uint",
+        "type": "int",
         "size": 4,
         "storage": [
           {
@@ -81285,8 +81291,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "undefined4 *",
+          "name": "_File",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -81297,7 +81303,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint _filbuf(undefined4 *param_1)"
+      "declaration": "int _filbuf(FILE *_File)"
     },
     {
       "entry": 4710199,
@@ -81336,24 +81342,24 @@
     {
       "entry": 4710346,
       "name": "_ioinit",
-      "cc": "__stdcall",
+      "cc": "__cdecl",
       "varargs": false,
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "int",
         "size": 4,
         "storage": [
           {
+            "size": 4,
             "reg": "eax",
-            "shift": 0,
-            "size": 4
+            "shift": 0
           }
         ]
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 _ioinit(void)"
+      "declaration": "int _ioinit(void)"
     },
     {
       "entry": 4710790,
@@ -81503,12 +81509,12 @@
     {
       "entry": 4711602,
       "name": "_errno",
-      "cc": "__stdcall",
+      "cc": "__cdecl",
       "varargs": false,
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "DWORD *",
+        "type": "int *",
         "size": 4,
         "storage": [
           {
@@ -81520,17 +81526,17 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "DWORD *_errno(void)"
+      "declaration": "int *_errno(void)"
     },
     {
       "entry": 4711611,
       "name": "_doserrno",
-      "cc": "__stdcall",
+      "cc": "__cdecl",
       "varargs": false,
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "DWORD *",
+        "type": "ulong *",
         "size": 4,
         "storage": [
           {
@@ -81542,7 +81548,7 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "DWORD *_doserrno(void)"
+      "declaration": "ulong *_doserrno(void)"
     },
     {
       "entry": 4711620,
@@ -81677,7 +81683,7 @@
       "params": [
         {
           "name": "param_1",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -81710,7 +81716,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int FUN_0047e59c(int *param_1, short *param_2, undefined4 *param_3)"
+      "declaration": "int FUN_0047e59c(FILE *param_1, short *param_2, undefined4 *param_3)"
     },
     {
       "entry": 4713705,
@@ -81744,7 +81750,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -81766,7 +81772,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0047ece9(uint param_1, int *param_2, int *param_3)"
+      "declaration": "undefined4 FUN_0047ece9(uint param_1, FILE *param_2, int *param_3)"
     },
     {
       "entry": 4713737,
@@ -81811,7 +81817,7 @@
         },
         {
           "name": "param_3",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -81833,7 +81839,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0047ed09(uint param_1, int param_2, int *param_3, int *param_4)"
+      "declaration": "undefined4 FUN_0047ed09(uint param_1, int param_2, FILE *param_3, int *param_4)"
     },
     {
       "entry": 4713786,
@@ -81878,7 +81884,7 @@
         },
         {
           "name": "param_3",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -81900,7 +81906,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 FUN_0047ed3a(undefined2 *param_1, int param_2, int *param_3, int *param_4)"
+      "declaration": "undefined4 FUN_0047ed3a(undefined2 *param_1, int param_2, FILE *param_3, int *param_4)"
     },
     {
       "entry": 4713843,
@@ -82321,7 +82327,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "uint",
+        "type": "int",
         "size": 4,
         "storage": [
           {
@@ -82333,7 +82339,7 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "uint FUN_0047f320(void)"
+      "declaration": "int FUN_0047f320(void)"
     },
     {
       "entry": 4715587,
@@ -82456,20 +82462,20 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "int",
         "size": 4,
         "storage": [
           {
+            "size": 4,
             "reg": "eax",
-            "shift": 0,
-            "size": 4
+            "shift": 0
           }
         ]
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "uint",
+          "name": "_Filehandle",
+          "type": "int",
           "size": 4,
           "storage": [
             {
@@ -82480,7 +82486,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _lock_fhandle(uint param_1)"
+      "declaration": "int _lock_fhandle(int _Filehandle)"
     },
     {
       "entry": 4715999,
@@ -82490,20 +82496,14 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
-        "size": 4,
-        "storage": [
-          {
-            "reg": "eax",
-            "shift": 0,
-            "size": 4
-          }
-        ]
+        "type": "void",
+        "size": 0,
+        "storage": []
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "uint",
+          "name": "_Filehandle",
+          "type": "int",
           "size": 4,
           "storage": [
             {
@@ -82514,7 +82514,7 @@
         }
       ],
       "problems": [],
-      "declaration": "undefined4 _unlock_fhandle(uint param_1)"
+      "declaration": "void _unlock_fhandle(int _Filehandle)"
     },
     {
       "entry": 4716033,
@@ -82569,7 +82569,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "char *",
+        "type": "intptr_t",
         "size": 4,
         "storage": [
           {
@@ -82581,7 +82581,7 @@
       },
       "params": [
         {
-          "name": "param_1",
+          "name": "_Mode",
           "type": "int",
           "size": 4,
           "storage": [
@@ -82592,8 +82592,8 @@
           ]
         },
         {
-          "name": "param_2",
-          "type": "uint *",
+          "name": "_Filename",
+          "type": "char *",
           "size": 4,
           "storage": [
             {
@@ -82603,8 +82603,8 @@
           ]
         },
         {
-          "name": "param_3",
-          "type": "undefined4 *",
+          "name": "_ArgList",
+          "type": "char **",
           "size": 4,
           "storage": [
             {
@@ -82614,8 +82614,8 @@
           ]
         },
         {
-          "name": "param_4",
-          "type": "char *",
+          "name": "_Env",
+          "type": "char **",
           "size": 4,
           "storage": [
             {
@@ -82626,7 +82626,7 @@
         }
       ],
       "problems": [],
-      "declaration": "char *_spawnve(int param_1, uint *param_2, undefined4 *param_3, char *param_4)"
+      "declaration": "intptr_t _spawnve(int _Mode, char *_Filename, char **_ArgList, char **_Env)"
     },
     {
       "entry": 4716655,
@@ -84037,7 +84037,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "LONG",
+        "type": "int",
         "size": 4,
         "storage": [
           {
@@ -84049,8 +84049,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "int",
+          "name": "_ExceptionNum",
+          "type": "ulong",
           "size": 4,
           "storage": [
             {
@@ -84060,7 +84060,7 @@
           ]
         },
         {
-          "name": "param_2",
+          "name": "_ExceptionPtr",
           "type": "_EXCEPTION_POINTERS *",
           "size": 4,
           "storage": [
@@ -84072,7 +84072,7 @@
         }
       ],
       "problems": [],
-      "declaration": "LONG _XcptFilter(int param_1, _EXCEPTION_POINTERS *param_2)"
+      "declaration": "int _XcptFilter(ulong _ExceptionNum, _EXCEPTION_POINTERS *_ExceptionPtr)"
     },
     {
       "entry": 4720532,
@@ -84144,46 +84144,46 @@
     {
       "entry": 4720678,
       "name": "_setenvp",
-      "cc": "__stdcall",
+      "cc": "__cdecl",
       "varargs": false,
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "int",
         "size": 4,
         "storage": [
           {
+            "size": 4,
             "reg": "eax",
-            "shift": 0,
-            "size": 4
+            "shift": 0
           }
         ]
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 _setenvp(void)"
+      "declaration": "int _setenvp(void)"
     },
     {
       "entry": 4720863,
       "name": "_setargv",
-      "cc": "__stdcall",
+      "cc": "__cdecl",
       "varargs": false,
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "undefined4",
+        "type": "int",
         "size": 4,
         "storage": [
           {
+            "size": 4,
             "reg": "eax",
-            "shift": 0,
-            "size": 4
+            "shift": 0
           }
         ]
       },
       "params": [],
       "problems": [],
-      "declaration": "undefined4 _setargv(void)"
+      "declaration": "int _setargv(void)"
     },
     {
       "entry": 4721016,
@@ -84266,12 +84266,12 @@
     {
       "entry": 4721452,
       "name": "_crtGetEnvironmentStringsA",
-      "cc": "__stdcall",
+      "cc": "__cdecl",
       "varargs": false,
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "LPSTR",
+        "type": "LPVOID",
         "size": 4,
         "storage": [
           {
@@ -84283,7 +84283,7 @@
       },
       "params": [],
       "problems": [],
-      "declaration": "LPSTR _crtGetEnvironmentStringsA(void)"
+      "declaration": "LPVOID _crtGetEnvironmentStringsA(void)"
     },
     {
       "entry": 4721758,
@@ -87707,7 +87707,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -87718,7 +87718,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint FUN_00482a3d(uint param_1, int *param_2)"
+      "declaration": "uint FUN_00482a3d(uint param_1, FILE *param_2)"
     },
     {
       "entry": 4729654,
@@ -88054,7 +88054,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "byte *",
+        "type": "uchar *",
         "size": 4,
         "storage": [
           {
@@ -88066,8 +88066,8 @@
       },
       "params": [
         {
-          "name": "param_1",
-          "type": "byte *",
+          "name": "_Str",
+          "type": "uchar *",
           "size": 4,
           "storage": [
             {
@@ -88077,7 +88077,7 @@
           ]
         },
         {
-          "name": "param_2",
+          "name": "_Ch",
           "type": "uint",
           "size": 4,
           "storage": [
@@ -88089,7 +88089,7 @@
         }
       ],
       "problems": [],
-      "declaration": "byte *_mbsrchr(byte *param_1, uint param_2)"
+      "declaration": "uchar *_mbsrchr(uchar *_Str, uint _Ch)"
     },
     {
       "entry": 4730545,
@@ -89709,6 +89709,7 @@
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
+      "purge": 0,
       "ret": {
         "type": "undefined4",
         "size": 4,
@@ -89866,7 +89867,7 @@
         },
         {
           "name": "param_2",
-          "type": "int *",
+          "type": "FILE *",
           "size": 4,
           "storage": [
             {
@@ -89877,7 +89878,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint FUN_00484c80(uint param_1, int *param_2)"
+      "declaration": "uint FUN_00484c80(uint param_1, FILE *param_2)"
     },
     {
       "entry": 4738471,
@@ -90333,7 +90334,7 @@
       "decompiled": false,
       "purge": 0,
       "ret": {
-        "type": "int",
+        "type": "LPWSTR",
         "size": 4,
         "storage": [
           {
@@ -90423,7 +90424,7 @@
         }
       ],
       "problems": [],
-      "declaration": "int FUN_004853f8(LCID param_1, DWORD param_2, LPCWSTR param_3, int param_4, LPWSTR param_5, int param_6, UINT param_7)"
+      "declaration": "LPWSTR FUN_004853f8(LCID param_1, DWORD param_2, LPCWSTR param_3, int param_4, LPWSTR param_5, int param_6, UINT param_7)"
     },
     {
       "entry": 4740346,
@@ -90453,6 +90454,7 @@
       "cc": "__stdcall",
       "varargs": false,
       "decompiled": false,
+      "purge": 0,
       "ret": {
         "type": "LPWSTR",
         "size": 4,
@@ -90761,7 +90763,7 @@
         },
         {
           "name": "param_2",
-          "type": "byte *",
+          "type": "uchar *",
           "size": 4,
           "storage": [
             {
@@ -90772,7 +90774,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint FUN_00485775(byte param_1, byte *param_2)"
+      "declaration": "uint FUN_00485775(byte param_1, uchar *param_2)"
     },
     {
       "entry": 4741165,
@@ -90873,8 +90875,8 @@
       },
       "params": [
         {
-          "name": "this_",
-          "type": "void *",
+          "name": "param_1_00",
+          "type": "undefined4",
           "size": 4,
           "storage": [
             {
@@ -90885,7 +90887,7 @@
           ]
         },
         {
-          "name": "param_1",
+          "name": "param_2",
           "type": "byte *",
           "size": 4,
           "storage": [
@@ -90896,7 +90898,7 @@
           ]
         },
         {
-          "name": "param_2",
+          "name": "param_3",
           "type": "byte *",
           "size": 4,
           "storage": [
@@ -90908,7 +90910,7 @@
         }
       ],
       "problems": [],
-      "declaration": "uint FUN_00485b58(void *this_, byte *param_1, byte *param_2)"
+      "declaration": "uint FUN_00485b58(undefined4 param_1_00, byte *param_2, byte *param_3)"
     },
     {
       "entry": 4742381,

@@ -45,10 +45,10 @@ namespace game
 
     _ioinit();
     cmdArgs = win32::kernel32::GetCommandLineA();
-    _aenvptr = _crtGetEnvironmentStringsA();
+    _aenvptr = (char*)_crtGetEnvironmentStringsA();
     _setargv();
     _setenvp();
-    _cinit();
+    _cinit(0);
 
     startupInfo.dwFlags = 0;
     win32::kernel32::GetStartupInfoA(&startupInfo);

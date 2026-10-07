@@ -10,56 +10,55 @@
 namespace game
 {
 
-  WPARAM _WinMain(HINSTANCE hInstance, undefined4 param_2, char *launchParam, int showWindowMode)
+WPARAM _WinMain(HINSTANCE hInstance, undefined4 param_2, char *launchParam, int showWindowMode)
+{
+	ATOM windowClassAtom;
+	WPARAM WVar1;
+	int result;
 
-  {
-    ATOM windowClassAtom;
-    WPARAM WVar1;
-    int result;
+	g_moduleHandle = hInstance;
+	FUN_004656b0();
+	g_errorLogFileHandle = _freopen("debug.log", "w", _iob + 1);
+	if (g_errorLogFileHandle == (FILE *)0x0)
+	{
+		printf("Could not create error.log\n");
+	}
 
-    g_moduleHandle = hInstance;
-    FUN_004656b0();
-    g_errorLogFileHandle = _freopen("debug.log", "w", _iob + 1);
-    if (g_errorLogFileHandle == (FILE *)0x0)
-    {
-      printf("Could not create error.log\n");
-    }
+	CreateBlackExe();
 
-    CreateBlackExe();
+	nullsub_2();
 
-    nullsub_2();
+	if (CreateWindowClass(hInstance) == 0)
+	{
+		return CloseOnError();
+	}
 
-    if (CreateWindowClass(hInstance) == 0)
-    {
-      return CloseOnError();
-    }
+	result = CreateGameWindow(hInstance, showWindowMode);
+	if (result == 0)
+	{
+		OutputDebugString("oops\n");
+		return CloseOnError();
+	}
 
-    result = CreateGameWindow(hInstance, showWindowMode);
-    if (result == 0)
-    {
-      OutputDebugString("oops\n");
-      return CloseOnError();
-    }
+	OutputDebugStringA("caca");
 
-    OutputDebugStringA("caca");
+	unk_lockDatFileExists();
 
-    unk_lockDatFileExists();
+	result = MeasureCpuPerfStats();
+	if (result == 0)
+	{
+		return CloseOnError();
+	}
 
-    result = MeasureCpuPerfStats();
-    if (result == 0)
-    {
-      return CloseOnError();
-    }
+	result = DirectInput_Init();
+	if (result == 0)
+	{
+		logError("InitInput() failed");
+	}
 
-    result = DirectInput_Init();
-    if (result == 0)
-    {
-      logError("InitInput() failed");
-    }
-
-    Run(launchParam);
-    _fflush((int *)(_iob + 1));
-    return CloseOnError(); // ?
-  }
+	Run(launchParam);
+	_fflush((FILE *)(_iob + 1));
+	return CloseOnError(); // ?
+}
 
 }

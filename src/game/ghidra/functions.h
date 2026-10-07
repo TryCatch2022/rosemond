@@ -58,21 +58,21 @@ undefined4 unk_LoadAnimation_John(void);  // 0x004057b0
 undefined4 FUN_004057f0(int param_1, uint param_2);  // 0x004057f0
 undefined4 FUN_00405840(int param_1);  // 0x00405840
 undefined4 FUN_00405a60(int param_1);  // 0x00405a60
-undefined4 FUN_00405b60(int param_1, undefined1 param_2, float param_3, float param_4, float param_5);  // 0x00405b60
+undefined4 FUN_00405b60(Entity *param_1, undefined1 param_2, float param_3, float param_4, float param_5);  // 0x00405b60
 undefined4 unk_LoadAnimation_Linda(void);  // 0x00405e60
 undefined4 FUN_00405ea0(int param_1);  // 0x00405ea0
 undefined4 FUN_004060b0(int param_1);  // 0x004060b0
 undefined4 FUN_004061b0(int *param_1);  // 0x004061b0
 undefined4 FUN_00406210(int *param_1, int *param_2);  // 0x00406210
-undefined4 FUN_00406340(int param_1, undefined1 param_2, float param_3, float param_4, float param_5);  // 0x00406340
+undefined4 FUN_00406340(Entity *param_1, undefined1 param_2, float param_3, float param_4, float param_5);  // 0x00406340
 undefined4 unk_LoadAnimation_Melissa(void);  // 0x00406650
 undefined4 FUN_00406690(int param_1);  // 0x00406690
 undefined4 FUN_004068a0(int param_1);  // 0x004068a0
-undefined4 FUN_004069a0(int param_1, undefined1 param_2, float param_3, float param_4, float param_5);  // 0x004069a0
+undefined4 FUN_004069a0(Entity *param_1, undefined1 param_2, float param_3, float param_4, float param_5);  // 0x004069a0
 undefined4 unk_LoadAnimation_Mikael(void);  // 0x00406ca0
 undefined4 FUN_00406ce0(int param_1);  // 0x00406ce0
 undefined4 FUN_00406ef0(int param_1);  // 0x00406ef0
-undefined4 FUN_00406ff0(int param_1, undefined1 param_2, float param_3, float param_4, float param_5);  // 0x00406ff0
+undefined4 FUN_00406ff0(Entity *param_1, undefined1 param_2, float param_3, float param_4, float param_5);  // 0x00406ff0
 undefined4 unk_LoadAnimation_Veterin(void);  // 0x004072f0
 undefined4 FUN_00407330(int param_1);  // 0x00407330
 undefined4 FUN_00407530(int param_1);  // 0x00407530
@@ -84,14 +84,14 @@ undefined4 FUN_00407720(undefined4 param_1, int param_2);  // 0x00407720
 void *FUN_00407780(Player *param_1);  // 0x00407780
 float10 FUN_00407980(undefined4 param_1, int param_2, int param_3);  // 0x00407980
 int *FUN_00407a50(int param_1);  // 0x00407a50
-byte *GetAIList(byte *param_1, int param_2, int *param_3);  // 0x00407a70
-byte *GetSpawnList(void *param_1, int *param_2);  // 0x00407b30
-undefined4 FUN_00407bb0(void *param_1);  // 0x00407bb0
+byte *GetAIList(char *param_1, int param_2, int *param_3);  // 0x00407a70
+byte *GetSpawnList(char *param_1, int *param_2);  // 0x00407b30
+undefined4 FUN_00407bb0(char *param_1);  // 0x00407bb0
 undefined4 unk_AIToVehicle_RemoveAI(int param_1);  // 0x00407c10
-undefined4 FUN_00407cb0(byte *param_1, int param_2);  // 0x00407cb0
-undefined4 FUN_00407d00(byte *param_1, int param_2, undefined4 param_3, float param_4);  // 0x00407d00
-undefined4 FUN_00407ee0(byte *param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5);  // 0x00407ee0
-undefined4 FUN_00407f40(byte *param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5);  // 0x00407f40
+undefined4 FUN_00407cb0(char *param_1, int param_2);  // 0x00407cb0
+undefined4 FUN_00407d00(char *param_1, int param_2, undefined4 param_3, float param_4);  // 0x00407d00
+undefined4 FUN_00407ee0(char *param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5);  // 0x00407ee0
+undefined4 FUN_00407f40(char *param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5);  // 0x00407f40
 undefined4 unk_AI_AllocateSpawnAndRoute(char *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5);  // 0x00407fa0
 undefined4 FUN_00408120(int param_1, int param_2);  // 0x00408120
 undefined4 FUN_00408190(int param_1);  // 0x00408190
@@ -108,8 +108,8 @@ undefined4 FUN_00408f60(int *param_1, int param_2, float param_3);  // 0x00408f6
 undefined4 FUN_00409030(undefined4 param_1, int param_2, int param_3, int param_4, float *param_5, float *param_6, float *param_7, float *param_8);  // 0x00409030
 undefined4 FUN_00409200(int param_1);  // 0x00409200
 undefined4 FUN_00409230(int *param_1);  // 0x00409230
-undefined4 SetAIGuard_004093d0(int *param_1);  // 0x004093d0
-undefined4 SetAIGuard_00409690(int *param_1);  // 0x00409690
+undefined4 SetAIGuard_004093d0(Player *param_1);  // 0x004093d0
+undefined4 SetAIGuard_00409690(Player *param_1);  // 0x00409690
 undefined4 FUN_004096a0(int *param_1);  // 0x004096a0
 undefined4 FUN_00409710(int param_1);  // 0x00409710
 undefined4 unk_OnSeePlayer(int *param_1);  // 0x00409740
@@ -122,8 +122,8 @@ undefined4 FUN_00409aa0(char *param_1);  // 0x00409aa0
 undefined4 FUN_00409ac0(void);  // 0x00409ac0
 undefined4 unk_LeaveControllable(undefined4 param_1, int param_2);  // 0x00409f30
 undefined4 unk_CopyDataFromUnitInfo(byte *name, int param_2, Entity *param_3);  // 0x00409fa0
-undefined4 CreateAI(char *param_1, char param_2, int param_3, int routeCount, int unk_positionsArray);  // 0x0040a040
-undefined4 SaveAIPlayerInfo(int param_1, int *param_2);  // 0x0040a370
+undefined4 CreateAI(char *param_1, char param_2, undefined4 param_3, int routeCount, int unk_positionsArray);  // 0x0040a040
+undefined4 SaveAIPlayerInfo(int param_1, FILE *param_2);  // 0x0040a370
 undefined4 ReadAI(Entity *controllable, int *stream);  // 0x0040a410
 undefined4 AddAIFromFile(LPCSTR param_1, int param_2);  // 0x0040a4f0
 undefined4 FUN_0040aaa0(void *this_, undefined4 param_1, undefined4 param_2, float param_3);  // 0x0040aaa0
@@ -168,7 +168,7 @@ undefined4 FUN_0040ce00(void);  // 0x0040ce00
 undefined4 FUN_0040ce10(void);  // 0x0040ce10
 uint unk_someFPUComparisonsAgainstGlobals(void);  // 0x0040ce20
 float10 FUN_0040ce50(void);  // 0x0040ce50
-bool FUN_0040cfb0(undefined4 param_1, int param_2);  // 0x0040cfb0
+bool FUN_0040cfb0(undefined4 param_1, Entity *param_2);  // 0x0040cfb0
 undefined4 FUN_0040d220(void);  // 0x0040d220
 undefined4 thunk_FUN_0042fc80(void);  // 0x0040d460
 undefined4 FUN_0040d470(void);  // 0x0040d470
@@ -186,7 +186,7 @@ undefined4 FUN_0040ded0(short *param_1);  // 0x0040ded0
 undefined4 FUN_0040dee0(int param_1);  // 0x0040dee0
 undefined4 FUN_0040df10(short *param_1);  // 0x0040df10
 int FUN_0040df40(ushort *param_1, int param_2);  // 0x0040df40
-undefined4 FUN_0040df90(int param_1);  // 0x0040df90
+undefined4 FUN_0040df90(undefined4 *param_1);  // 0x0040df90
 undefined4 *FUN_0040e010(short *param_1, char *param_2, undefined4 param_3, char param_4);  // 0x0040e010
 undefined4 FUN_0040e120(int param_1, short *param_2);  // 0x0040e120
 undefined4 FUN_0040e170(int param_1);  // 0x0040e170
@@ -203,7 +203,7 @@ uint FUN_0040e4e0(char *param_1, int param_2);  // 0x0040e4e0
 undefined4 FUN_0040e530(char *param_1, int *param_2, int param_3);  // 0x0040e530
 undefined4 FUN_0040e5d0(char *param_1);  // 0x0040e5d0
 undefined4 FUN_0040e600(int *param_1, int param_2);  // 0x0040e600
-undefined4 FUN_0040e620(void *param_1, int param_2);  // 0x0040e620
+undefined4 FUN_0040e620(int param_1, int param_2);  // 0x0040e620
 undefined4 FUN_0040e660(char *param_1);  // 0x0040e660
 undefined4 FUN_0040e690(void);  // 0x0040e690
 undefined4 FUN_0040e6a0(int *param_1, int param_2, int param_3, int param_4, int param_5, int param_6, int param_7, int param_8);  // 0x0040e6a0
@@ -225,13 +225,13 @@ longlong FUN_0040ee20(int *param_1, int *param_2);  // 0x0040ee20
 undefined4 FUN_0040eee0(short *param_1, char *param_2, undefined4 param_3, char param_4);  // 0x0040eee0
 undefined4 unk_freeActiveDialog(void);  // 0x0040efe0
 undefined4 FUN_0040f010(void);  // 0x0040f010
-undefined4 FUN_0040f040(int param_1, byte *param_2);  // 0x0040f040
+undefined4 FUN_0040f040(int param_1, char *param_2);  // 0x0040f040
 undefined4 unk_isPositionOutsideCullDistance(Vec3 *position);  // 0x0040f120
-undefined4 FUN_0040f170(int param_1, int *param_2);  // 0x0040f170
-undefined4 FUN_0040f1c0(int param_1, int *param_2);  // 0x0040f1c0
+undefined4 FUN_0040f170(int param_1, FILE *param_2);  // 0x0040f170
+undefined4 FUN_0040f1c0(Entity *param_1, char *param_2);  // 0x0040f1c0
 undefined4 FUN_0040f240(int param_1);  // 0x0040f240
 undefined4 FUN_0040f270(int *param_1);  // 0x0040f270
-undefined4 FUN_0040f4b0(int param_1, undefined1 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined1 param_8, int param_9, int param_10);  // 0x0040f4b0
+undefined4 FUN_0040f4b0(Entity *param_1, undefined1 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined1 param_8, int param_9, int param_10);  // 0x0040f4b0
 undefined4 FUN_0040f580(int *param_1, undefined4 param_2);  // 0x0040f580
 undefined4 FUN_0040f5e0(int param_1, undefined1 param_2, undefined2 param_3, undefined1 param_4, undefined1 param_5, undefined1 param_6);  // 0x0040f5e0
 undefined4 FUN_0040f6d0(int param_1, undefined1 param_2, undefined2 param_3, undefined1 param_4, undefined1 param_5, undefined1 param_6);  // 0x0040f6d0
@@ -242,12 +242,12 @@ undefined4 GetSmoke(void);  // 0x0040f990
 undefined4 FUN_0040fa00(int param_1);  // 0x0040fa00
 undefined4 Smoke(int param_1, byte param_2, float param_3, float param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8, undefined4 param_9, undefined4 param_10, undefined4 param_11, undefined4 param_12, undefined4 param_13, int param_14);  // 0x0040fa10
 undefined4 FUN_00410100(int param_1, uint param_2, float param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8);  // 0x00410100
-undefined4 FUN_004108b0(int param_1);  // 0x004108b0
+undefined4 FUN_004108b0(Entity *param_1);  // 0x004108b0
 undefined4 FUN_00410dc0(void *param_1);  // 0x00410dc0
 undefined4 FUN_00410de0(int param_1);  // 0x00410de0
 undefined4 FUN_00410f20(void *this_, float param_1);  // 0x00410f20
 undefined4 FUN_00411140(int param_1, byte param_2);  // 0x00411140
-undefined4 FUN_00411170(int *param_1);  // 0x00411170
+undefined4 FUN_00411170(Entity *param_1);  // 0x00411170
 undefined4 FUN_00411280(int param_1);  // 0x00411280
 undefined4 FUN_00411300(int *param_1);  // 0x00411300
 undefined4 FUN_004113a0(int param_1, undefined1 param_2, undefined1 param_3, undefined1 param_4, undefined1 param_5, int param_6, undefined4 param_7);  // 0x004113a0
@@ -284,27 +284,27 @@ undefined4 FUN_00414510(ushort param_1);  // 0x00414510
 undefined4 FUN_00414770(undefined4 param_1);  // 0x00414770
 undefined4 FUN_00414780(int param_1);  // 0x00414780
 undefined4 unk_LoadInterfaceFromFile(char *fileName);  // 0x004147b0
-undefined4 LoadUIThings(int *param_1);  // 0x00414a80
+undefined4 LoadUIThings(char *param_1);  // 0x00414a80
 int FUN_00414ab0(int param_1);  // 0x00414ab0
-undefined4 FUN_00414ad0(char *param_1, int *param_2);  // 0x00414ad0
-undefined4 FUN_00414b20(int *param_1);  // 0x00414b20
-undefined4 FUN_00414b70(int *param_1);  // 0x00414b70
+undefined4 FUN_00414ad0(void *param_1, FILE *param_2);  // 0x00414ad0
+undefined4 FUN_00414b20(FILE *param_1);  // 0x00414b20
+undefined4 FUN_00414b70(FILE *param_1);  // 0x00414b70
 undefined4 FUN_00414ba0(void);  // 0x00414ba0
 undefined4 FUN_00414bb0(void);  // 0x00414bb0
 undefined4 FUN_00414d30(void);  // 0x00414d30
 undefined4 FUN_00414e40(int param_1);  // 0x00414e40
 undefined4 FUN_00414ed0(int param_1);  // 0x00414ed0
 undefined4 FUN_00415020(void);  // 0x00415020
-undefined4 FUN_00415050(int *param_1);  // 0x00415050
+undefined4 FUN_00415050(char *param_1);  // 0x00415050
 undefined4 FUN_00415070(void);  // 0x00415070
 undefined4 FUN_00415090(undefined4 param_1, int param_2);  // 0x00415090
-undefined4 FUN_004150e0(int *param_1);  // 0x004150e0
+undefined4 FUN_004150e0(FILE *param_1);  // 0x004150e0
 undefined4 FUN_00415100(int *param_1);  // 0x00415100
 undefined4 FUN_00415120(int *param_1);  // 0x00415120
 undefined4 FUN_00415160(int *param_1);  // 0x00415160
 undefined4 FUN_00415190(int *param_1);  // 0x00415190
 int FUN_004151d0(int param_1, int param_2);  // 0x004151d0
-int unk_getInterfaceField(int param_1);  // 0x004151f0
+undefined1 **unk_getInterfaceField(int param_1);  // 0x004151f0
 undefined4 FUN_00415220(int param_1);  // 0x00415220
 undefined4 FUN_00415250(int param_1);  // 0x00415250
 float10 FUN_00415280(int param_1);  // 0x00415280
@@ -342,7 +342,7 @@ undefined4 startInterface(void);  // 0x004172e0
 undefined4 FUN_00417330(void);  // 0x00417330
 undefined4 FUN_004173a0(void);  // 0x004173a0
 undefined4 FUN_00417410(int param_1);  // 0x00417410
-undefined4 FUN_00417420(int param_1);  // 0x00417420
+ItemData *FUN_00417420(int param_1);  // 0x00417420
 undefined4 FUN_00417440(void);  // 0x00417440
 undefined4 FUN_00417460(void);  // 0x00417460
 undefined4 FUN_004174b0(undefined4 param_1, int param_2);  // 0x004174b0
@@ -400,7 +400,7 @@ int FUN_004195d0(undefined4 param_1);  // 0x004195d0
 int FUN_00419600(void);  // 0x00419600
 undefined4 FUN_00419610(int param_1);  // 0x00419610
 undefined4 FUN_00419690(void);  // 0x00419690
-undefined4 FUN_004196b0(void *param_1, byte *param_2, byte *param_3);  // 0x004196b0
+undefined4 FUN_004196b0(void *param_1, char *param_2, char *param_3);  // 0x004196b0
 undefined4 FUN_004196e0(undefined4 param_1, undefined4 param_2, undefined4 param_3);  // 0x004196e0
 int FUN_004197a0(short *param_1, int param_2, int param_3);  // 0x004197a0
 undefined4 FUN_00419890(int param_1);  // 0x00419890
@@ -435,8 +435,8 @@ undefined4 FUN_0041ae20(int param_1);  // 0x0041ae20
 undefined4 FUN_0041ae70(int param_1, int param_2, float param_3);  // 0x0041ae70
 undefined4 FUN_0041b000(undefined4 param_1);  // 0x0041b000
 undefined4 FUN_0041b050(undefined4 param_1);  // 0x0041b050
-undefined4 FUN_0041b0b0(int *param_1);  // 0x0041b0b0
-undefined4 LoadStaticAdvText(int *param_1);  // 0x0041b110
+undefined4 FUN_0041b0b0(FILE *param_1);  // 0x0041b0b0
+undefined4 LoadStaticAdvText(char *param_1);  // 0x0041b110
 undefined4 InitStaticAdvTextBuf(int param_1);  // 0x0041b160
 undefined4 FUN_0041b1a0(void);  // 0x0041b1a0
 undefined4 FUN_0041b200(short *param_1, int param_2);  // 0x0041b200
@@ -476,7 +476,7 @@ undefined4 FUN_0041cce0(char param_1);  // 0x0041cce0
 undefined4 FUN_0041cfa0(char *param_1);  // 0x0041cfa0
 undefined4 FUN_0041d040(char *param_1);  // 0x0041d040
 undefined4 FUN_0041d090(char *param_1);  // 0x0041d090
-undefined4 FUN_0041d130(byte *param_1);  // 0x0041d130
+undefined4 FUN_0041d130(LPCSTR param_1);  // 0x0041d130
 undefined4 FUN_0041d160(void);  // 0x0041d160
 undefined4 thunk_FUN_0042d0a0(void);  // 0x0041d270
 undefined4 FUN_0041d280(void);  // 0x0041d280
@@ -488,7 +488,7 @@ undefined4 FUN_0041da60(void);  // 0x0041da60
 undefined4 FUN_0041dc60(int param_1);  // 0x0041dc60
 undefined4 FUN_0041de70(void *this_, int param_1);  // 0x0041de70
 undefined4 FUN_0041e090(int param_1);  // 0x0041e090
-undefined4 FUN_0041e0b0(int *param_1);  // 0x0041e0b0
+undefined4 FUN_0041e0b0(FILE *param_1);  // 0x0041e0b0
 undefined4 LoadPlayTime(char *stream);  // 0x0041e0e0
 undefined4 FUN_0041e110(int param_1);  // 0x0041e110
 undefined4 FUN_0041e160(void);  // 0x0041e160
@@ -514,32 +514,33 @@ undefined4 FUN_0041e9b0(void);  // 0x0041e9b0
 undefined4 FUN_0041e9d0(int param_1);  // 0x0041e9d0
 undefined4 FUN_0041e9e0(int param_1);  // 0x0041e9e0
 undefined4 FUN_0041e9f0(char *param_1, LPCSTR param_2, uint param_3);  // 0x0041e9f0
-undefined4 FUN_0041ea50(char *param_1, LPCSTR param_2, uint param_3);  // 0x0041ea50
+undefined4 FUN_0041ea50(void *param_1, LPCSTR param_2, size_t param_3);  // 0x0041ea50
 int unk_loadCompetitionResult(undefined4 param_1, int param_2);  // 0x0041ea90
 undefined4 FUN_0041eb80(int param_1);  // 0x0041eb80
 undefined4 FUN_0041eb90(int param_1);  // 0x0041eb90
-undefined4 FUN_0041ebd0(int param_1, int *param_2);  // 0x0041ebd0
-undefined4 FUN_0041ec20(int param_1, int *param_2);  // 0x0041ec20
+undefined4 FUN_0041ebd0(int param_1, FILE *param_2);  // 0x0041ebd0
+undefined4 FUN_0041ec20(int param_1, FILE *param_2);  // 0x0041ec20
 undefined4 FUN_0041ec80(void);  // 0x0041ec80
 undefined4 FUN_0041ed20(Entity *param_1);  // 0x0041ed20
 uint unk_GetActiveHorseType(void);  // 0x0041ed90
 undefined4 LoadHorseTasks(HorseUserData *horse, int *stream);  // 0x0041ede0
-undefined4 FUN_0041ee40(undefined4 *param_1, int *param_2);  // 0x0041ee40
+undefined4 FUN_0041ee40(Entity *param_1, int *param_2);  // 0x0041ee40
 int FUN_0041eed0(undefined4 *param_1);  // 0x0041eed0
 undefined4 FUN_0041ef90(void);  // 0x0041ef90
 undefined4 FUN_0041f010(Entity *param_1);  // 0x0041f010
 HorseUserData *GetHorse(void);  // 0x0041f030
 undefined4 *SetUpHorse(int param_1, Entity *entity);  // 0x0041f0c0
-undefined4 FUN_0041f237(void);  // 0x0041f237
-undefined4 FUN_0041f249(void);  // 0x0041f249
-undefined4 FUN_0041f25b(void);  // 0x0041f25b
-undefined4 FUN_0041f26d(void);  // 0x0041f26d
-undefined4 FUN_0041f27c(void);  // 0x0041f27c
-undefined4 FUN_0041f28d(void);  // 0x0041f28d
-undefined4 FUN_0041f29e(void);  // 0x0041f29e
-undefined4 FUN_0041f2af(void);  // 0x0041f2af
-undefined4 FUN_0041f2c9(void);  // 0x0041f2c9
-undefined4 FUN_0041f2da(void);  // 0x0041f2da
+undefined4 FUN_0041f200(undefined4 *param_1);  // 0x0041f200
+undefined4 caseD_6(void);  // 0x0041f237
+undefined4 caseD_9(void);  // 0x0041f249
+undefined4 caseD_a(void);  // 0x0041f25b
+undefined4 caseD_c(void);  // 0x0041f26d
+undefined4 caseD_d(void);  // 0x0041f27c
+undefined4 caseD_e(void);  // 0x0041f28d
+undefined4 caseD_f(void);  // 0x0041f29e
+undefined4 caseD_1(void);  // 0x0041f2af
+undefined4 caseD_7(void);  // 0x0041f2c9
+undefined4 caseD_4(void);  // 0x0041f2da
 undefined4 FUN_0041f3b0(int param_1);  // 0x0041f3b0
 undefined4 FUN_0041f3c0(int param_1);  // 0x0041f3c0
 undefined4 FUN_0041f440(Entity *entity);  // 0x0041f440
@@ -548,7 +549,7 @@ float10 FUN_0041f630(int param_1);  // 0x0041f630
 float10 FUN_0041f650(int param_1);  // 0x0041f650
 float10 FUN_0041f670(void);  // 0x0041f670
 float10 FUN_0041f6a0(void);  // 0x0041f6a0
-undefined4 FUN_0041f6d0(int param_1);  // 0x0041f6d0
+undefined4 FUN_0041f6d0(Task *param_1);  // 0x0041f6d0
 Task *GetTask(void);  // 0x0041f6e0
 undefined4 FUN_0041f760(Task *param_1);  // 0x0041f760
 undefined4 unk_addTaskToList(Task *param_1, Task *param_2);  // 0x0041f770
@@ -556,16 +557,16 @@ undefined4 FUN_0041f780(Entity *param_1);  // 0x0041f780
 uint FUN_0041f870(void);  // 0x0041f870
 undefined4 FUN_0041f890(Entity *param_1);  // 0x0041f890
 undefined4 FUN_0041f8c0(HorseUserData *horseData, Task *task);  // 0x0041f8c0
-int FUN_0041f960(void *this_);  // 0x0041f960
-undefined4 unk_InterpolateHorseData(Entity *param_1);  // 0x0041f9b0
-undefined4 Lerp(InterpolatingFloat *this_, float lerpT);  // 0x0041f9f0
+int FUN_0041f960(void);  // 0x0041f960
+void unk_InterpolateHorseData(Entity *param_1);  // 0x0041f9b0
+void Lerp(InterpolatingFloat *this_, float lerpT);  // 0x0041f9f0
 undefined4 unk_UpdateTasksForHorses(Task *param_1);  // 0x0041fa10
-undefined4 FUN_0041fb10(undefined4 param_1);  // 0x0041fb10
+undefined4 FUN_0041fb10(int param_1);  // 0x0041fb10
 undefined4 FUN_0041fb20(int param_1, int taskRounds);  // 0x0041fb20
 undefined4 FUN_0041fc00(HorseUserData *param_1);  // 0x0041fc00
 float10 FUN_0041fc70(int param_1);  // 0x0041fc70
 float10 FUN_0041fc80(int param_1);  // 0x0041fc80
-undefined4 FUN_0041fc90(void);  // 0x0041fc90
+HorseUserData *FUN_0041fc90(void);  // 0x0041fc90
 undefined4 FUN_0041fca0(void);  // 0x0041fca0
 undefined4 FUN_0041fcb0(void);  // 0x0041fcb0
 undefined4 FUN_0041fcc0(void);  // 0x0041fcc0
@@ -575,17 +576,17 @@ undefined4 FUN_0041fd30(int param_1);  // 0x0041fd30
 undefined4 DistanceBetweenEntitiesSquared(Entity *param_1, Entity *param_2);  // 0x0041fe10
 undefined4 FUN_0041fea0(int count, int *param_2);  // 0x0041fea0
 int FUN_00420020(int *param_1, int param_2, int param_3, float *param_4);  // 0x00420020
-undefined4 FUN_004200e0(int param_1);  // 0x004200e0
-undefined4 FUN_00420100(int param_1);  // 0x00420100
-undefined4 FUN_00420130(int param_1);  // 0x00420130
+Entity *FUN_004200e0(int param_1);  // 0x004200e0
+HorseUserData *FUN_00420100(int param_1);  // 0x00420100
+HorseUserData *FUN_00420130(int param_1);  // 0x00420130
 undefined4 FUN_00420160(undefined4 *param_1);  // 0x00420160
-undefined4 FUN_004201b0(int param_1);  // 0x004201b0
-undefined4 FUN_004201d0(int param_1);  // 0x004201d0
+undefined4 FUN_004201b0(Task *param_1);  // 0x004201b0
+undefined4 FUN_004201d0(HorseUserData *param_1);  // 0x004201d0
 undefined4 DeleteHorse(Entity *param_1);  // 0x00420220
 undefined4 unk_RemoveHorseFromList(Entity *param_1, int param_2, int *param_3);  // 0x004202c0
 undefined4 FUN_00420320(undefined4 *param_1);  // 0x00420320
 float10 FUN_00420370(void);  // 0x00420370
-undefined4 FUN_004203c0(undefined4 param_1, int param_2, int param_3);  // 0x004203c0
+Task *FUN_004203c0(Task *param_1, int param_2, Task *param_3);  // 0x004203c0
 float10 FUN_00420410(void);  // 0x00420410
 float10 FUN_00420430(int param_1);  // 0x00420430
 undefined4 FUN_00420450(void);  // 0x00420450
@@ -618,14 +619,14 @@ longlong FUN_00420c20(float param_1);  // 0x00420c20
 undefined4 FUN_00420c80(int param_1, int param_2);  // 0x00420c80
 undefined4 FUN_00420cb0(int param_1);  // 0x00420cb0
 undefined4 FUN_00420cf0(int param_1, int param_2);  // 0x00420cf0
-undefined4 SaveMissions(int *param_1);  // 0x00420d90
-undefined4 FUN_00420dd0(int *param_1);  // 0x00420dd0
-undefined4 SaveHorseDB(int *param_1);  // 0x00420e10
-undefined4 LoadHorseDB(int *param_1);  // 0x00420ef0
-undefined4 FUN_00420fe0(char *param_1, int *param_2);  // 0x00420fe0
-undefined4 SaveActiveHorseUserData(int *param_1);  // 0x00421010
-undefined4 SaveOtherHorseUserData(int *param_1);  // 0x00421060
-undefined4 FUN_004210b0(char *horse, int *stream);  // 0x004210b0
+undefined4 SaveMissions(FILE *param_1);  // 0x00420d90
+undefined4 FUN_00420dd0(char *param_1);  // 0x00420dd0
+undefined4 SaveHorseDB(FILE *param_1);  // 0x00420e10
+undefined4 LoadHorseDB(Entity *param_1);  // 0x00420ef0
+undefined4 FUN_00420fe0(void *param_1, FILE *param_2);  // 0x00420fe0
+undefined4 SaveActiveHorseUserData(FILE *param_1);  // 0x00421010
+undefined4 SaveOtherHorseUserData(FILE *param_1);  // 0x00421060
+undefined4 FUN_004210b0(HorseUserData *horse, int *stream);  // 0x004210b0
 undefined4 LoadActiveHorseUserData(Entity *player);  // 0x004210e0
 undefined4 FUN_004211d0(int *param_1);  // 0x004211d0
 undefined4 FUN_004212c0(void);  // 0x004212c0
@@ -647,8 +648,8 @@ undefined4 FUN_00421cf0(int param_1, int itemId);  // 0x00421cf0
 int RemovePlayerItem(Player *pPlayer, int param_2);  // 0x00421d00
 undefined4 RemoveItem(int playerId, int param_2);  // 0x00421ee0
 bool unk_RunActivateOrUseItemScripts(Entity *param_1, int playerId);  // 0x00421f20
-int unk_findNearestInteractable(int param_1);  // 0x00422160
-undefined4 FUN_004224c0(int param_1, byte *param_2);  // 0x004224c0
+Entity *unk_findNearestInteractable(int param_1);  // 0x00422160
+undefined4 FUN_004224c0(int param_1, char *param_2);  // 0x004224c0
 undefined4 FUN_00422540(int param_1, char param_2);  // 0x00422540
 bool FUN_00422590(Entity *item);  // 0x00422590
 undefined4 unk_Player_UpdateHeldItem(Player *player);  // 0x004225b0
@@ -656,7 +657,7 @@ Entity *unk_GetUsableHeldItem(Player *param_1);  // 0x00422630
 undefined4 unk_ClearHoldingItem(Player *param_1);  // 0x004226a0
 undefined4 FUN_004226e0(Player *param_1);  // 0x004226e0
 undefined4 FUN_00422740(void);  // 0x00422740
-undefined4 FUN_00422a00(byte *param_1);  // 0x00422a00
+undefined4 FUN_00422a00(char *param_1);  // 0x00422a00
 undefined4 FUN_00422a40(void);  // 0x00422a40
 undefined4 unk_loadKeyDefs(void);  // 0x00422c30
 int FUN_00422d20(undefined4 param_1);  // 0x00422d20
@@ -675,11 +676,11 @@ undefined4 FUN_00424890(void);  // 0x00424890
 undefined4 DisplayWorld(void);  // 0x00424980
 undefined4 RestoreAll(void);  // 0x00424ac0
 void logError(LPCSTR errorMsg, ...);  // 0x00424c10
-undefined4 unk_AddBriefing(byte *param_1, byte *param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, int param_6);  // 0x00424c80
+undefined4 unk_AddBriefing(byte *param_1, char *param_2, float param_3, float param_4, float param_5, int param_6);  // 0x00424c80
 undefined4 FUN_00424dc0(void);  // 0x00424dc0
 undefined4 FUN_00424df0(void);  // 0x00424df0
 undefined4 FUN_004250b0(int param_1, char *param_2);  // 0x004250b0
-uint FUN_004250d0(byte *param_1);  // 0x004250d0
+uint FUN_004250d0(char *param_1);  // 0x004250d0
 undefined4 AddDefaultMapObjects(void);  // 0x004251b0
 undefined4 FUN_004254d0(int param_1, int param_2);  // 0x004254d0
 undefined4 FUN_00425510(void);  // 0x00425510
@@ -688,20 +689,20 @@ undefined4 FUN_00425730(char *param_1, int param_2, undefined4 param_3, undefine
 bool FUN_004257d0(void);  // 0x004257d0
 undefined4 FUN_004257e0(void);  // 0x004257e0
 undefined4 FUN_004259d0(void);  // 0x004259d0
-undefined4 unk_saveHorseAndScore(int *file);  // 0x00425a30
-undefined4 unk_somethingWithActiveHorseStrings(int *stream);  // 0x00425b30
-undefined4 unk_deleteTempFiles(void *param_1);  // 0x00425c00
+undefined4 unk_saveHorseAndScore(FILE *file);  // 0x00425a30
+undefined4 unk_somethingWithActiveHorseStrings(char *stream);  // 0x00425b30
+undefined4 unk_deleteTempFiles(void);  // 0x00425c00
 undefined4 unk_deleteScoreTempFile(void);  // 0x00425c50
 int loadMenu(int param_1, char *launchParam);  // 0x00425c60
 undefined4 FUN_00425ea0(void);  // 0x00425ea0
 undefined4 hideWindow(void);  // 0x00425f00
 undefined4 showWindow(void);  // 0x00425f10
 undefined4 defWindowProcAWrapper(HWND param_1, UINT param_2, WPARAM param_3, LPARAM param_4);  // 0x00425f20
-undefined4 spawnMenuExe(void);  // 0x00425f40
+void spawnMenuExe(void);  // 0x00425f40
 undefined4 unk_spawnNewGameExeThenExit(void);  // 0x00425fe0
 undefined4 unk_removeLockDatFile(void);  // 0x00426090
 undefined4 FUN_004260c0(void);  // 0x004260c0
-undefined4 unk_connectToServer(undefined1 *param_1);  // 0x00426150
+undefined4 unk_connectToServer(undefined4 *param_1);  // 0x00426150
 undefined4 FUN_00426370(int param_1);  // 0x00426370
 bool FUN_00426430(void);  // 0x00426430
 undefined4 FUN_00426440(void);  // 0x00426440
@@ -746,14 +747,14 @@ int FUN_00427420(void);  // 0x00427420
 undefined4 FUN_00427440(void);  // 0x00427440
 undefined4 FUN_00427460(int param_1);  // 0x00427460
 undefined4 FUN_00427470(int param_1);  // 0x00427470
-undefined4 FUN_004274a0(int param_1, byte *param_2);  // 0x004274a0
-undefined4 FUN_004274f0(int param_1, byte *param_2, undefined4 *param_3);  // 0x004274f0
+undefined4 FUN_004274a0(int param_1, char *param_2);  // 0x004274a0
+undefined4 FUN_004274f0(int param_1, char *param_2, undefined4 *param_3);  // 0x004274f0
 undefined4 FUN_00427550(void);  // 0x00427550
 undefined4 FUN_00427560(undefined4 param_1);  // 0x00427560
-undefined4 FUN_00427570(int param_1, byte *param_2);  // 0x00427570
-undefined4 FUN_00427580(int param_1, byte *param_2);  // 0x00427580
+undefined4 FUN_00427570(int param_1, char *param_2);  // 0x00427570
+undefined4 FUN_00427580(int param_1, char *param_2);  // 0x00427580
 undefined4 FUN_004276b0(int param_1);  // 0x004276b0
-undefined4 FUN_004276f0(int param_1, byte *param_2, undefined4 *param_3);  // 0x004276f0
+undefined4 FUN_004276f0(int param_1, char *param_2, undefined4 *param_3);  // 0x004276f0
 uint FUN_00427730(void);  // 0x00427730
 uint FUN_00427740(void);  // 0x00427740
 undefined4 FUN_00427750(undefined4 param_1);  // 0x00427750
@@ -770,7 +771,7 @@ float10 FUN_00427e30(int param_1);  // 0x00427e30
 undefined4 FUN_00427e50(void);  // 0x00427e50
 undefined4 FUN_00427e60(void);  // 0x00427e60
 undefined4 FUN_00427e70(void);  // 0x00427e70
-undefined1 *FUN_00427e90(undefined1 *param_1);  // 0x00427e90
+char *FUN_00427e90(char *param_1);  // 0x00427e90
 undefined *FUN_00427f00(int param_1);  // 0x00427f00
 undefined *FUN_00427f10(int param_1);  // 0x00427f10
 undefined4 FUN_00427f20(int param_1);  // 0x00427f20
@@ -799,7 +800,7 @@ undefined4 FUN_00428690(undefined4 *param_1, int param_2, int param_3);  // 0x00
 undefined4 FUN_004286c0(undefined4 *param_1, undefined4 *param_2);  // 0x004286c0
 undefined4 FUN_004286e0(void);  // 0x004286e0
 undefined4 unk_GetCompetitionResults(short *param_1, int param_2, int param_3, undefined4 *param_4, void *param_5);  // 0x00428700
-undefined4 FUN_00428a10(undefined2 *param_1, int param_2, int param_3, undefined2 param_4);  // 0x00428a10
+undefined4 FUN_00428a10(char *param_1, int param_2, int param_3, undefined2 param_4);  // 0x00428a10
 undefined4 FUN_00428a40(void);  // 0x00428a40
 undefined4 FUN_00428b10(int param_1);  // 0x00428b10
 undefined4 FUN_00428b80(undefined4 *param_1);  // 0x00428b80
@@ -832,22 +833,22 @@ undefined4 FUN_004296d0(void);  // 0x004296d0
 float10 FUN_004296f0(void);  // 0x004296f0
 float10 FUN_00429710(void);  // 0x00429710
 undefined4 FUN_00429720(void);  // 0x00429720
-undefined4 FUN_00429770(int *param_1);  // 0x00429770
-undefined4 LoadHighScore(int *param_1);  // 0x004297d0
+undefined4 FUN_00429770(FILE *param_1);  // 0x00429770
+undefined4 LoadHighScore(char *param_1);  // 0x004297d0
 undefined4 FUN_00429880(void);  // 0x00429880
-char *unk_readCompInfo(int *param_1);  // 0x00429910
+char *unk_readCompInfo(char *param_1);  // 0x00429910
 undefined4 FUN_004299a0(void);  // 0x004299a0
-undefined4 FUN_00429a20(int *param_1, char *param_2);  // 0x00429a20
+undefined4 FUN_00429a20(FILE *param_1, undefined4 *param_2);  // 0x00429a20
 undefined4 FUN_00429a80(void);  // 0x00429a80
 undefined4 *FUN_00429a90(undefined4 *param_1);  // 0x00429a90
 undefined4 FUN_00429ac0(void);  // 0x00429ac0
 undefined4 FUN_00429ad0(int param_1);  // 0x00429ad0
-undefined4 FUN_00429b10(int *param_1);  // 0x00429b10
+undefined4 FUN_00429b10(FILE *param_1);  // 0x00429b10
 undefined4 PrintCompInfo(void);  // 0x00429b70
 undefined4 FUN_00429ba0(undefined4 *param_1);  // 0x00429ba0
-undefined4 LoadCompetition(int *param_1);  // 0x00429bc0
-undefined4 FUN_00429c70(int *param_1);  // 0x00429c70
-undefined4 FUN_00429c90(int *param_1);  // 0x00429c90
+undefined4 LoadCompetition(char *param_1);  // 0x00429bc0
+undefined4 FUN_00429c70(FILE *param_1);  // 0x00429c70
+undefined4 FUN_00429c90(char *param_1);  // 0x00429c90
 undefined4 SaveLevelScore(void);  // 0x00429cb0
 undefined4 unk_LoadLevelScore(void);  // 0x00429cf0
 undefined4 PlayPrizeCeremony_00429d30(void);  // 0x00429d30
@@ -865,7 +866,7 @@ char *GetDirectDrawError(int param_1);  // 0x0042a940
 undefined4 FUN_0042b150(uint param_1, int *param_2);  // 0x0042b150
 undefined4 FUN_0042b180(int param_1, int param_2, int param_3, int param_4, int *param_5);  // 0x0042b180
 undefined4 FUN_0042b1b0(int param_1, char param_2);  // 0x0042b1b0
-undefined4 FUN_0042b210(char *param_1, int *param_2, int param_3, int param_4, int param_5);  // 0x0042b210
+undefined4 FUN_0042b210(byte *param_1, int *param_2, int param_3, int param_4, int param_5);  // 0x0042b210
 int *FUN_0042b340(char *param_1, size_t param_2);  // 0x0042b340
 undefined4 FUN_0042b390(int param_1, int param_2, int param_3, int param_4, int param_5);  // 0x0042b390
 int FUN_0042b3d0(int param_1, int param_2);  // 0x0042b3d0
@@ -890,8 +891,8 @@ undefined4 FUN_0042cf80(void);  // 0x0042cf80
 undefined4 FUN_0042d0a0(void);  // 0x0042d0a0
 int *FUN_0042d450(undefined4 param_1, int *param_2);  // 0x0042d450
 undefined4 FUN_0042d4f0(int param_1);  // 0x0042d4f0
-undefined4 FUN_0042d510(int *param_1);  // 0x0042d510
-undefined4 FUN_0042d550(int *param_1);  // 0x0042d550
+undefined4 FUN_0042d510(FILE *param_1);  // 0x0042d510
+undefined4 FUN_0042d550(char *param_1);  // 0x0042d550
 undefined4 FUN_0042d5b0(void);  // 0x0042d5b0
 void *unk_getWorldObjects(int *param_1);  // 0x0042d5c0
 undefined4 *FUN_0042d760(int param_1, undefined4 param_2);  // 0x0042d760
@@ -900,7 +901,7 @@ undefined4 FUN_0042d7d0(int param_1, undefined4 param_2);  // 0x0042d7d0
 undefined4 *FUN_0042d810(int param_1, undefined4 param_2);  // 0x0042d810
 undefined4 FUN_0042d840(int param_1, undefined4 param_2);  // 0x0042d840
 undefined4 FUN_0042d880(undefined4 param_1, undefined4 param_2);  // 0x0042d880
-undefined4 FUN_0042d8a0(undefined4 param_1, int param_2, undefined *param_3);  // 0x0042d8a0
+undefined4 FUN_0042d8a0(undefined4 param_1, int param_2, void *param_3);  // 0x0042d8a0
 undefined4 *FUN_0042d8f0(int param_1, char *param_2, undefined4 param_3, undefined4 param_4);  // 0x0042d8f0
 undefined4 FUN_0042d950(int param_1, undefined4 param_2);  // 0x0042d950
 undefined4 *FUN_0042d980(int param_1, char *param_2, int param_3, undefined4 *param_4);  // 0x0042d980
@@ -918,10 +919,10 @@ undefined4 FUN_0042ddc0(int param_1, int param_2);  // 0x0042ddc0
 undefined4 FUN_0042dde0(int param_1, int param_2, int param_3);  // 0x0042dde0
 undefined4 FUN_0042de20(int param_1, int param_2, int param_3);  // 0x0042de20
 undefined4 FUN_0042def0(int param_1, int param_2, int param_3);  // 0x0042def0
-int GetWorldObjectId(byte *objectName);  // 0x0042df50
+int GetWorldObjectId(char *objectName);  // 0x0042df50
 undefined4 LoadWorldDefData(void);  // 0x0042e1b0
 undefined4 FUN_0042e300(void);  // 0x0042e300
-undefined4 FUN_0042e320(int *param_1, byte *param_2, int param_3, undefined4 *param_4);  // 0x0042e320
+undefined4 FUN_0042e320(int *param_1, char *param_2, int param_3, undefined4 *param_4);  // 0x0042e320
 undefined4 FUN_0042e3c0(int param_1);  // 0x0042e3c0
 undefined4 FUN_0042e410(int param_1);  // 0x0042e410
 undefined4 FUN_0042e440(int param_1);  // 0x0042e440
@@ -934,7 +935,7 @@ undefined4 FUN_0042e5d0(int param_1);  // 0x0042e5d0
 undefined4 FUN_0042e620(int param_1, int param_2);  // 0x0042e620
 undefined4 FUN_0042e670(int param_1, int param_2);  // 0x0042e670
 undefined4 FUN_0042e6a0(int param_1, int param_2, int param_3);  // 0x0042e6a0
-undefined4 FUN_0042e730(byte *param_1);  // 0x0042e730
+undefined4 FUN_0042e730(char *param_1);  // 0x0042e730
 undefined4 FUN_0042e7a0(int param_1);  // 0x0042e7a0
 undefined4 FUN_0042e7e0(int param_1, int param_2);  // 0x0042e7e0
 undefined4 FUN_0042e830(int param_1);  // 0x0042e830
@@ -943,7 +944,7 @@ undefined4 FUN_0042e9c0(int *param_1, uint param_2);  // 0x0042e9c0
 undefined4 FUN_0042ea80(int *param_1, int param_2, int param_3);  // 0x0042ea80
 int FUN_0042ead0(int param_1, int param_2, int param_3);  // 0x0042ead0
 undefined4 FUN_0042eb20(int param_1, int *param_2);  // 0x0042eb20
-undefined4 FUN_0042ed20(undefined *param_1, int param_2);  // 0x0042ed20
+undefined4 FUN_0042ed20(void *param_1, int param_2);  // 0x0042ed20
 undefined4 FUN_0042ed50(int param_1);  // 0x0042ed50
 int FUN_0042ed80(int param_1, int param_2, int param_3);  // 0x0042ed80
 undefined4 FUN_0042ede0(int param_1, int param_2);  // 0x0042ede0
@@ -953,7 +954,7 @@ undefined4 FUN_0042ee70(int param_1);  // 0x0042ee70
 undefined4 FUN_0042eeb0(int param_1, int param_2);  // 0x0042eeb0
 undefined4 FUN_0042eee0(int param_1);  // 0x0042eee0
 undefined4 FUN_0042ef30(int param_1, int param_2);  // 0x0042ef30
-int FUN_0042ef90(int param_1, int param_2, undefined *param_3);  // 0x0042ef90
+int FUN_0042ef90(int param_1, int param_2, void *param_3);  // 0x0042ef90
 undefined4 FUN_0042f000(int param_1);  // 0x0042f000
 undefined4 FUN_0042f060(char *param_1, undefined4 param_2, undefined4 param_3);  // 0x0042f060
 undefined4 FUN_0042f0d0(int param_1);  // 0x0042f0d0
@@ -962,7 +963,7 @@ int FUN_0042f1d0(float *param_1, int param_2);  // 0x0042f1d0
 uint FUN_0042f200(float *param_1, int param_2);  // 0x0042f200
 undefined4 FUN_0042f260(void);  // 0x0042f260
 undefined4 FUN_0042f2a0(int param_1, int param_2);  // 0x0042f2a0
-undefined4 FUN_0042f310(int param_1);  // 0x0042f310
+undefined4 FUN_0042f310(Entity *param_1);  // 0x0042f310
 undefined4 FUN_0042f430(int param_1, int param_2);  // 0x0042f430
 undefined4 FUN_0042f4b0(int param_1);  // 0x0042f4b0
 undefined4 FUN_0042f4e0(int param_1, int param_2);  // 0x0042f4e0
@@ -970,8 +971,8 @@ undefined4 FUN_0042f520(void);  // 0x0042f520
 undefined4 FUN_0042f540(int param_1);  // 0x0042f540
 undefined4 FUN_0042f560(int param_1);  // 0x0042f560
 undefined4 FUN_0042f5a0(int param_1);  // 0x0042f5a0
-undefined4 FUN_0042f6b0(int param_1);  // 0x0042f6b0
-undefined4 FUN_0042f760(int param_1);  // 0x0042f760
+undefined4 FUN_0042f6b0(Entity *param_1);  // 0x0042f6b0
+undefined4 FUN_0042f760(Entity *param_1);  // 0x0042f760
 uint FUN_0042f830(int param_1, float *param_2);  // 0x0042f830
 int FUN_0042fa50(float *param_1, int param_2);  // 0x0042fa50
 undefined4 FUN_0042faa0(int param_1);  // 0x0042faa0
@@ -981,46 +982,46 @@ undefined8 FUN_0042fb90(int *param_1, undefined4 param_2);  // 0x0042fb90
 undefined4 FUN_0042fbc0(int param_1);  // 0x0042fbc0
 float10 FUN_0042fbe0(int param_1);  // 0x0042fbe0
 undefined4 FUN_0042fc80(void);  // 0x0042fc80
-undefined4 FUN_0042fcb0(int param_1);  // 0x0042fcb0
+undefined4 FUN_0042fcb0(Entity *param_1);  // 0x0042fcb0
 int FUN_0042fd60(Entity *param_1);  // 0x0042fd60
 int FUN_0042fe00(int param_1);  // 0x0042fe00
 bool FUN_0042fe30(void);  // 0x0042fe30
-undefined4 FUN_0042fe50(int *param_1);  // 0x0042fe50
+undefined4 FUN_0042fe50(Entity *param_1);  // 0x0042fe50
 undefined4 FUN_0042ffd0(void);  // 0x0042ffd0
 undefined4 FUN_00430000(int param_1, int param_2, undefined4 param_3);  // 0x00430000
 undefined4 FUN_00430030(int param_1, int param_2, int param_3, int param_4, int param_5, undefined4 param_6, undefined4 param_7);  // 0x00430030
 undefined4 FUN_004300a0(int param_1);  // 0x004300a0
 undefined4 FUN_004300d0(int param_1, int param_2);  // 0x004300d0
 undefined4 FUN_00430150(int param_1);  // 0x00430150
-undefined4 FUN_004301b0(undefined *param_1);  // 0x004301b0
-undefined4 FUN_004301d0(undefined *param_1);  // 0x004301d0
-undefined4 FUN_004301f0(int *param_1, char *param_2);  // 0x004301f0
-undefined4 SaveAllDependencyStatus(int *param_1);  // 0x00430250
-undefined4 SaveAllWorldStatus(int *param_1);  // 0x00430300
-undefined4 SaveAllObjects(int *param_1);  // 0x004303f0
-undefined4 FUN_00430470(int *param_1);  // 0x00430470
-undefined4 FUN_004304e0(int *param_1);  // 0x004304e0
-undefined4 FUN_00430570(int *param_1, char *param_2);  // 0x00430570
+undefined4 FUN_004301b0(void *param_1);  // 0x004301b0
+undefined4 FUN_004301d0(void *param_1);  // 0x004301d0
+undefined4 FUN_004301f0(FILE *param_1, char *param_2);  // 0x004301f0
+undefined4 SaveAllDependencyStatus(FILE *param_1);  // 0x00430250
+undefined4 SaveAllWorldStatus(FILE *param_1);  // 0x00430300
+undefined4 SaveAllObjects(FILE *param_1);  // 0x004303f0
+undefined4 FUN_00430470(FILE *param_1);  // 0x00430470
+undefined4 FUN_004304e0(FILE *param_1);  // 0x004304e0
+undefined4 FUN_00430570(char *param_1, char *param_2);  // 0x00430570
 int FUN_004305c0(int param_1);  // 0x004305c0
-undefined *FUN_004305e0(undefined *param_1, int param_2, undefined4 *param_3);  // 0x004305e0
-undefined4 LoadAllWorldStatus(int *param_1);  // 0x00430640
-undefined4 LoadAllDependencyStatus(int *param_1);  // 0x004307c0
-void *FUN_004308c0(void *param_1, byte *param_2);  // 0x004308c0
-byte *FUN_004308f0(byte *param_1, byte *param_2);  // 0x004308f0
-byte *FUN_00430920(byte *param_1, byte *param_2);  // 0x00430920
-undefined4 FUN_00430950(int *param_1);  // 0x00430950
-undefined4 LoadAllActiveDepList(int *param_1);  // 0x004309e0
-undefined4 FUN_00430a90(int *stream);  // 0x00430a90
-char FUN_00430b90(int param_1);  // 0x00430b90
-undefined4 FUN_00430c30(int param_1, int param_2);  // 0x00430c30
+void *FUN_004305e0(void *param_1, int param_2, undefined4 *param_3);  // 0x004305e0
+undefined4 LoadAllWorldStatus(char *param_1);  // 0x00430640
+undefined4 LoadAllDependencyStatus(char *param_1);  // 0x004307c0
+int FUN_004308c0(int param_1, char *param_2);  // 0x004308c0
+char *FUN_004308f0(char *param_1, char *param_2);  // 0x004308f0
+char *FUN_00430920(char *param_1, char *param_2);  // 0x00430920
+undefined4 FUN_00430950(char *param_1);  // 0x00430950
+undefined4 LoadAllActiveDepList(char *param_1);  // 0x004309e0
+undefined4 FUN_00430a90(char *stream);  // 0x00430a90
+char FUN_00430b90(Entity *param_1);  // 0x00430b90
+undefined4 FUN_00430c30(Entity *param_1, int param_2);  // 0x00430c30
 int *FUN_00430cc0(int param_1);  // 0x00430cc0
 undefined4 FUN_00430d30(int *param_1, int param_2);  // 0x00430d30
 undefined4 FUN_00430d50(int param_1);  // 0x00430d50
 undefined4 FUN_00430d80(undefined4 param_1, int param_2);  // 0x00430d80
 undefined4 FUN_00430db0(void);  // 0x00430db0
 undefined4 FUN_00430df0(void);  // 0x00430df0
-undefined4 FUN_00430e90(int param_1, int param_2);  // 0x00430e90
-int FUN_00430eb0(int param_1, int param_2);  // 0x00430eb0
+Entity *FUN_00430e90(int param_1, int param_2);  // 0x00430e90
+int FUN_00430eb0(Entity *param_1, int param_2);  // 0x00430eb0
 undefined4 FUN_00430fd0(int param_1, int param_2);  // 0x00430fd0
 undefined4 FUN_00431020(Entity *param_1);  // 0x00431020
 undefined4 FUN_00431040(int *param_1);  // 0x00431040
@@ -1049,21 +1050,21 @@ undefined4 CreateShip(Entity *entity, byte type, float param_3, float param_4, f
 undefined4 FUN_00431d10(Player *param_1);  // 0x00431d10
 undefined *GetHorseNameForType(int param_1);  // 0x00431dd0
 undefined4 unk_FillUnitInfoFromType(int type, Entity *param_2);  // 0x00431de0
-undefined4 *FUN_00431e20(int type, undefined4 param_2, float x, float y, float z);  // 0x00431e20
+Entity *FUN_00431e20(int type, undefined4 param_2, float x, float y, float z);  // 0x00431e20
 undefined4 FUN_00431f20(Entity *param_1, int param_2);  // 0x00431f20
 undefined4 LoadWeaponInfoData(void);  // 0x00432050
 float10 FUN_004327e0(int param_1, int param_2, int param_3);  // 0x004327e0
 undefined4 FreeWorldObjects(void);  // 0x00432950
 undefined4 FUN_00432990(char *param_1);  // 0x00432990
 undefined4 FUN_00432a40(void);  // 0x00432a40
-undefined4 FUN_00432a50(void);  // 0x00432a50
+Entity *FUN_00432a50(void);  // 0x00432a50
 int FUN_00432a80(char *param_1);  // 0x00432a80
 undefined4 FUN_00432b30(void);  // 0x00432b30
-undefined4 LoadWorldObjects(int *stream);  // 0x00432ba0
-undefined4 unk_saveCheckpoints(int *stream);  // 0x00432c10
-char *FUN_00432c90(int param_1);  // 0x00432c90
-int FUN_00432cd0(int param_1);  // 0x00432cd0
-undefined4 *FUN_00432cf0(char *param_1, int *param_2);  // 0x00432cf0
+undefined4 LoadWorldObjects(char *stream);  // 0x00432ba0
+undefined4 unk_saveCheckpoints(FILE *stream);  // 0x00432c10
+undefined1 *FUN_00432c90(int param_1);  // 0x00432c90
+Checkpoint *FUN_00432cd0(int param_1);  // 0x00432cd0
+float *FUN_00432cf0(char *param_1, int *param_2);  // 0x00432cf0
 undefined4 unk_Checkpoint_Constructor(char *param_1, undefined4 param_2);  // 0x00432ec0
 undefined4 FUN_00432f10(char *param_1, char param_2, char param_3);  // 0x00432f10
 undefined4 LoadWorld(LPCSTR param_1);  // 0x00432f30
@@ -1072,7 +1073,7 @@ undefined4 unk_D3DRMStuff(char *param_1, int param_2, int param_3, undefined4 pa
 undefined4 FUN_0043c680(void);  // 0x0043c680
 undefined4 RestoreD3D(void);  // 0x0043c710
 undefined4 CreateDirectDraw_0043c980(IDirectDraw *lpIDirectDraw, undefined4 param_2, undefined4 param_3);  // 0x0043c980
-undefined4 FUN_0043cac0(void);  // 0x0043cac0
+undefined4 FUN_0043cac0(int param_1);  // 0x0043cac0
 undefined4 FUN_0043caf0(undefined4 *param_1, undefined4 param_2, undefined4 param_3, undefined4 *param_4, undefined4 *param_5);  // 0x0043caf0
 undefined4 CreateD3D(undefined4 *param_1);  // 0x0043ccd0
 bool FUN_0043cd50(IDirectDraw **param_1);  // 0x0043cd50
@@ -1170,24 +1171,24 @@ undefined4 FUN_00446cd0(int *param_1, int param_2);  // 0x00446cd0
 undefined4 AddTGAToCache_00447240(LPCSTR param_1, char *param_2);  // 0x00447240
 undefined4 FUN_004475a0(LPCSTR param_1);  // 0x004475a0
 undefined4 FUN_00447680(char *param_1, LPCSTR param_2);  // 0x00447680
-int *FUN_00447750(undefined4 *param_1, LPCSTR param_2, byte *param_3, uint param_4);  // 0x00447750
-undefined4 FUN_00447e50(byte *param_1, LPCSTR param_2);  // 0x00447e50
+int *FUN_00447750(undefined4 *param_1, LPCSTR param_2, char *param_3, uint param_4);  // 0x00447750
+undefined4 FUN_00447e50(char *param_1, LPCSTR param_2);  // 0x00447e50
 undefined4 FUN_00447ed0(uint *param_1, int *param_2, uint param_3);  // 0x00447ed0
 undefined4 FUN_00447f00(int *param_1, int *param_2);  // 0x00447f00
 void *AddTGAToCache_004481f0(LPCSTR param_1, uint *param_2, uint *param_3, uint *param_4);  // 0x004481f0
-undefined4 FUN_004484f0(LPCSTR param_1, char *param_2, int param_3, int param_4);  // 0x004484f0
-undefined4 FUN_004485a0(LPCSTR param_1, int param_2, uint param_3, uint param_4, int param_5);  // 0x004485a0
+undefined4 FUN_004484f0(LPCSTR param_1, void *param_2, int param_3, int param_4);  // 0x004484f0
+undefined4 FUN_004485a0(LPCSTR param_1, int param_2, uint param_3, size_t param_4, int param_5);  // 0x004485a0
 undefined4 FUN_004486b0(byte *param_1, int *param_2, int *param_3, int param_4, int param_5);  // 0x004486b0
 undefined4 HalfScalePic(byte *param_1, int param_2, int param_3);  // 0x00448700
-undefined4 *FUN_00448830(undefined4 *param_1, LPCSTR param_2, byte *param_3);  // 0x00448830
+undefined4 *FUN_00448830(undefined4 *param_1, LPCSTR param_2, char *param_3);  // 0x00448830
 undefined4 *LoadFromTGACacheTO3FXX(void);  // 0x00448858
 undefined4 CreateNextMIP_TGA(byte *param_1, int param_2, int param_3, int param_4);  // 0x00448bd0
 undefined4 FUN_00448d10(void);  // 0x00448d10
-undefined4 FUN_00448e80(int param_1, int param_2, int param_3, int *param_4, int param_5, int param_6, int param_7, float param_8);  // 0x00448e80
+undefined4 FUN_00448e80(int param_1, int param_2, int param_3, Entity *param_4, int param_5, int param_6, int param_7, float param_8);  // 0x00448e80
 uint FUN_00449710(int param_1, int param_2, int param_3, int param_4, int param_5, float *param_6);  // 0x00449710
-uint FUN_004499f0(int *param_1, int param_2, int param_3, int *param_4, int param_5, int param_6);  // 0x004499f0
-undefined4 FUN_00449cf0(int *param_1, int *param_2);  // 0x00449cf0
-undefined4 FUN_0044a380(int *param_1, int *param_2);  // 0x0044a380
+uint FUN_004499f0(Entity *param_1, int param_2, int param_3, Entity *param_4, int param_5, int param_6);  // 0x004499f0
+undefined4 FUN_00449cf0(Entity *param_1, Entity *param_2);  // 0x00449cf0
+undefined4 FUN_0044a380(Entity *param_1, Entity *param_2);  // 0x0044a380
 undefined4 unk_Entity_OnInit(Entity *entity);  // 0x0044a520
 undefined4 FUN_0044a5d0(void);  // 0x0044a5d0
 undefined4 unk_Physics_applyCollisionForces(void);  // 0x0044a960
@@ -1209,8 +1210,8 @@ void *AllocateScriptMemory(size_t bytes);  // 0x0044c8a0
 undefined4 FUN_0044c9b0(void);  // 0x0044c9b0
 undefined4 FUN_0044c9d0(void);  // 0x0044c9d0
 undefined4 _fopen_wrapper(LPCSTR fileName, char *mode);  // 0x0044ca40
-undefined4 MakeUnitVectorR(int param_1);  // 0x0044ca50
-undefined4 FUN_0044cae0(int param_1);  // 0x0044cae0
+undefined4 MakeUnitVectorR(int param_1, undefined4 param_2);  // 0x0044ca50
+undefined4 FUN_0044cae0(int param_1, undefined4 param_2);  // 0x0044cae0
 undefined4 FUN_0044cb70(int param_1, int param_2, int param_3);  // 0x0044cb70
 undefined4 FUN_0044cc00(int param_1, int param_2, int param_3);  // 0x0044cc00
 float10 vecLength(int param_1);  // 0x0044cc90
@@ -1235,8 +1236,8 @@ undefined4 FUN_0044dd30(int param_1, int param_2);  // 0x0044dd30
 undefined4 FUN_0044ddb0(void);  // 0x0044ddb0
 undefined4 FUN_0044dfc0(int param_1);  // 0x0044dfc0
 undefined4 FUN_0044e020(int param_1);  // 0x0044e020
-undefined4 FUN_0044e080(int param_1);  // 0x0044e080
-undefined4 FUN_0044e140(int param_1);  // 0x0044e140
+undefined4 FUN_0044e080(Entity *param_1);  // 0x0044e080
+undefined4 FUN_0044e140(Entity *param_1);  // 0x0044e140
 undefined4 FUN_0044e320(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, int param_7, int param_8, int param_9);  // 0x0044e320
 undefined4 PprojectToCameraSpace(int *object);  // 0x0044e430
 undefined4 FUN_0044ec60(int param_1, int param_2, int param_3, int param_4);  // 0x0044ec60
@@ -1267,8 +1268,8 @@ undefined4 FUN_00450d20(int param_1, undefined4 param_2, undefined4 param_3);  /
 undefined4 unk_scheduleEvent(int targetFrame, undefined4 function, undefined4 entity);  // 0x00450db0
 void DeleteAllPtrEvents(Entity *project);  // 0x00450e40
 undefined4 DeleteAllEvents(void);  // 0x00450ef0
-undefined4 unk_SaveScriptEvents(int *param_1);  // 0x00450fe0
-undefined4 LoadScriptEvents(int *param_1);  // 0x00451090
+undefined4 unk_SaveScriptEvents(FILE *param_1);  // 0x00450fe0
+undefined4 LoadScriptEvents(char *param_1);  // 0x00451090
 undefined4 openInfoStream(LPCSTR param_1);  // 0x004510e0
 undefined4 FUN_00451290(void);  // 0x00451290
 undefined4 unk_saveAndCloseInfoStream(LPCSTR param_1);  // 0x004512c0
@@ -1295,7 +1296,7 @@ undefined4 FUN_00452e40(void);  // 0x00452e40
 undefined4 FUN_00453250(void);  // 0x00453250
 int FUN_004532f0(int *param_1, int param_2);  // 0x004532f0
 undefined4 FUN_00453400(undefined4 param_1);  // 0x00453400
-undefined4 FUN_00453440(int param_1, int param_2);  // 0x00453440
+undefined4 FUN_00453440(undefined4 *param_1, int param_2);  // 0x00453440
 int *FUN_004537a0(int *param_1, int param_2, int *param_3, int *param_4, int param_5);  // 0x004537a0
 undefined4 VertexInsideFaceRXZ(int face, int vertex);  // 0x004539b0
 char FaceIntersectDiscRXZ(int face, int param_2, float param_3);  // 0x00453a80
@@ -1305,16 +1306,16 @@ float10 LandHeight(int param_1, int param_2, int param_3);  // 0x00453d90
 undefined4 HeightR(int *face, int pos, int param_3);  // 0x00453f40
 float10 HeightP(int ace, int param_2, int param_3);  // 0x00453f90
 undefined4 FUN_00454070(int param_1, int param_2, int param_3, int param_4, float param_5, float *param_6);  // 0x00454070
-undefined4 FUN_00454210(int param_1);  // 0x00454210
+undefined4 FUN_00454210(Entity *param_1);  // 0x00454210
 undefined4 unk_Physics_detectCollisions(void);  // 0x004544a0
-undefined4 DetectCollision(void *this_, int *param_1);  // 0x00454600
-undefined4 CheckLandFace(int *param_1, int *ace, int *param_3, float param_4, char param_5);  // 0x00454710
+undefined4 DetectCollision(void *this_, Entity *param_1);  // 0x00454600
+undefined4 CheckLandFace(Entity *param_1, int *ace, Entity *param_3, float param_4, char param_5);  // 0x00454710
 undefined4 FUN_00454b40(void *this_, float param_1);  // 0x00454b40
 undefined4 loadDialog(LPCSTR param_1, int param_2);  // 0x00454bb0
 undefined4 DialogMap_Destructor(void);  // 0x00454d90
 undefined4 Map_Find(void *this_, char *key);  // 0x00454dc0
-undefined4 FUN_00454e00(void *this_, byte *param_1, undefined4 *param_2);  // 0x00454e00
-uint FUN_00454e40(void *this_, byte *param_1);  // 0x00454e40
+void *FUN_00454e00(undefined4 param_1_00, char *param_2, undefined4 *param_3);  // 0x00454e00
+uint FUN_00454e40(void *this_, char *param_1);  // 0x00454e40
 undefined2 *unk_listLexiconUnicodes(void);  // 0x00454e70
 undefined4 FUN_00454f10(void);  // 0x00454f10
 undefined4 FUN_004554a0(void *this_, int param_1);  // 0x004554a0
@@ -1361,16 +1362,16 @@ undefined4 FUN_00458250(int param_1, char *param_2, int param_3, short param_4, 
 undefined4 FUN_00458350(LPCSTR param_1);  // 0x00458350
 undefined4 unk_OnReplayFinished(void);  // 0x004583c0
 undefined4 FUN_004583f0(void);  // 0x004583f0
-undefined4 FUN_00458440(int param_1, int *param_2);  // 0x00458440
-undefined4 readVec3FromStream(int param_1, int *param_2);  // 0x00458480
-undefined4 FUN_004584c0(int param_1, int *param_2, int param_3);  // 0x004584c0
-undefined4 readTransformFromStream(int dest, int *stream, int readPosition);  // 0x00458580
+undefined4 FUN_00458440(int param_1, FILE *param_2);  // 0x00458440
+undefined4 readVec3FromStream(int param_1, char *param_2);  // 0x00458480
+undefined4 FUN_004584c0(Entity *param_1, FILE *param_2, int param_3);  // 0x004584c0
+undefined4 readTransformFromStream(int dest, char *stream, int readPosition);  // 0x00458580
 undefined4 FUN_004585f0(void);  // 0x004585f0
 undefined4 LoadPlayer_00458b70(int param_1, int param_2);  // 0x00458b70
 undefined4 ProjectToSavePlayerPartInfo(int param_1, int param_2);  // 0x00458cf0
 void *FUN_00458e80(int param_1);  // 0x00458e80
 undefined4 SavePlayer(Entity *param_1, int *stream);  // 0x00458f00
-undefined4 SaveAllPlayers(int *stream);  // 0x004591c0
+undefined4 SaveAllPlayers(FILE *stream);  // 0x004591c0
 undefined4 CheckMovePlayerProject(int param_1, int param_2);  // 0x004593f0
 undefined4 LoadPlayer_004594e0(int *stream, Entity *player);  // 0x004594e0
 undefined4 deleteAllPlayers(void);  // 0x00459a60
@@ -1395,7 +1396,7 @@ undefined4 FUN_0045a7f0(void);  // 0x0045a7f0
 undefined4 FUN_0045a870(void);  // 0x0045a870
 undefined4 FUN_0045a8b0(undefined *param_1, int param_2, undefined4 param_3);  // 0x0045a8b0
 undefined4 saveGame3(Entity *param_1);  // 0x0045a920
-int FUN_0045ac10(char *param_1);  // 0x0045ac10
+Entity *FUN_0045ac10(char *param_1);  // 0x0045ac10
 undefined4 saveGame2(uint param_1);  // 0x0045aef0
 undefined1 *FUN_0045aff0(int param_1);  // 0x0045aff0
 undefined4 LoadProjects(void);  // 0x0045b000
@@ -1403,8 +1404,8 @@ undefined4 FUN_0045b3b0(void);  // 0x0045b3b0
 undefined4 FUN_0045b430(void);  // 0x0045b430
 undefined4 FUN_0045b4a0(void);  // 0x0045b4a0
 undefined4 LoadAllBindings(void);  // 0x0045b5a0
-undefined4 writeTypeToFile(int *file, undefined4 param_2);  // 0x0045b660
-undefined4 Load_CtrlOrder(int *param_1, int *param_2);  // 0x0045b680
+undefined4 writeTypeToFile(FILE *file, undefined4 param_2);  // 0x0045b660
+undefined4 Load_CtrlOrder(char *param_1, char *param_2);  // 0x0045b680
 undefined4 SaveGame(LPCSTR fileName);  // 0x0045b6b0
 undefined4 unk_OnLoadGameInit(void);  // 0x0045b8e0
 undefined4 LoadGame_0045b930(void);  // 0x0045b930
@@ -1469,7 +1470,7 @@ undefined4 FUN_0045f5e0(void);  // 0x0045f5e0
 int FUN_0045f640(int param_1);  // 0x0045f640
 int ppBucket(int param_1);  // 0x0045f660
 uint LoadObject_0045f680(void);  // 0x0045f680
-undefined4 FUN_0045f780(byte *param_1);  // 0x0045f780
+undefined4 FUN_0045f780(char *param_1);  // 0x0045f780
 int FUN_0045f810(int param_1);  // 0x0045f810
 undefined4 LoadObject_0045f830(int param_1);  // 0x0045f830
 undefined4 SaveProjectList(LPCSTR param_1);  // 0x0045f880
@@ -1478,7 +1479,7 @@ int LoadObject_0045fee0(int param_1);  // 0x0045fee0
 uint LoadProjectLargeEdgeInfo(int param_1, undefined4 *param_2, undefined4 *param_3);  // 0x004602b0
 undefined4 FUN_004604e0(int param_1);  // 0x004604e0
 undefined4 LoadInstance(undefined4 param_1, int param_2);  // 0x00460670
-int FUN_00460b60(int param_1);  // 0x00460b60
+int FUN_00460b60(undefined4 param_1);  // 0x00460b60
 undefined4 FUN_00460ba0(int param_1);  // 0x00460ba0
 undefined4 FUN_00460db0(LPCSTR param_1);  // 0x00460db0
 undefined4 FUN_00460e20(LPCSTR param_1);  // 0x00460e20
@@ -1488,7 +1489,7 @@ undefined4 LoadFace_Cache(LPCSTR param_1);  // 0x004617c0
 undefined4 unk_AllocateVertex(int param_1);  // 0x00461950
 undefined4 unk_AllocateFaceMemory(int param_1);  // 0x00461a60
 undefined4 unk_AllocateProjectPtrs(void);  // 0x00461b60
-int MallocNewProject(int param_1);  // 0x00461bc0
+int MallocNewProject(undefined4 param_1);  // 0x00461bc0
 int AllocateObject(void);  // 0x00461ca0
 void unk_RemoveFromEntityLinkedList(Entity *player);  // 0x00461d90
 void RestoreProject(Entity *param_1);  // 0x00461de0
@@ -1511,7 +1512,7 @@ undefined4 FUN_00462c10(int *param_1);  // 0x00462c10
 undefined4 FUN_00462c30(void);  // 0x00462c30
 undefined4 DirectSound_Create(void);  // 0x00462c70
 undefined4 FUN_00462de0(undefined4 param_1);  // 0x00462de0
-undefined4 FUN_00462df0(void);  // 0x00462df0
+LPDIRECTSOUND **FUN_00462df0(void);  // 0x00462df0
 undefined4 unk_DirectSound_SetCoooperativeLevel(int priority);  // 0x00462e00
 undefined4 FUN_00462e30(int param_1);  // 0x00462e30
 undefined4 FUN_00462e60(void);  // 0x00462e60
@@ -1519,16 +1520,16 @@ undefined4 FUN_00462eb0(void);  // 0x00462eb0
 undefined4 FUN_00462f30(LPCSTR param_1);  // 0x00462f30
 undefined4 PreloadSounds(LPCSTR param_1);  // 0x00462fc0
 undefined4 CheckWAVLength(LPSTR param_1);  // 0x004630a0
-int LoadFX(byte *param_1, void *param_2);  // 0x00463130
+int LoadFX(char *param_1, uint param_2);  // 0x00463130
 undefined4 AddVirtualSoundChannel(int param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4);  // 0x004634c0
-undefined4 FUN_004635e0(undefined *param_1);  // 0x004635e0
+undefined4 FUN_004635e0(void *param_1);  // 0x004635e0
 uint FUN_00463640(int param_1, int param_2, float param_3);  // 0x00463640
-undefined4 FUN_00463690(byte *param_1);  // 0x00463690
+undefined4 FUN_00463690(char *param_1);  // 0x00463690
 undefined4 FUN_00463720(void);  // 0x00463720
 undefined4 FUN_00463810(char *param_1, undefined4 *param_2, undefined4 param_3, undefined4 param_4, undefined1 param_5);  // 0x00463810
-undefined4 unk_PlaySound(byte *param_1, undefined4 *param_2, float param_3, undefined4 param_4, byte param_5);  // 0x00463890
-undefined4 FUN_00463950(byte *name, int param_2);  // 0x00463950
-undefined4 unk_soundSomething2(byte *param_1, int param_2, int param_3);  // 0x004639d0
+undefined4 unk_PlaySound(char *param_1, undefined4 *param_2, float param_3, undefined4 param_4, byte param_5);  // 0x00463890
+undefined4 FUN_00463950(char *name, int param_2);  // 0x00463950
+undefined4 unk_soundSomething2(char *param_1, int param_2, int param_3);  // 0x004639d0
 undefined4 FUN_00463a50(int param_1);  // 0x00463a50
 undefined4 UpdateSamplesPlayed(int channel);  // 0x00463a80
 int UpdateDoppler(int *channel);  // 0x00463b00
@@ -1539,15 +1540,15 @@ int UpdateVolume(int *param_1);  // 0x00463f20
 undefined4 FUN_00464050(int param_1, int param_2);  // 0x00464050
 undefined4 SortVirtualSoundChannels(void);  // 0x004640a0
 undefined4 UpdateSoundChannels_00464150(void);  // 0x00464150
-undefined4 SaveGame_Sound(int *param_1);  // 0x00464430
-undefined4 LoadSounds(int *param_1);  // 0x00464530
+undefined4 SaveGame_Sound(FILE *param_1);  // 0x00464430
+undefined4 LoadSounds(char *param_1);  // 0x00464530
 undefined4 UpdateSoundChannels_00464630(void);  // 0x00464630
 undefined4 terminateBlackExe(void);  // 0x004646a0
 undefined4 CreateBlackExe(void);  // 0x004646c0
 WPARAM CloseOnError(void);  // 0x00464700
 undefined4 unk_processMessagesAndSomeRenderyFunction(void);  // 0x00464810
 undefined4 pumpMessages(void);  // 0x00464870
-undefined4 FUN_004648d0(undefined4 *param_1);  // 0x004648d0
+undefined4 FUN_004648d0(int *param_1, undefined4 param_2);  // 0x004648d0
 undefined4 unk_PrintMathError(undefined4 *param_1);  // 0x00464f30
 WPARAM _WinMain(HINSTANCE moduleHandle, undefined4 param_2, char *launchParam, int showWindowMode);  // 0x00465040
 undefined4 FUN_00465141(void);  // 0x00465141
@@ -1589,32 +1590,32 @@ float10 VM_PopStackValue(uint *param_1);  // 0x00466680
 undefined4 PopStackValue2(void);  // 0x00466700
 undefined4 ExecuteScript(int *param_1, int function);  // 0x00466720
 undefined4 VM_PushStack(void *this_, undefined4 *param_1);  // 0x00466b00
-undefined *VM_GetNativeFunctionBindingByName(byte *functionName);  // 0x00466bc0
-int unk_getScriptByName(byte *param_1, int param_2);  // 0x00466c10
+undefined *VM_GetNativeFunctionBindingByName(char *functionName);  // 0x00466bc0
+int unk_getScriptByName(char *param_1, int param_2);  // 0x00466c10
 undefined4 VM_PushVarNr(undefined2 param_1, undefined2 param_2);  // 0x00466c60
 undefined4 FUN_00466cb0(void);  // 0x00466cb0
 undefined4 unk_ScriptEvent_Constructor(void);  // 0x00466cf0
 undefined4 FUN_00466d50(int *param_1);  // 0x00466d50
-undefined4 FUN_00466d60(int *param_1, undefined4 param_2, int *param_3);  // 0x00466d60
-undefined4 LoadScriptEvent(int *param_1);  // 0x00466e10
+undefined4 FUN_00466d60(int *param_1, undefined4 param_2, FILE *param_3);  // 0x00466d60
+undefined4 LoadScriptEvent(char *param_1);  // 0x00466e10
 undefined4 FUN_00466fb0(int param_1);  // 0x00466fb0
 undefined4 CheckAndFreeScriptEventProject(int *param_1, int project);  // 0x00467000
 undefined4 FUN_00467040(undefined4 *param_1);  // 0x00467040
 undefined4 FUN_004670c0(int *param_1);  // 0x004670c0
-undefined4 FUN_004673a0(undefined4 param_1, int param_2);  // 0x004673a0
+int FUN_004673a0(undefined4 param_1, int param_2);  // 0x004673a0
 undefined4 FUN_00467420(int *param_1);  // 0x00467420
-undefined4 FUN_00467680(int param_1);  // 0x00467680
+undefined4 FUN_00467680(undefined4 *param_1);  // 0x00467680
 undefined4 CallScriptOne(int *param_1, int params, undefined4 param_3);  // 0x004678f0
 undefined4 CallScriptTwo(int *param_1, int param_2, undefined4 param_3, undefined4 param_4);  // 0x00467940
 void CallScriptThree(int *param_1, FunctionContext *param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5);  // 0x004679b0
 undefined4 CallScriptFour(int *param_1, int param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6);  // 0x00467a30
 undefined4 FUN_00467ad0(void);  // 0x00467ad0
 undefined4 FUN_00467b10(void);  // 0x00467b10
-undefined4 FUN_00467b40(int param_1, int *file);  // 0x00467b40
-undefined4 LoadScriptState(int param_1, int *param_2);  // 0x00467bc0
+undefined4 FUN_00467b40(int param_1, FILE *file);  // 0x00467b40
+undefined4 LoadScriptState(undefined4 *param_1, char *param_2);  // 0x00467bc0
 undefined4 BindScript(char *param_1, int param_2, int *param_3);  // 0x00467ca0
-undefined4 *FUN_00467f50(int param_1, byte *param_2);  // 0x00467f50
-undefined4 *FUN_00467fa0(byte *param_1);  // 0x00467fa0
+undefined4 *FUN_00467f50(int param_1, char *param_2);  // 0x00467f50
+undefined4 *FUN_00467fa0(char *param_1);  // 0x00467fa0
 int FUN_00467fe0(int *param_1);  // 0x00467fe0
 undefined4 FUN_00468010(int param_1);  // 0x00468010
 undefined4 FUN_00468080(void);  // 0x00468080
@@ -1625,8 +1626,8 @@ undefined4 SetScriptPath(char *param_1);  // 0x00468250
 undefined4 FUN_00468290(LPCSTR param_1);  // 0x00468290
 undefined4 LoadScriptList(LPCSTR param_1);  // 0x00468340
 undefined4 ReadFileBuckets(void);  // 0x00468420
-undefined4 FUN_00468600(byte *param_1);  // 0x00468600
-undefined4 *FUN_00468660(byte *param_1);  // 0x00468660
+undefined4 FUN_00468600(char *param_1);  // 0x00468600
+undefined4 *FUN_00468660(char *param_1);  // 0x00468660
 void *AllocateScriptMem(size_t param_1);  // 0x00468690
 undefined4 *LoadScript(char *param_1);  // 0x00468730
 int FUN_00468ab0(int param_1);  // 0x00468ab0
@@ -1857,9 +1858,9 @@ undefined4 FUN_0046fd00(undefined4 *param_1);  // 0x0046fd00
 undefined4 FUN_0046fd20(int param_1);  // 0x0046fd20
 undefined4 FUN_0046fd30(void *this_, undefined4 param_1, undefined4 param_2);  // 0x0046fd30
 undefined4 FUN_0046fd70(void);  // 0x0046fd70
-undefined4 FUN_0046fd80(undefined4 param_1, byte *param_2);  // 0x0046fd80
-undefined4 AI_Error(undefined4 param_1, byte *param_2);  // 0x0046fdb0
-undefined4 FUN_0046fdf0(byte *param_1);  // 0x0046fdf0
+undefined4 FUN_0046fd80(undefined4 param_1, LPCSTR param_2);  // 0x0046fd80
+undefined4 AI_Error(undefined4 param_1, LPCSTR param_2);  // 0x0046fdb0
+undefined4 FUN_0046fdf0(LPCSTR param_1);  // 0x0046fdf0
 undefined4 FUN_0046fe10(void *this_, int param_1);  // 0x0046fe10
 undefined4 FUN_0046fe30(int param_1, int param_2, char param_3);  // 0x0046fe30
 undefined4 DirectInputCreateA(void);  // 0x00471230
@@ -1931,7 +1932,7 @@ undefined4 FUN_00476d57(void);  // 0x00476d57
 undefined4 FUN_00476d58(void);  // 0x00476d58
 longlong _ftol(void);  // 0x00476d90
 int printf(LPCSTR param_1, ...);  // 0x00476db7
-int _sprintf(undefined1 *param_1, byte *param_2);  // 0x00476df8
+int _sprintf(char *_Dest, char *_Format, ...);  // 0x00476df8
 undefined4 FUN_00476e4a(DWORD param_1);  // 0x00476e4a
 int _rand(void);  // 0x00476e57
 undefined4 FUN_00476e80(void);  // 0x00476e80
@@ -1950,76 +1951,76 @@ undefined4 FUN_0047737e(void);  // 0x0047737e
 undefined4 unk_Allocator_Free(void *param_1);  // 0x004773b4
 undefined4 FUN_0047741e(void);  // 0x0047741e
 undefined4 _unlock_wrapper(void);  // 0x00477476
-uint _tolower(uint param_1);  // 0x0047749d
+int _tolower(int _C);  // 0x0047749d
 uint FUN_0047750c(void *this_, uint param_1);  // 0x0047750c
-undefined4 _fclose(FILE *param_1);  // 0x004775d7
+int _fclose(FILE *_File);  // 0x004775d7
 undefined4 _fclose_lk(FILE *param_1);  // 0x00477608
 undefined4 _sscanf(char *name, byte *param_2);  // 0x00477654
 uint readFromFile(char *buffer, uint size, uint count, char *fileStream);  // 0x00477688
-uint _fread(char *param_1, uint param_2, uint param_3, int *param_4);  // 0x004776b7
-uint writeToFile(char *buffer, uint size, uint count, int *stream);  // 0x0047779f
-uint _fwrite(char *param_1, uint param_2, uint param_3, int *param_4);  // 0x004777ce
-char *_fgets(char *param_1, int param_2, undefined4 *param_3);  // 0x004778d8
-int FUN_0047793a(int *param_1, byte *param_2);  // 0x0047793a
-int _fflush(int *param_1);  // 0x00477967
+size_t _fread(void *_DstBuf, size_t _ElementSize, size_t _Count, FILE *_File);  // 0x004776b7
+size_t writeToFile(void *buffer, size_t size, size_t count, FILE *stream);  // 0x0047779f
+size_t _fwrite(void *_Str, size_t _Size, size_t _Count, FILE *_File);  // 0x004777ce
+char *_fgets(char *_Buf, int _MaxCount, FILE *_File);  // 0x004778d8
+int FUN_0047793a(FILE *param_1, byte *param_2);  // 0x0047793a
+int _fflush(FILE *_File);  // 0x00477967
 int FUN_00477996(int *param_1);  // 0x00477996
 undefined4 FUN_004779c4(int *param_1);  // 0x004779c4
 undefined4 FUN_00477a20(void);  // 0x00477a20
 int FUN_00477a29(int param_1);  // 0x00477a29
 undefined4 FUN_00477acd(void);  // 0x00477acd
 undefined4 FUN_00477b75(void);  // 0x00477b75
-undefined4 _lock_file(uint param_1);  // 0x00477b89
-undefined4 _lock_file2(int param_1, int param_2);  // 0x00477bb8
-undefined4 _unlock_file(uint param_1);  // 0x00477bdb
-undefined4 _unlock_file2(int param_1, int param_2);  // 0x00477c0a
+void _lock_file(FILE *_File);  // 0x00477b89
+void _lock_file2(int _Index, void *_File);  // 0x00477bb8
+void _unlock_file(FILE *_File);  // 0x00477bdb
+void _unlock_file2(int _Index, void *_File);  // 0x00477c0a
 undefined4 *FUN_00477c2d(LPCSTR name, char *param_2, uint param_3);  // 0x00477c2d
 undefined4 _fopen(LPCSTR name, char *param_2);  // 0x00477c5e
-int _fseek(int *param_1, int param_2, DWORD param_3);  // 0x00477c71
+int _fseek(FILE *_File, long _Offset, int _Origin);  // 0x00477c71
 int FUN_00477c9d(int *param_1, int param_2, DWORD param_3);  // 0x00477c9d
 undefined4 FUN_00477d30(void);  // 0x00477d30
 void *operator_new(uint param_1);  // 0x00477d5f
-undefined4 FUN_00477d6d(undefined *param_1);  // 0x00477d6d
+undefined4 FUN_00477d6d(void *param_1);  // 0x00477d6d
 undefined4 FUN_00477d78(short *param_1, short *param_2);  // 0x00477d78
 int FUN_00477d9d(short *param_1);  // 0x00477d9d
 char *_strncpy(char *_Dest, char *_Source, size_t _Count);  // 0x00477dc0
-int FUN_00477ebe(undefined1 *param_1, short *param_2);  // 0x00477ebe
+int FUN_00477ebe(char *param_1, short *param_2);  // 0x00477ebe
 uint FUN_00477f2d(LPWSTR param_1, byte *param_2, uint param_3);  // 0x00477f2d
 uint FUN_00477f8a(LPWSTR param_1, byte *param_2, uint param_3);  // 0x00477f8a
 int FUN_0047808a(short *param_1);  // 0x0047808a
 int _strncmp(char *_Str1, char *_Str2, size_t _MaxCount);  // 0x004780d0
-undefined4 _remove(LPCSTR param_1);  // 0x00478108
-uint _wcstombs(LPSTR param_1, LPCWSTR param_2, uint param_3);  // 0x00478132
+int _remove(char *_Filename);  // 0x00478108
+size_t _wcstombs(char *_Dest, wchar_t *_Source, size_t _MaxCount);  // 0x00478132
 uint _wcstombs_lk(LPSTR param_1, LPCWSTR param_2, uint param_3);  // 0x0047818f
 int FUN_0047833e(short *param_1, int param_2);  // 0x0047833e
 int _vsprintf(char *param_1, LPCSTR param_2, va_list param_3);  // 0x0047836d
-int _ftell(char *param_1);  // 0x004783be
+long _ftell(FILE *_File);  // 0x004783be
 int FUN_004783e0(char *param_1);  // 0x004783e0
-int FUN_00478541(int *param_1, byte *param_2);  // 0x00478541
+int FUN_00478541(FILE *param_1, byte *param_2);  // 0x00478541
 undefined4 FUN_0047857d(uint *param_1);  // 0x0047857d
 undefined4 FUN_0047859e(uint *param_1);  // 0x0047859e
-undefined4 _cinit(void);  // 0x00478632
-undefined4 _exit_0047865f(UINT param_1);  // 0x0047865f
+int _cinit(int param_1);  // 0x00478632
+void _exit_0047865f(int _Code);  // 0x0047865f
 void _exit_00478670(int _Code);  // 0x00478670
 undefined4 FUN_00478681(UINT param_1, int param_2, int param_3);  // 0x00478681
 undefined4 FUN_00478726(void);  // 0x00478726
 undefined4 FUN_0047872f(void);  // 0x0047872f
 undefined4 FUN_00478738(undefined4 *param_1, undefined4 *param_2);  // 0x00478738
-uint FUN_00478752(undefined4 *param_1);  // 0x00478752
-undefined4 _close(uint param_1);  // 0x00478783
+uint FUN_00478752(FILE *param_1);  // 0x00478752
+int _close(int _FileHandle);  // 0x00478783
 undefined4 FUN_004787e0(uint param_1);  // 0x004787e0
-int _read(uint param_1, char *param_2, char *param_3);  // 0x00478863
+int _read(int _FileHandle, void *_DstBuf, uint _MaxCharCount);  // 0x00478863
 int FUN_004788c8(uint param_1, char *param_2, char *param_3);  // 0x004788c8
-DWORD _filelength(uint param_1);  // 0x00478aa1
-undefined4 _open(LPCSTR param_1, uint param_2, uint param_3);  // 0x00478b2b
+long _filelength(int _FileHandle);  // 0x00478aa1
+int _open(char *_Filename, int _OpenFlag, ...);  // 0x00478b2b
 uint FUN_00478b42(LPCSTR param_1, uint param_2, uint param_3, uint param_4);  // 0x00478b42
-undefined4 _spawnl(int param_1, uint *param_2);  // 0x00478e11
+intptr_t _spawnl(int _Mode, char *_Filename, char *_ArgList, ...);  // 0x00478e11
 undefined4 FUN_00478e29(uint param_1, uint *param_2);  // 0x00478e29
 undefined4 FUN_004790bc(uint *param_1, HANDLE param_2, uint param_3);  // 0x004790bc
 uint FUN_0047927e(LPWSTR param_1, byte *param_2, uint param_3);  // 0x0047927e
 uint FUN_004792db(LPWSTR param_1, byte *param_2, uint param_3);  // 0x004792db
 float10 FUN_004793a4(void *param_1, byte *param_2);  // 0x004793a4
 undefined4 FUN_004793fb(char *param_1);  // 0x004793fb
-int _strnicoll(byte *param_1, byte *param_2, void *param_3);  // 0x00479486
+int _strnicoll(char *_Str1, char *_Str2, size_t _MaxCount);  // 0x00479486
 int FUN_0047955a(void *this_, byte *param_1);  // 0x0047955a
 HANDLE FUN_004795e5(LPCSTR param_1, uint *param_2);  // 0x004795e5
 undefined4 FUN_004796b2(HANDLE param_1, uint *param_2);  // 0x004796b2
@@ -2035,7 +2036,7 @@ undefined4 _local_unwind2(int param_1, int param_2);  // 0x00479b9a
 int _abnormal_termination(void);  // 0x00479c02
 undefined4 _NLG_Notify1(undefined4 param_1);  // 0x00479c25
 undefined4 FUN_00479c2e(void);  // 0x00479c2e
-undefined4 FUN_00479c50(int param_1, PVOID param_2, undefined4 param_3);  // 0x00479c50
+undefined4 _except_handler3(int param_1, PVOID param_2, undefined4 param_3);  // 0x00479c50
 undefined4 _seh_longjmp_unwind_4(int param_1);  // 0x00479d0d
 undefined8 _alldiv(uint param_1, uint param_2, uint param_3, uint param_4);  // 0x00479d30
 int FUN_00479dda(uchar *param_1);  // 0x00479dda
@@ -2074,15 +2075,15 @@ char *FUN_0047a894(char *param_1, size_t param_2, int *param_3, char param_4);  
 undefined4 FUN_0047a93b(undefined8 *param_1, char *param_2, size_t param_3, int param_4);  // 0x0047a93b
 errno_t _cfltcvt(double *arg, char *buffer, size_t sizeInBytes, int format, int precision, int caps);  // 0x0047a9ce
 undefined4 FUN_0047aa1f(char *param_1, int param_2);  // 0x0047aa1f
-undefined4 _stbuf(undefined4 *param_1);  // 0x0047aa44
-undefined4 _ftbuf(int param_1, int *param_2);  // 0x0047aad1
-int _output(int *param_1, byte *param_2, undefined4 *param_3);  // 0x0047aafb
-undefined4 FUN_0047b23c(uint param_1, int *param_2, int *param_3);  // 0x0047b23c
-undefined4 FUN_0047b271(uint param_1, int param_2, int *param_3, int *param_4);  // 0x0047b271
-undefined4 FUN_0047b2a2(char *param_1, int param_2, int *param_3, int *param_4);  // 0x0047b2a2
+int _stbuf(FILE *_File);  // 0x0047aa44
+void _ftbuf(int _Flag, FILE *_File);  // 0x0047aad1
+int _output(FILE *param_1, byte *param_2, undefined4 *param_3);  // 0x0047aafb
+undefined4 FUN_0047b23c(uint param_1, FILE *param_2, int *param_3);  // 0x0047b23c
+undefined4 FUN_0047b271(uint param_1, int param_2, FILE *param_3, int *param_4);  // 0x0047b271
+undefined4 FUN_0047b2a2(char *param_1, int param_2, FILE *param_3, int *param_4);  // 0x0047b2a2
 undefined4 FUN_0047b2da(int *param_1);  // 0x0047b2da
-uint FUN_0047b2e8(uint param_1, int *param_2);  // 0x0047b2e8
-undefined4 _mtinit(void);  // 0x0047b400
+uint FUN_0047b2e8(uint param_1, FILE *param_2);  // 0x0047b2e8
+int _mtinit(void);  // 0x0047b400
 undefined4 FUN_0047b454(int param_1);  // 0x0047b454
 DWORD *FUN_0047b467(void);  // 0x0047b467
 float10 FUN_0047b6a0(undefined4 param_1, undefined4 param_2, undefined2 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8);  // 0x0047b6a0
@@ -2107,14 +2108,14 @@ int *FUN_0047c6cb(uint param_1);  // 0x0047c6cb
 int FUN_0047c8d3(int *param_1, uint param_2, uint param_3);  // 0x0047c8d3
 undefined4 FUN_0047c9f7(int param_1, int *param_2, byte *param_3, uint param_4);  // 0x0047c9f7
 undefined4 FUN_0047caa0(void);  // 0x0047caa0
-undefined4 _lock(int param_1);  // 0x0047cac9
-undefined4 _unlock(int param_1);  // 0x0047cb2a
+void _lock(int _File);  // 0x0047cac9
+void _unlock(int _File);  // 0x0047cb2a
 undefined4 FUN_0047cb3f(undefined4 param_1);  // 0x0047cb3f
 undefined4 FUN_0047cb5a(undefined4 *param_1);  // 0x0047cb5a
 int FUN_0047cb87(void);  // 0x0047cb87
 undefined4 crt_heap_init(int param_1);  // 0x0047cccf
 undefined4 *FUN_0047cd30(undefined4 *param_1, undefined4 *param_2, uint param_3);  // 0x0047cd30
-int FUN_0047d065(LCID param_1, uint param_2, char *param_3, int param_4, LPWSTR param_5, int param_6, UINT param_7, int param_8);  // 0x0047d065
+LPCWSTR FUN_0047d065(LCID param_1, uint param_2, char *param_3, int param_4, LPWSTR param_5, int param_6, UINT param_7, int param_8);  // 0x0047d065
 undefined4 FUN_0047d175(void);  // 0x0047d175
 LPCWSTR FUN_0047d179(void);  // 0x0047d179
 undefined4 FUN_0047d229(void);  // 0x0047d229
@@ -2122,27 +2123,27 @@ int FUN_0047d22d(void);  // 0x0047d22d
 LPCWSTR FUN_0047d23b(void);  // 0x0047d23b
 uint FUN_0047d289(void *this_, int param_1, uint param_2);  // 0x0047d289
 void _freebuf(FILE *_File);  // 0x0047d2fe
-int _input(void *this_, int *param_1, byte *param_2, undefined4 *param_3);  // 0x0047d329
+int _input(void *this_, FILE *param_1, byte *param_2, undefined4 *param_3);  // 0x0047d329
 uint FUN_0047dd4e(void *this_, uint param_1);  // 0x0047dd4e
-uint FUN_0047dd85(undefined4 *param_1);  // 0x0047dd85
+uint FUN_0047dd85(FILE *param_1);  // 0x0047dd85
 undefined4 FUN_0047dd9f(uint param_1, int *param_2);  // 0x0047dd9f
-uint FUN_0047ddb6(int *param_1, undefined4 *param_2);  // 0x0047ddb6
+uint FUN_0047ddb6(int *param_1, FILE *param_2);  // 0x0047ddb6
 size_t _strlen(char *_Str);  // 0x0047dde0
-uint _filbuf(undefined4 *param_1);  // 0x0047de5b
+int _filbuf(FILE *_File);  // 0x0047de5b
 undefined4 FUN_0047df37(uint param_1);  // 0x0047df37
-undefined4 _ioinit(void);  // 0x0047dfca
+int _ioinit(void);  // 0x0047dfca
 int FUN_0047e186(void);  // 0x0047e186
 undefined4 *FUN_0047e207(LPCSTR param_1, char *param_2, uint param_3, undefined4 *param_4);  // 0x0047e207
 undefined4 *FUN_0047e377(void);  // 0x0047e377
 undefined4 FUN_0047e43f(uint param_1);  // 0x0047e43f
-DWORD *_errno(void);  // 0x0047e4b2
-DWORD *_doserrno(void);  // 0x0047e4bb
+int *_errno(void);  // 0x0047e4b2
+ulong *_doserrno(void);  // 0x0047e4bb
 DWORD FUN_0047e4c4(uint param_1, LONG param_2, DWORD param_3);  // 0x0047e4c4
 DWORD FUN_0047e529(uint param_1, LONG param_2, DWORD param_3);  // 0x0047e529
-int FUN_0047e59c(int *param_1, short *param_2, undefined4 *param_3);  // 0x0047e59c
-undefined4 FUN_0047ece9(uint param_1, int *param_2, int *param_3);  // 0x0047ece9
-undefined4 FUN_0047ed09(uint param_1, int param_2, int *param_3, int *param_4);  // 0x0047ed09
-undefined4 FUN_0047ed3a(undefined2 *param_1, int param_2, int *param_3, int *param_4);  // 0x0047ed3a
+int FUN_0047e59c(FILE *param_1, short *param_2, undefined4 *param_3);  // 0x0047e59c
+undefined4 FUN_0047ece9(uint param_1, FILE *param_2, int *param_3);  // 0x0047ece9
+undefined4 FUN_0047ed09(uint param_1, int param_2, FILE *param_3, int *param_4);  // 0x0047ed09
+undefined4 FUN_0047ed3a(undefined2 *param_1, int param_2, FILE *param_3, int *param_4);  // 0x0047ed3a
 undefined4 FUN_0047ed73(int *param_1);  // 0x0047ed73
 undefined8 FUN_0047ed80(int *param_1);  // 0x0047ed80
 undefined4 FUN_0047ed90(PCNZWCH param_1, int param_2);  // 0x0047ed90
@@ -2153,14 +2154,14 @@ int FUN_0047f16d(uchar *param_1, size_t param_2);  // 0x0047f16d
 undefined4 *FUN_0047f1c5(int *param_1);  // 0x0047f1c5
 uint *FUN_0047f230(uint *param_1, uint *param_2);  // 0x0047f230
 uint *FUN_0047f240(uint *param_1, uint *param_2);  // 0x0047f240
-uint FUN_0047f320(void);  // 0x0047f320
+int FUN_0047f320(void);  // 0x0047f320
 undefined4 FUN_0047f443(uint param_1, HANDLE param_2);  // 0x0047f443
 undefined4 FUN_0047f4bf(uint param_1);  // 0x0047f4bf
 undefined4 FUN_0047f53e(uint param_1);  // 0x0047f53e
-undefined4 _lock_fhandle(uint param_1);  // 0x0047f580
-undefined4 _unlock_fhandle(uint param_1);  // 0x0047f5df
+int _lock_fhandle(int _Filehandle);  // 0x0047f580
+void _unlock_fhandle(int _Filehandle);  // 0x0047f5df
 int FUN_0047f601(uint param_1, int param_2);  // 0x0047f601
-char *_spawnve(int param_1, uint *param_2, undefined4 *param_3, char *param_4);  // 0x0047f726
+intptr_t _spawnve(int _Mode, char *_Filename, char **_ArgList, char **_Env);  // 0x0047f726
 char *FUN_0047f86f(int param_1, LPCSTR param_2, undefined4 *param_3, char *param_4);  // 0x0047f86f
 int FUN_0047f8c0(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, int param_7);  // 0x0047f8c0
 undefined4 FUN_0047f982(void *this_, uint *param_1, byte *param_2);  // 0x0047f982
@@ -2190,13 +2191,13 @@ int FUN_00480530(void);  // 0x00480530
 undefined4 FUN_00480553(void);  // 0x00480553
 int _mbsnbicoll(uchar *_Str1, uchar *_Str2, size_t _MaxCount);  // 0x004805a9
 undefined4 FUN_004805e8(void);  // 0x004805e8
-LONG _XcptFilter(int param_1, _EXCEPTION_POINTERS *param_2);  // 0x00480656
+int _XcptFilter(ulong _ExceptionNum, _EXCEPTION_POINTERS *_ExceptionPtr);  // 0x00480656
 int *FUN_00480794(int param_1, int *param_2);  // 0x00480794
 byte *_wincmdln(void);  // 0x004807ce
-undefined4 _setenvp(void);  // 0x00480826
-undefined4 _setargv(void);  // 0x004808df
+int _setenvp(void);  // 0x00480826
+int _setargv(void);  // 0x004808df
 undefined4 FUN_00480978(byte *param_1, undefined4 *param_2, byte *param_3, int *param_4, int *param_5);  // 0x00480978
-LPSTR _crtGetEnvironmentStringsA(void);  // 0x00480b2c
+LPVOID _crtGetEnvironmentStringsA(void);  // 0x00480b2c
 undefined4 FUN_00480c5e(void);  // 0x00480c5e
 undefined4 FUN_00480c97(DWORD param_1);  // 0x00480c97
 undefined4 FUN_00480dea(PEXCEPTION_RECORD param_1, PVOID param_2, DWORD param_3, undefined4 param_4, int *param_5, int param_6, PVOID param_7, char param_8);  // 0x00480dea
@@ -2270,7 +2271,7 @@ BOOL FUN_00482937(void);  // 0x00482937
 uint FUN_00482983(void *this_, int param_1);  // 0x00482983
 longlong _allshl(byte param_1, int param_2);  // 0x004829b0
 uint FUN_004829cf(uint param_1, int *param_2);  // 0x004829cf
-uint FUN_00482a3d(uint param_1, int *param_2);  // 0x00482a3d
+uint FUN_00482a3d(uint param_1, FILE *param_2);  // 0x00482a3d
 undefined4 FUN_00482b36(void);  // 0x00482b36
 uint FUN_00482b9e(short *param_1, short param_2);  // 0x00482b9e
 int FUN_00482bc7(PCNZWCH param_1, LPCWSTR param_2, int param_3);  // 0x00482bc7
@@ -2279,7 +2280,7 @@ byte *FUN_00482cd6(byte *param_1, uint param_2);  // 0x00482cd6
 uint *FUN_00482d6d(uint *param_1);  // 0x00482d6d
 int FUN_00482d98(uint param_1, int param_2);  // 0x00482d98
 undefined4 FUN_00482df9(LPCSTR param_1, byte param_2);  // 0x00482df9
-byte *_mbsrchr(byte *param_1, uint param_2);  // 0x00482e3f
+uchar *_mbsrchr(uchar *_Str, uint _Ch);  // 0x00482e3f
 char *FUN_00482eb1(int param_1, LPCSTR param_2, char *param_3, LPVOID param_4);  // 0x00482eb1
 undefined4 FUN_0048309a(undefined4 *param_1, undefined4 *param_2, undefined4 *param_3, undefined4 *param_4);  // 0x0048309a
 undefined4 FUN_004832a0(void);  // 0x004832a0
@@ -2321,7 +2322,7 @@ undefined4 FUN_00484b34(void);  // 0x00484b34
 undefined4 FUN_00484b38(void);  // 0x00484b38
 undefined4 FUN_00484b3f(void);  // 0x00484b3f
 uint _stricmp(char *param_1, char *param_2);  // 0x00484bb0
-uint FUN_00484c80(uint param_1, int *param_2);  // 0x00484c80
+uint FUN_00484c80(uint param_1, FILE *param_2);  // 0x00484c80
 int FUN_00484da7(LCID param_1, DWORD param_2, PCNZWCH param_3, int param_4, LPCWSTR param_5, int param_6, UINT param_7);  // 0x00484da7
 undefined4 FUN_00484ecc(void);  // 0x00484ecc
 int FUN_00484ed0(void);  // 0x00484ed0
@@ -2333,7 +2334,7 @@ char *_strrchr(char *_Str, int _Ch);  // 0x004850c0
 undefined4 FUN_004850e7(int *param_1, int *param_2);  // 0x004850e7
 undefined4 FUN_00485307(int *param_1, uint param_2, int param_3);  // 0x00485307
 uint FUN_00485383(uint param_1);  // 0x00485383
-int FUN_004853f8(LCID param_1, DWORD param_2, LPCWSTR param_3, int param_4, LPWSTR param_5, int param_6, UINT param_7);  // 0x004853f8
+LPWSTR FUN_004853f8(LCID param_1, DWORD param_2, LPCWSTR param_3, int param_4, LPWSTR param_5, int param_6, UINT param_7);  // 0x004853f8
 undefined4 FUN_004854fa(void);  // 0x004854fa
 LPWSTR FUN_004854fe(void);  // 0x004854fe
 undefined4 FUN_00485577(void);  // 0x00485577
@@ -2343,10 +2344,10 @@ int FUN_00485601(short *param_1, int param_2);  // 0x00485601
 uint FUN_00485631(WCHAR param_1, ushort param_2);  // 0x00485631
 void RtlUnwind(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue);  // 0x00485690
 int FUN_00485696(ushort *param_1, ushort *param_2);  // 0x00485696
-uint FUN_00485775(byte param_1, byte *param_2);  // 0x00485775
+uint FUN_00485775(byte param_1, uchar *param_2);  // 0x00485775
 undefined4 FUN_0048582d(byte *param_1, int *param_2);  // 0x0048582d
 undefined4 FUN_00485ae8(char *param_1);  // 0x00485ae8
-uint FUN_00485b58(void *this_, byte *param_1, byte *param_2);  // 0x00485b58
+uint FUN_00485b58(undefined4 param_1_00, byte *param_2, byte *param_3);  // 0x00485b58
 uint *FUN_00485ced(uint *param_1, LPCSTR param_2, size_t param_3);  // 0x00485ced
 int FUN_00485d92(void);  // 0x00485d92
 uint FUN_00485dd5(uint param_1);  // 0x00485dd5

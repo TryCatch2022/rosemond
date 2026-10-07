@@ -35,7 +35,7 @@ void logError(LPCSTR errorMsg,...)
     printf(s_Error_s_0049334c,s_buffer);
     // 00424c46  68283d4a00             PUSH 0x4a3d28
     // 00424c4b  e8172d0500             CALL 0x00477967
-    _fflush((int *)(_iob + 1));
+    _fflush((FILE *)(_iob + 1));
     // 00424c50  83c418                 ADD ESP,0x18
     // 00424c53  e868feffff             CALL 0x00424ac0
     RestoreAll();

@@ -58,7 +58,6 @@ run the recompiled game.exe from the build folder.
 Alternatively copy the game.exe and the dll to the folder (rename the original
 game.exe out of the way)
 
-
 Internals:
 ==========
 
@@ -195,3 +194,42 @@ Ghidra export function ranges and data (jump tables, etc) into the disassembler.
 Functions can be moved to decompiled C++ one at a time (see above).
 Game appears to run.
 Next step is converting assembly to C/C++ while still ensuring the game compiles and runs.
+
+
+
+
+Working with .scr scripts:
+==========================
+
+Use `scrtool.py` to decode a game script into editable text and compile it back
+to `.scr`. Outputs are written to separate files; the tool refuses to overwrite
+an existing output.
+
+```
+python scrtool.py decode gameScripts/haymove.scr -o build/scrtool/haymove.source.txt
+python scrtool.py encode build/scrtool/haymove.source.txt -o build/scrtool/haymove.rebuilt.scr
+python scrtool.py verify gameScripts
+python scrtool.py decode gameScripts/haymove.scr --legacy -o build/scrtool/haymove.vm.txt
+```
+
+The default text is source-like: bytecode functions become named blocks,
+arithmetic becomes expressions, and global assignments look like
+`global[2] = global[1] + 1.5;`. Use `global[n]` because the `.scr` files do not
+carry dependable global-variable names. Labels are used for branches that
+cannot be safely structured. Instructions the decompiler cannot interpret are
+preserved as `vm.raw` directives; the encoder also preserves the original
+container metadata for decoded scripts. New scripts can be authored without a
+metadata template:
+
+```text
+ROSEMOND-SCRIPT 1
+globals 8
+function startup {
+  global[2] = global[1] + 1.5;
+  return;
+}
+```
+
+Use `decode --legacy` for the older instruction-by-instruction representation.
+`verify` checks that decoding and recompiling each `.scr` produces an identical
+file; it does not run edited scripts in the game.
