@@ -38,6 +38,7 @@ class SourceProgram:
     global_count: int
     functions: list[SourceFunction]
     prefix: bytes | None
+    preamble: SourceFunction | None = None
 
 
 @dataclass(frozen=True)
@@ -109,30 +110,31 @@ def _candidate_functions(data: bytes, script: scrtool.Script) -> list[FunctionIn
     if not candidates_by_record or any(not candidates for candidates in candidates_by_record):
         raise ValueError("at least one function descriptor has no plausible name/entry pair")
 
-    states = {
-        candidate.entry: (len(candidate.name), [candidate])
-        for candidate in candidates_by_record[0]
-    }
-    for candidates in candidates_by_record[1:]:
-        next_states = {}
-        for candidate in candidates:
-            predecessors = [state for entry, state in states.items() if entry > candidate.entry]
-            if not predecessors:
-                continue
-            best_score, best_path = max(predecessors, key=lambda state: state[0])
-            current = next_states.get(candidate.entry)
-            score = best_score + len(candidate.name)
-            if current is None or score > current[0]:
-                next_states[candidate.entry] = (score, best_path + [candidate])
-        states = next_states
+    entry_owner: dict[int, int] = {}
+    selected_by_record: dict[int, FunctionInfo] = {}
 
-    result = states.get(0)
-    if result is None:
-        raise ValueError("function entries do not form a descending sequence ending at zero")
-    selected = result[1]
+    def assign(index: int, visited: set[int]) -> bool:
+        for candidate in candidates_by_record[index]:
+            if candidate.entry in visited:
+                continue
+            visited.add(candidate.entry)
+            owner = entry_owner.get(candidate.entry)
+            if owner is None or assign(owner, visited):
+                entry_owner[candidate.entry] = index
+                selected_by_record[index] = candidate
+                return True
+        return False
+
+    record_order = sorted(range(len(candidates_by_record)), key=lambda index: len(candidates_by_record[index]))
+    for index in record_order:
+        if not assign(index, set()):
+            raise ValueError(f"cannot resolve a unique function entry for descriptor {index}")
+    if len(selected_by_record) != len(script.descriptors):
+        raise ValueError("function entry matching did not cover every descriptor")
+    selected = [selected_by_record[index] for index in range(len(script.descriptors))]
     entries = [function.entry for function in selected]
-    if len(selected) != len(script.descriptors) or any(left <= right for left, right in zip(entries, entries[1:])):
-        raise ValueError("function entry sequence is incomplete or ambiguous")
+    if len(set(entries)) != len(entries):
+        raise ValueError("function entry matching produced duplicate starts")
     return selected
 
 
@@ -282,12 +284,21 @@ def render_source(data: bytes) -> str:
             f"meta.function {function.index} {function.entry} {function.name_offset} "
             f"{function.entry_offset} {json.dumps(function.name, ensure_ascii=True)}"
         )
+    first_entry = min(function.entry for function in functions)
+    if first_entry:
+        lines.append("preamble {")
+        lines.extend(_indent_source(_decompile_function(script.instructions, 0, first_entry)))
+        lines.append("}")
     for function in sorted(functions, key=lambda item: item.index):
         lines.append(f"function {function.index} {json.dumps(function.name, ensure_ascii=True)} {{")
         body = _decompile_function(script.instructions, function.entry, end_by_index[function.index])
-        lines.extend(f"    {line}" if not line.endswith(":") else f"{line}" for line in body)
+        lines.extend(_indent_source(body))
         lines.append("}")
     return "\n".join(lines) + "\n"
+
+
+def _indent_source(lines: list[str]) -> list[str]:
+    return [f"    {line}" if not line.endswith(":") else line for line in lines]
 
 
 def _tokenize_expression(text: str) -> list[tuple[str, str]]:
@@ -507,6 +518,8 @@ def parse_source(text: str) -> SourceProgram:
     metadata = {}
     functions = []
     current = None
+    preamble = None
+    current_is_preamble = False
 
     for line_number, raw_line in enumerate(lines[1:], 2):
         line = raw_line.strip()
@@ -517,6 +530,9 @@ def parse_source(text: str) -> SourceProgram:
             continue
         if current is not None:
             if fields == ["}"]:
+                if current_is_preamble:
+                    preamble = current
+                current_is_preamble = False
                 current = None
             else:
                 current.body.append(line)
@@ -531,6 +547,11 @@ def parse_source(text: str) -> SourceProgram:
             name_offset = scrtool.parse_integer(fields[3], "name offset", 0xFFFFFFFF)
             entry_offset = scrtool.parse_integer(fields[4], "entry offset", 0xFFFFFFFF)
             metadata[index] = FunctionInfo(index, fields[5], entry, name_offset, entry_offset, fields[5])
+        elif fields == ["preamble", "{"]:
+            if preamble is not None or current_is_preamble:
+                raise ValueError("source has more than one preamble block")
+            current = SourceFunction(-1, "__preamble")
+            current_is_preamble = True
         elif fields[0] == "function" and fields[-1] == "{":
             if len(fields) == 4:
                 index = scrtool.parse_integer(fields[1], "function index", 0xFFFF)
@@ -555,7 +576,7 @@ def parse_source(text: str) -> SourceProgram:
         raise ValueError("source has no functions")
     if prefix is not None and (len(metadata) != len(functions) or any(function.info is None for function in functions)):
         raise ValueError("template metadata must describe every function")
-    return SourceProgram(global_count, functions, prefix)
+    return SourceProgram(global_count, functions, prefix, preamble)
 
 
 def compile_source(text: str) -> bytes:
@@ -599,6 +620,11 @@ def compile_source(text: str) -> bytes:
     ordered = sorted(program.functions, key=lambda function: function.info.entry if function.info else function.index)
     compiled = []
     instruction_total = 0
+    if program.preamble is not None:
+        preamble = _compile_function(program.preamble)
+        preamble.entry = 0
+        compiled.append(preamble)
+        instruction_total = len(preamble.instructions)
     for function in ordered:
         result = _compile_function(function)
         result.entry = instruction_total
@@ -610,6 +636,9 @@ def compile_source(text: str) -> bytes:
     for result in compiled:
         function = result.function
         info = function.info
+        if function.index == -1:
+            instructions.extend(result.instructions)
+            continue
         if info is None or info.entry_offset + 2 > prefix_size:
             raise ValueError(f"function entry field for {function.name!r} is outside template metadata")
         struct.pack_into("<H", prefix, info.entry_offset, result.entry)
