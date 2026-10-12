@@ -73,6 +73,7 @@ namespace win32::kernel32
     using ::GetStdHandle;
     using ::GetStringTypeA;
     using ::GetStringTypeW;
+    using ::GetSystemTimeAsFileTime;
     using ::GetTimeZoneInformation;
     using ::GetVersion;
     using ::GetVersionExA;
@@ -84,6 +85,7 @@ namespace win32::kernel32
     using ::HeapDestroy;
     using ::HeapFree;
     using ::HeapReAlloc;
+    using ::HeapSize;
     using ::InitializeCriticalSection;
     // InterlockedIncrement/Decrement are macros for the overloaded
     // _Interlocked* intrinsics, so `&win32::kernel32::InterlockedIncrement`
@@ -115,6 +117,7 @@ namespace win32::kernel32
     using ::SetFilePointer;
     using ::SetHandleCount;
     using ::SetLastError;
+    using ::SetPriorityClass;
     using ::SetStdHandle;
     // Not the real SetUnhandledExceptionFilter: see lib/callbacks.cpp.
     LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(

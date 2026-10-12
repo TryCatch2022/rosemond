@@ -53,11 +53,6 @@ if(NOT MSVC AND CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86|x86)$")
     add_compile_options(-mmmx -msse -msse2)
 endif()
 
-file(GLOB GAME_DISASM_SOURCES
-     "${CMAKE_SOURCE_DIR}/src/game/disassembly/*.cpp")
-file(GLOB GAME_DISASM_HEADERS
-     "${CMAKE_SOURCE_DIR}/src/game/disassembly/*.h")
-
 # ---------------------------------------------------------------------------
 # core static library
 # ---------------------------------------------------------------------------
@@ -104,7 +99,9 @@ target_include_directories(game_core PRIVATE
 
 # Everything the disassembler generates compiles into a DLL. The program is the
 # generated stub executable, which carries the original binary's segments at
-# their own addresses and calls one exported function here.
+# their own addresses and calls one exported function here. One per program:
+# game.exe, menu.exe and black.exe, each from src/<name> (see
+# disassemble_ghidra.py and decompile.py).
 function(add_game_target name)
     # script and directories
     set(game_src_dir "${CMAKE_SOURCE_DIR}/src/${name}")
@@ -141,7 +138,7 @@ function(add_game_target name)
         add_custom_command(
             OUTPUT ${stubs}
             COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/disasm/cstubs.py"
-                    ${routines} ${registry} ${prototypes} ${stubs}
+                    ${routines} ${registry} ${prototypes} ${stubs} --name ${name}
             DEPENDS ${stub_inputs}
             COMMENT "Generating the entry points and stubs to decompiled C++"
             VERBATIM)
@@ -158,14 +155,9 @@ function(add_game_target name)
         endif()
     endif()
 
-    # pick the hardcoded disasm set for this game
-    if(name STREQUAL "game")
-        set(DISASM_SOURCES ${GAME_DISASM_SOURCES})
-        set(DISASM_HEADERS ${GAME_DISASM_HEADERS})
-    else()
-        set(DISASM_SOURCES "")
-        set(DISASM_HEADERS "")
-    endif()
+    # what the disassembler generated for this program
+    file(GLOB DISASM_SOURCES "${game_src_dir}/disassembly/*.cpp")
+    file(GLOB DISASM_HEADERS "${game_src_dir}/disassembly/*.h")
 
     # adding the headers to the executable source list is what makes CMake
     # aware that the custom command must run before compilation starts.
@@ -219,3 +211,9 @@ function(add_game_target name)
 endfunction()
 
 add_game_target(game)
+# Only once disassemble_ghidra.py has generated them.
+foreach(program menu black)
+    if(EXISTS "${CMAKE_SOURCE_DIR}/src/${program}/disassembly/${program}.cpp")
+        add_game_target(${program})
+    endif()
+endforeach()

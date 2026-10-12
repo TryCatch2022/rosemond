@@ -1,0 +1,2314 @@
+{
+  "program": "black.exe",
+  "md5": "53a8db6fd9309b75609d082ce96a1db5",
+  "functions": [
+    {
+      "entry": 4198400,
+      "name": "FUN_00401000",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401000(void)"
+    },
+    {
+      "entry": 4198480,
+      "name": "FUN_00401050",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 16,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "HINSTANCE",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "undefined4",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        },
+        {
+          "name": "param_3",
+          "type": "undefined4",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 12
+            }
+          ]
+        },
+        {
+          "name": "param_4",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 16
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401050(HINSTANCE param_1, undefined4 param_2, undefined4 param_3, int param_4)"
+    },
+    {
+      "entry": 4198592,
+      "name": "FUN_004010c0",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "ATOM",
+        "size": 2,
+        "storage": [
+          {
+            "size": 2,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "HINSTANCE",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "ATOM FUN_004010c0(HINSTANCE param_1)"
+    },
+    {
+      "entry": 4198704,
+      "name": "FUN_00401130",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "HINSTANCE",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401130(HINSTANCE param_1, int param_2)"
+    },
+    {
+      "entry": 4198816,
+      "name": "entry",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 entry(void)"
+    },
+    {
+      "entry": 4199062,
+      "name": "FUN_00401296",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "DWORD",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401296(DWORD param_1)"
+    },
+    {
+      "entry": 4199099,
+      "name": "FUN_004012bb",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "DWORD",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_004012bb(DWORD param_1)"
+    },
+    {
+      "entry": 4199135,
+      "name": "FUN_004012df",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 FUN_004012df(void)"
+    },
+    {
+      "entry": 4199180,
+      "name": "FUN_0040130c",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "UINT",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_0040130c(UINT param_1)"
+    },
+    {
+      "entry": 4199197,
+      "name": "_exit",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "void",
+        "size": 0,
+        "storage": []
+      },
+      "params": [
+        {
+          "name": "_Code",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "void _exit(int _Code)"
+    },
+    {
+      "entry": 4199214,
+      "name": "FUN_0040132e",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "UINT",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        },
+        {
+          "name": "param_3",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 12
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_0040132e(UINT param_1, int param_2, int param_3)"
+    },
+    {
+      "entry": 4199367,
+      "name": "FUN_004013c7",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "undefined4 *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "undefined4 *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_004013c7(undefined4 *param_1, undefined4 *param_2)"
+    },
+    {
+      "entry": 4199393,
+      "name": "FUN_004013e1",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "LONG",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "_EXCEPTION_POINTERS *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "LONG FUN_004013e1(int param_1, _EXCEPTION_POINTERS *param_2)"
+    },
+    {
+      "entry": 4199714,
+      "name": "FUN_00401522",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "int *",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "int *FUN_00401522(int param_1)"
+    },
+    {
+      "entry": 4199781,
+      "name": "FUN_00401565",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "byte *",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "byte *FUN_00401565(void)"
+    },
+    {
+      "entry": 4199869,
+      "name": "FUN_004015bd",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 FUN_004015bd(void)"
+    },
+    {
+      "entry": 4200054,
+      "name": "FUN_00401676",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401676(void)"
+    },
+    {
+      "entry": 4200207,
+      "name": "FUN_0040170f",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "byte *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "undefined4 *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        },
+        {
+          "name": "param_3",
+          "type": "byte *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 12
+            }
+          ]
+        },
+        {
+          "name": "param_4",
+          "type": "int *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 16
+            }
+          ]
+        },
+        {
+          "name": "param_5",
+          "type": "int *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 20
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_0040170f(byte *param_1, undefined4 *param_2, byte *param_3, int *param_4, int *param_5)"
+    },
+    {
+      "entry": 4200643,
+      "name": "FUN_004018c3",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "LPSTR",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "LPSTR FUN_004018c3(void)"
+    },
+    {
+      "entry": 4200949,
+      "name": "FUN_004019f5",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 FUN_004019f5(void)"
+    },
+    {
+      "entry": 4201376,
+      "name": "FUN_00401ba0",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401ba0(int param_1)"
+    },
+    {
+      "entry": 4201436,
+      "name": "_global_unwind2",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "PVOID",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 _global_unwind2(PVOID param_1)"
+    },
+    {
+      "entry": 4201502,
+      "name": "_local_unwind2",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 _local_unwind2(int param_1, int param_2)"
+    },
+    {
+      "entry": 4201650,
+      "name": "FUN_00401cb2",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 4,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401cb2(void)"
+    },
+    {
+      "entry": 4201873,
+      "name": "FUN_00401d91",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 4,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401d91(int param_1)"
+    },
+    {
+      "entry": 4201900,
+      "name": "FUN_00401dac",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401dac(void)"
+    },
+    {
+      "entry": 4201957,
+      "name": "FUN_00401de5",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "DWORD",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401de5(DWORD param_1)"
+    },
+    {
+      "entry": 4202296,
+      "name": "FUN_00401f38",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "byte",
+          "size": 1,
+          "storage": [
+            {
+              "size": 1,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401f38(byte param_1)"
+    },
+    {
+      "entry": 4202313,
+      "name": "FUN_00401f49",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "byte",
+          "size": 1,
+          "storage": [
+            {
+              "size": 1,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "uint",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        },
+        {
+          "name": "param_3",
+          "type": "byte",
+          "size": 1,
+          "storage": [
+            {
+              "size": 1,
+              "stack": 12
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401f49(byte param_1, uint param_2, byte param_3)"
+    },
+    {
+      "entry": 4202362,
+      "name": "FUN_00401f7a",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_00401f7a(int param_1)"
+    },
+    {
+      "entry": 4202771,
+      "name": "FUN_00402113",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "int",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "int FUN_00402113(int param_1)"
+    },
+    {
+      "entry": 4202845,
+      "name": "FUN_0040215d",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_0040215d(int param_1)"
+    },
+    {
+      "entry": 4202896,
+      "name": "FUN_00402190",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 FUN_00402190(void)"
+    },
+    {
+      "entry": 4202937,
+      "name": "FUN_004021b9",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 FUN_004021b9(void)"
+    },
+    {
+      "entry": 4203326,
+      "name": "FUN_0040233e",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 FUN_0040233e(void)"
+    },
+    {
+      "entry": 4203354,
+      "name": "FUN_0040235a",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "LPVOID",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_0040235a(LPVOID param_1)"
+    },
+    {
+      "entry": 4203408,
+      "name": "FUN_00402390",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "uint *",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "uint *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "uint *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "uint *FUN_00402390(uint *param_1, uint *param_2)"
+    },
+    {
+      "entry": 4203424,
+      "name": "FUN_004023a0",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "uint *",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "uint *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "uint *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "uint *FUN_004023a0(uint *param_1, uint *param_2)"
+    },
+    {
+      "entry": 4203648,
+      "name": "_malloc",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "void *",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "_Size",
+          "type": "size_t",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "void *_malloc(size_t _Size)"
+    },
+    {
+      "entry": 4203666,
+      "name": "_nh_malloc",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "void *",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "_Size",
+          "type": "size_t",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "_NhFlag",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "void *_nh_malloc(size_t _Size, int _NhFlag)"
+    },
+    {
+      "entry": 4203710,
+      "name": "FUN_004024be",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "uint *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_004024be(uint *param_1)"
+    },
+    {
+      "entry": 4203776,
+      "name": "_strlen",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "size_t",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "_Str",
+          "type": "char *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "size_t _strlen(char *_Str)"
+    },
+    {
+      "entry": 4203904,
+      "name": "FUN_00402580",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4 *",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "undefined4 *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "undefined4 *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        },
+        {
+          "name": "param_3",
+          "type": "uint",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 12
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 *FUN_00402580(undefined4 *param_1, undefined4 *param_2, uint param_3)"
+    },
+    {
+      "entry": 4204725,
+      "name": "FUN_004028b5",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 FUN_004028b5(void)"
+    },
+    {
+      "entry": 4204787,
+      "name": "FUN_004028f3",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "uint",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "uint FUN_004028f3(int param_1)"
+    },
+    {
+      "entry": 4204830,
+      "name": "FUN_0040291e",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "uint *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "uint",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_0040291e(uint *param_1, uint param_2)"
+    },
+    {
+      "entry": 4205641,
+      "name": "FUN_00402c49",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "int *",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "uint *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "int *FUN_00402c49(uint *param_1)"
+    },
+    {
+      "entry": 4206418,
+      "name": "FUN_00402f52",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4 *",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 *FUN_00402f52(void)"
+    },
+    {
+      "entry": 4206595,
+      "name": "FUN_00403003",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "int",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "int FUN_00403003(int param_1)"
+    },
+    {
+      "entry": 4206846,
+      "name": "FUN_004030fe",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "int",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "undefined4",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "undefined4",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        },
+        {
+          "name": "param_3",
+          "type": "undefined4",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 12
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "int FUN_004030fe(undefined4 param_1, undefined4 param_2, undefined4 param_3)"
+    },
+    {
+      "entry": 4206992,
+      "name": "_strncpy",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "char *",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "_Dest",
+          "type": "char *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "_Source",
+          "type": "char *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        },
+        {
+          "name": "_Count",
+          "type": "size_t",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 12
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "char *_strncpy(char *_Dest, char *_Source, size_t _Count)"
+    },
+    {
+      "entry": 4207246,
+      "name": "FUN_0040328e",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "int",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "LCID",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "uint",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        },
+        {
+          "name": "param_3",
+          "type": "char *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 12
+            }
+          ]
+        },
+        {
+          "name": "param_4",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 16
+            }
+          ]
+        },
+        {
+          "name": "param_5",
+          "type": "LPWSTR",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 20
+            }
+          ]
+        },
+        {
+          "name": "param_6",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 24
+            }
+          ]
+        },
+        {
+          "name": "param_7",
+          "type": "UINT",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 28
+            }
+          ]
+        },
+        {
+          "name": "param_8",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 32
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "int FUN_0040328e(LCID param_1, uint param_2, char *param_3, int param_4, LPWSTR param_5, int param_6, UINT param_7, int param_8)"
+    },
+    {
+      "entry": 4207794,
+      "name": "FUN_004034b2",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "int",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "char *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "int FUN_004034b2(char *param_1, int param_2)"
+    },
+    {
+      "entry": 4207837,
+      "name": "FUN_004034dd",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "BOOL",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "DWORD",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "LPCSTR",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        },
+        {
+          "name": "param_3",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 12
+            }
+          ]
+        },
+        {
+          "name": "param_4",
+          "type": "LPWORD",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 16
+            }
+          ]
+        },
+        {
+          "name": "param_5",
+          "type": "UINT",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 20
+            }
+          ]
+        },
+        {
+          "name": "param_6",
+          "type": "LCID",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 24
+            }
+          ]
+        },
+        {
+          "name": "param_7",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 28
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "BOOL FUN_004034dd(DWORD param_1, LPCSTR param_2, int param_3, LPWORD param_4, UINT param_5, LCID param_6, int param_7)"
+    },
+    {
+      "entry": 4208166,
+      "name": "FUN_00403626",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "undefined4",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 FUN_00403626(undefined4 param_1)"
+    },
+    {
+      "entry": 4208208,
+      "name": "FUN_00403650",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4 *",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param_1",
+          "type": "undefined4 *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "param_2",
+          "type": "undefined4 *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        },
+        {
+          "name": "param_3",
+          "type": "uint",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 12
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "undefined4 *FUN_00403650(undefined4 *param_1, undefined4 *param_2, uint param_3)"
+    },
+    {
+      "entry": 4209040,
+      "name": "FUN_00403990",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "undefined4",
+        "size": 4,
+        "storage": [
+          {
+            "reg": "eax",
+            "shift": 0,
+            "size": 4
+          }
+        ]
+      },
+      "params": [],
+      "problems": [],
+      "declaration": "undefined4 FUN_00403990(void)"
+    },
+    {
+      "entry": 4209088,
+      "name": "_memset",
+      "cc": "__cdecl",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 0,
+      "ret": {
+        "type": "void *",
+        "size": 4,
+        "storage": [
+          {
+            "size": 4,
+            "reg": "eax",
+            "shift": 0
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "_Dst",
+          "type": "void *",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "_Val",
+          "type": "int",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        },
+        {
+          "name": "_Size",
+          "type": "size_t",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 12
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "void *_memset(void *_Dst, int _Val, size_t _Size)"
+    },
+    {
+      "entry": 4209176,
+      "name": "RtlUnwind",
+      "cc": "__stdcall",
+      "varargs": false,
+      "decompiled": false,
+      "purge": 16,
+      "ret": {
+        "type": "void",
+        "size": 0,
+        "storage": []
+      },
+      "params": [
+        {
+          "name": "TargetFrame",
+          "type": "PVOID",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 4
+            }
+          ]
+        },
+        {
+          "name": "TargetIp",
+          "type": "PVOID",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 8
+            }
+          ]
+        },
+        {
+          "name": "ExceptionRecord",
+          "type": "PEXCEPTION_RECORD",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 12
+            }
+          ]
+        },
+        {
+          "name": "ReturnValue",
+          "type": "PVOID",
+          "size": 4,
+          "storage": [
+            {
+              "size": 4,
+              "stack": 16
+            }
+          ]
+        }
+      ],
+      "problems": [],
+      "declaration": "void RtlUnwind(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue)"
+    }
+  ]
+}

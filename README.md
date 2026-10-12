@@ -25,29 +25,56 @@ Windows64. Maybe someday.
 How to:
 =======
 
+There are three programs, each built the same way from its own directories:
+
+| target  | original    | Ghidra project for the function map | generated code |
+|---------|-------------|-------------------------------------|----------------|
+| `game`  | game.exe    | `afrh/afrh.gpr`                     | `src/game`     |
+| `menu`  | MENU.EXE    | `menu/menu.gpr`                     | `src/menu`     |
+| `black` | black.exe   | `black/black.gpr`                   | `src/black`    |
+
+Each has its own Ghidra project because Ghidra locks a whole project while it
+is open: with one per program, two people can work on two programs at once.
+Decompiling (below) uses `ghidra project/RosemondHill_Decomp`, which holds all
+three.
+
 Step 1: extract the information from the ghidra project. Dump functions into
-`afrh/functions.json`
+`<project>/functions.json`, e.g. for game.exe:
 
 ```
-analyzeHeadless <projdir> <projname> -process game.exe -noanalysis \
+analyzeHeadless afrh afrh -process game.exe -noanalysis \
     -scriptPath ghidra_scripts \
     -postScript RecoverMissingFunctions.java
 
-analyzeHeadless <projdir> <projname> -process game.exe -noanalysis \
+analyzeHeadless afrh afrh -process game.exe -noanalysis \
     -scriptPath ghidra_scripts \
     -postScript ExportFunctionMap.java afrh/functions.json
+```
+
+and `menu menu -process menu.exe ... menu/functions.json`, or `black black
+-process black.exe ... black/functions.json`. To start a project over from the
+original executable (analysis, recovery and export in one go):
+
+```
+analyzeHeadless menu menu -import menu/menu.exe -overwrite \
+    -scriptPath ghidra_scripts \
+    -postScript RecoverMissingFunctions.java \
+    -postScript ExportFunctionMap.java menu/functions.json
 ```
 
 Step 2: generate the reassembly files (the funny looking C++ code)
 
 ```
-python disassemble_ghidra.py
+python disassemble_ghidra.py              # game
+python disassemble_ghidra.py menu black   # any of game, menu, black
 ```
-requires Capstone installed for Python. This also creates a copy of the game
-executable with the original sections - mapped at the address where the game
-expects them.
+requires Capstone installed for Python. This also creates a copy of the
+executable with the original sections - mapped at the address where the
+program expects them (`src/<target>/disassembly/<target>.exe`).
 
-Step 3: use the Cmakefile to build the whole thing for x86 Windows.
+Step 3: use the Cmakefile to build the whole thing for x86 Windows. Every
+target whose disassembly has been generated is built: `<target>.exe` and
+`<target>_code.dll`.
 This explicitly requires an x86 compiler targeting windows 32bits as the
 assembly-looking code calls the actual windows API and expects full ABI
 compatibility.
@@ -97,7 +124,12 @@ decompiler on the annotated project (`ghidra project/RosemondHill_Decomp`):
 ```
 python decompile.py 0x407690 0x4098a0   # decompile these, refresh everything else
 python decompile.py                     # only refresh
+python decompile.py -t menu 0x403bf0    # the same for menu.exe (or -t black)
 ```
+
+In the GUI the script exports for whichever program is open. Everything for a
+program goes under `src/<target>`, in `namespace <target>`; `src/game` is used
+as the example below.
 
 then build. This runs `ghidra_scripts/ExportDecompiled.java` headless
 (read-only; nothing is saved to the project). Headless Ghidra cannot open a

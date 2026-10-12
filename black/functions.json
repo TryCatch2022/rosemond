@@ -1,0 +1,1254 @@
+{
+  "program": "black.exe",
+  "image_base": 4194304,
+  "blocks": [
+    {"name": "Headers", "start": 4194304, "end": 4198400, "r": true, "w": false, "x": false, "initialized": true},
+    {"name": ".text", "start": 4198400, "end": 4210688, "r": true, "w": false, "x": true, "initialized": true},
+    {"name": ".rdata", "start": 4210688, "end": 4214784, "r": true, "w": false, "x": false, "initialized": true},
+    {"name": ".data", "start": 4214784, "end": 4218880, "r": true, "w": true, "x": false, "initialized": true},
+    {"name": "tdb", "start": 4292866048, "end": 4292870144, "r": true, "w": true, "x": false, "initialized": true}
+  ],
+  "functions": [
+    {
+      "entry": 4198400,
+      "name": "FUN_00401000",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4198400, "end": 4198474, "items": [3, 1, 6, 1, 1, 6, 1, 6, 5, 2, 2, 2, 4, 2, 1, 2, 2, 2, 4, 1, 2, 4, 1, 2, 1, 2, 1, 1, 1, 1, 3, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4198480,
+      "name": "FUN_00401050",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 16,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4198480, "end": 4198557, "items": [1, 4, 1, 5, 3, 2, 2, 4, 1, 1, 5, 3, 2, 2, 6, 2, 1, 6, 6, 5, 2, 5, 2, 2, 1, 3]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4198400, 4198592, 4198704]
+    },
+    {
+      "entry": 4198560,
+      "name": "FUN_004010a0",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 2147483647,
+      "calling_convention": "unknown",
+      "ranges": [
+        {"start": 4198560, "end": 4198589, "items": [4, 4, 4, 1, 4, 1, 1, 1, 6, 3]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4198592,
+      "name": "FUN_004010c0",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4198592, "end": 4198691, "items": [3, 4, 1, 2, 5, 1, 4, 8, 4, 4, 4, 6, 2, 4, 4, 6, 4, 4, 1, 4, 8, 6, 5, 1, 3, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4198704,
+      "name": "FUN_00401130",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4198704, "end": 4198804, "items": [4, 1, 6, 2, 1, 2, 2, 2, 5, 2, 1, 2, 2, 1, 2, 2, 5, 5, 5, 2, 6, 2, 2, 2, 1, 1, 4, 6, 1, 1, 6, 1, 6, 5, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4198816,
+      "name": "entry",
+      "default_name": false,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4198816, "end": 4199051, "items": [1, 2, 2, 5, 5, 6, 1, 7, 3, 1, 1, 1, 3, 6, 2, 2, 6, 2, 6, 6, 3, 2, 6, 3, 5, 2, 1, 5, 1, 2, 2, 2, 5, 1, 3, 5, 6, 5, 5, 5, 5, 5, 5, 3, 3, 1, 6, 5, 3, 4, 2, 4, 2, 2, 1, 1, 3, 1, 1, 6, 1, 5, 3, 1, 5, 3, 2, 2, 3, 1, 1, 5, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4198480, 4199099, 4199135, 4199180, 4199393, 4199781, 4199869, 4200054, 4200643, 4200949, 4201376]
+    },
+    {
+      "entry": 4199051,
+      "name": "FUN_0040128b",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 2147483647,
+      "calling_convention": "unknown",
+      "ranges": [
+        {"start": 4199051, "end": 4199062, "items": [3, 3, 5]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4199197]
+    },
+    {
+      "entry": 4199062,
+      "name": "FUN_00401296",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4199062, "end": 4199096, "items": [7, 2, 5, 4, 5, 5, 6]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {"4199090": [4199197]},
+      "callees": [4199197, 4201900, 4201957]
+    },
+    {
+      "entry": 4199099,
+      "name": "FUN_004012bb",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4199099, "end": 4199134, "items": [7, 2, 5, 4, 5, 1, 5, 6]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4201900, 4201957]
+    },
+    {
+      "entry": 4199135,
+      "name": "FUN_004012df",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4199135, "end": 4199180, "items": [5, 2, 2, 2, 5, 5, 5, 5, 5, 5, 3, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4199367]
+    },
+    {
+      "entry": 4199180,
+      "name": "FUN_0040130c",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4199180, "end": 4199197, "items": [2, 2, 4, 5, 3, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4199214]
+    },
+    {
+      "entry": 4199197,
+      "name": "__exit",
+      "default_name": false,
+      "thunk": false,
+      "noreturn": true,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4199197, "end": 4199214, "items": [2, 2, 4, 5, 3, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4199214]
+    },
+    {
+      "entry": 4199214,
+      "name": "FUN_0040132e",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4199214, "end": 4199367, "items": [1, 2, 1, 6, 2, 4, 6, 1, 6, 5, 1, 4, 6, 6, 2, 5, 2, 2, 6, 1, 3, 2, 2, 2, 2, 2, 2, 3, 6, 2, 1, 5, 5, 5, 1, 1, 5, 5, 5, 1, 1, 2, 1, 2, 4, 6, 6, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4199367]
+    },
+    {
+      "entry": 4199367,
+      "name": "FUN_004013c7",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4199367, "end": 4199393, "items": [1, 4, 4, 2, 2, 2, 2, 2, 3, 2, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4199393,
+      "name": "FUN_004013e1",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4199393, "end": 4199714, "items": [1, 2, 1, 3, 5, 2, 1, 6, 3, 2, 6, 3, 2, 4, 2, 1, 5, 3, 6, 6, 3, 3, 6, 3, 3, 6, 6, 6, 2, 1, 2, 2, 3, 2, 7, 3, 3, 1, 2, 2, 6, 5, 2, 10, 2, 5, 2, 10, 2, 5, 2, 10, 2, 5, 2, 10, 2, 5, 2, 10, 2, 5, 2, 10, 2, 5, 2, 10, 6, 2, 2, 1, 6, 1, 1, 2, 4, 1, 2, 1, 3, 5, 3, 2, 3, 6, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4199714]
+    },
+    {
+      "entry": 4199714,
+      "name": "FUN_00401522",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4199714, "end": 4199781, "items": [4, 6, 6, 1, 5, 2, 3, 7, 3, 2, 2, 2, 2, 3, 1, 7, 2, 2, 2, 2, 2, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4199781,
+      "name": "FUN_00401565",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4199781, "end": 4199869, "items": [7, 2, 5, 1, 6, 2, 2, 2, 3, 1, 2, 2, 2, 2, 3, 1, 5, 2, 1, 2, 1, 2, 3, 2, 1, 2, 2, 2, 1, 3, 2, 2, 2, 2, 2, 2, 2, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4202296, 4203326]
+    },
+    {
+      "entry": 4199869,
+      "name": "FUN_004015bd",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4199869, "end": 4200054, "items": [1, 2, 6, 1, 1, 2, 5, 6, 2, 2, 2, 2, 2, 2, 1, 1, 5, 1, 4, 2, 7, 1, 5, 2, 1, 2, 6, 2, 2, 5, 1, 6, 2, 2, 1, 1, 5, 2, 1, 1, 3, 2, 1, 5, 2, 1, 2, 2, 2, 5, 1, 1, 2, 5, 1, 3, 1, 2, 2, 2, 1, 6, 5, 1, 6, 2, 1, 1, 10, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4199062, 4203326, 4203354, 4203408, 4203648, 4203776]
+    },
+    {
+      "entry": 4200054,
+      "name": "FUN_00401676",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4200054, "end": 4200207, "items": [1, 2, 1, 1, 1, 2, 6, 1, 1, 2, 5, 5, 5, 1, 1, 6, 5, 6, 2, 2, 2, 2, 3, 1, 3, 1, 1, 1, 1, 5, 3, 3, 3, 1, 5, 2, 3, 2, 2, 2, 5, 1, 3, 1, 3, 1, 3, 3, 1, 1, 1, 5, 3, 3, 1, 6, 1, 1, 5, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4199062, 4200207, 4203326, 4203648]
+    },
+    {
+      "entry": 4200207,
+      "name": "FUN_0040170f",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4200207, "end": 4200643, "items": [1, 2, 3, 3, 1, 1, 3, 3, 1, 3, 6, 3, 2, 2, 2, 3, 3, 3, 2, 3, 1, 3, 2, 2, 2, 3, 7, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 3, 1, 3, 2, 1, 2, 2, 2, 2, 2, 2, 1, 2, 1, 3, 7, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 2, 2, 3, 2, 2, 2, 1, 2, 2, 2, 4, 4, 3, 6, 2, 3, 2, 3, 2, 1, 2, 3, 6, 2, 2, 2, 3, 3, 3, 2, 7, 2, 3, 2, 1, 1, 2, 3, 2, 3, 2, 2, 3, 2, 4, 3, 2, 2, 2, 3, 3, 2, 3, 3, 3, 2, 2, 1, 2, 2, 1, 2, 2, 3, 1, 2, 1, 2, 2, 2, 2, 4, 2, 3, 2, 3, 2, 4, 2, 2, 2, 3, 7, 2, 2, 1, 1, 2, 2, 2, 1, 2, 3, 7, 2, 1, 2, 2, 1, 5, 2, 2, 3, 1, 2, 5, 2, 2, 3, 3, 1, 1, 1, 2, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4200643,
+      "name": "FUN_004018c3",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4200643, "end": 4200949, "items": [1, 1, 5, 1, 1, 6, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 10, 2, 6, 2, 2, 6, 10, 5, 3, 6, 2, 2, 2, 2, 2, 6, 3, 2, 2, 1, 1, 3, 2, 1, 1, 3, 2, 2, 6, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 1, 5, 2, 1, 4, 2, 1, 1, 1, 1, 4, 1, 1, 1, 2, 2, 2, 4, 5, 1, 4, 4, 1, 6, 2, 2, 3, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1, 2, 1, 5, 2, 1, 2, 2, 2, 2, 1, 1, 1, 5, 3, 1, 6, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4203354, 4203648, 4203904]
+    },
+    {
+      "entry": 4200949,
+      "name": "FUN_004019f5",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4200949, "end": 4201376, "items": [3, 1, 1, 1, 1, 5, 5, 2, 1, 2, 2, 2, 5, 1, 6, 10, 6, 2, 2, 4, 3, 4, 5, 3, 5, 2, 4, 1, 6, 6, 6, 4, 2, 6, 2, 3, 5, 2, 3, 2, 2, 6, 2, 5, 5, 5, 2, 1, 2, 7, 2, 6, 2, 2, 4, 3, 4, 2, 3, 6, 2, 3, 6, 2, 2, 6, 2, 2, 2, 2, 3, 2, 3, 3, 2, 3, 2, 1, 6, 2, 2, 2, 2, 3, 3, 7, 3, 2, 2, 3, 3, 1, 1, 3, 2, 2, 2, 5, 4, 3, 2, 2, 4, 2, 2, 1, 2, 2, 1, 2, 2, 3, 1, 6, 2, 3, 2, 1, 6, 2, 2, 5, 2, 3, 2, 4, 2, 3, 2, 4, 2, 4, 1, 3, 2, 6, 6, 1, 1, 1, 1, 3, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4199062, 4203648]
+    },
+    {
+      "entry": 4201376,
+      "name": "FUN_00401ba0",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4201376, "end": 4201436, "items": [2, 2, 4, 5, 3, 1, 6, 2, 5, 2, 5, 2, 2, 6, 6, 2, 1, 2, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4204725]
+    },
+    {
+      "entry": 4201436,
+      "name": "__global_unwind2",
+      "default_name": false,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4201436, "end": 4201468, "items": [1, 2, 1, 1, 1, 1, 2, 2, 5, 3, 5, 1, 1, 1, 1, 2, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4209176]
+    },
+    {
+      "entry": 4201468,
+      "name": "FUN_00401bfc",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 2147483647,
+      "calling_convention": "unknown",
+      "ranges": [
+        {"start": 4201468, "end": 4201502, "items": [4, 7, 5, 2, 4, 4, 2, 5, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4201502,
+      "name": "__local_unwind2",
+      "default_name": false,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4201502, "end": 4201606, "items": [1, 1, 1, 4, 1, 2, 5, 7, 7, 4, 3, 3, 3, 2, 4, 2, 3, 3, 4, 3, 5, 2, 5, 4, 5, 4, 2, 7, 3, 1, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4201650]
+    },
+    {
+      "entry": 4201650,
+      "name": "FUN_00401cb2",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 4,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4201650, "end": 4201674, "items": [1, 1, 5, 3, 3, 3, 3, 1, 1, 3]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4201684,
+      "name": "FUN_00401cd4",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 2147483647,
+      "calling_convention": "unknown",
+      "ranges": [
+        {"start": 4201684, "end": 4201873, "items": [1, 2, 3, 1, 1, 1, 1, 1, 3, 3, 7, 6, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3, 5, 2, 1, 1, 3, 4, 1, 1, 3, 2, 2, 2, 3, 1, 5, 3, 3, 1, 1, 5, 3, 3, 2, 4, 5, 3, 3, 4, 3, 3, 3, 2, 5, 2, 5, 2, 1, 3, 2, 1, 5, 3, 1, 5, 1, 1, 1, 1, 2, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4201436, 4201502, 4201650]
+    },
+    {
+      "entry": 4201873,
+      "name": "FUN_00401d91",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 4,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4201873, "end": 4201900, "items": [1, 4, 2, 3, 1, 3, 1, 5, 3, 1, 3]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4201502]
+    },
+    {
+      "entry": 4201900,
+      "name": "FUN_00401dac",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4201900, "end": 4201957, "items": [5, 3, 2, 2, 2, 7, 2, 5, 5, 5, 1, 2, 2, 2, 5, 5, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4201957]
+    },
+    {
+      "entry": 4201957,
+      "name": "FUN_00401de5",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4201957, "end": 4202296, "items": [1, 2, 6, 3, 2, 5, 2, 2, 3, 1, 5, 2, 1, 2, 3, 6, 6, 5, 3, 6, 2, 2, 7, 6, 6, 6, 6, 5, 1, 2, 6, 2, 2, 6, 5, 1, 5, 1, 1, 6, 1, 1, 6, 5, 1, 1, 3, 2, 6, 1, 5, 2, 6, 3, 2, 2, 5, 1, 5, 3, 6, 5, 1, 5, 6, 1, 1, 5, 6, 5, 1, 5, 6, 6, 1, 5, 5, 6, 5, 1, 5, 3, 1, 2, 3, 6, 2, 1, 2, 5, 1, 1, 2, 2, 6, 1, 6, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4203408, 4203424, 4203776, 4206846, 4206992]
+    },
+    {
+      "entry": 4202296,
+      "name": "FUN_00401f38",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4202296, "end": 4202313, "items": [2, 2, 4, 5, 3, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4202313]
+    },
+    {
+      "entry": 4202313,
+      "name": "FUN_00401f49",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4202313, "end": 4202362, "items": [5, 4, 6, 2, 5, 2, 8, 4, 2, 2, 2, 2, 1, 2, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4202362,
+      "name": "FUN_00401f7a",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4202362, "end": 4202771, "items": [1, 2, 3, 1, 1, 1, 3, 5, 2, 1, 6, 3, 6, 2, 2, 6, 2, 5, 2, 2, 3, 1, 5, 2, 3, 1, 1, 6, 3, 6, 2, 2, 1, 5, 4, 6, 2, 1, 6, 6, 4, 6, 3, 2, 2, 6, 4, 3, 2, 6, 7, 1, 2, 2, 2, 1, 5, 2, 3, 3, 3, 1, 6, 3, 2, 2, 3, 2, 2, 3, 3, 2, 2, 3, 6, 6, 1, 2, 2, 1, 1, 3, 2, 3, 3, 4, 2, 3, 10, 1, 5, 5, 6, 5, 1, 1, 1, 5, 1, 2, 1, 1, 4, 6, 2, 1, 7, 1, 5, 2, 1, 5, 1, 5, 10, 2, 6, 2, 5, 1, 1, 1, 2, 6, 2, 5, 5, 2, 2, 3, 1, 1, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4202771, 4202845, 4202896, 4202937]
+    },
+    {
+      "entry": 4202771,
+      "name": "FUN_00402113",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4202771, "end": 4202845, "items": [4, 7, 3, 2, 10, 6, 3, 2, 10, 6, 3, 2, 5, 10, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4202845,
+      "name": "FUN_0040215d",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4202845, "end": 4202896, "items": [4, 5, 2, 3, 2, 3, 2, 1, 2, 2, 1, 5, 1, 5, 1, 5, 1, 5, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4202896,
+      "name": "FUN_00402190",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4202896, "end": 4202937, "items": [1, 2, 1, 2, 5, 2, 1, 2, 5, 5, 5, 5, 1, 1, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4202937,
+      "name": "FUN_004021b9",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4202937, "end": 4203326, "items": [1, 2, 6, 3, 1, 1, 6, 6, 3, 6, 2, 5, 7, 1, 2, 2, 3, 7, 2, 2, 1, 1, 3, 3, 3, 2, 2, 2, 7, 1, 5, 2, 3, 2, 2, 3, 2, 1, 1, 3, 2, 2, 1, 1, 2, 6, 6, 6, 1, 6, 1, 1, 2, 5, 2, 6, 6, 1, 1, 6, 1, 1, 1, 6, 5, 2, 6, 6, 1, 1, 6, 1, 1, 5, 6, 5, 3, 2, 6, 3, 3, 2, 7, 7, 6, 2, 3, 2, 7, 7, 2, 7, 1, 1, 1, 2, 2, 2, 2, 5, 3, 2, 3, 2, 7, 2, 3, 6, 2, 3, 2, 3, 2, 7, 2, 3, 2, 7, 1, 2, 2, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4207246, 4207837]
+    },
+    {
+      "entry": 4203326,
+      "name": "FUN_0040233e",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4203326, "end": 4203354, "items": [7, 2, 2, 5, 1, 10, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4202362]
+    },
+    {
+      "entry": 4203354,
+      "name": "FUN_0040235a",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4203354, "end": 4203401, "items": [1, 4, 2, 2, 1, 5, 1, 2, 1, 2, 1, 5, 1, 1, 1, 1, 2, 6, 6, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4204787, 4204830]
+    },
+    {
+      "entry": 4203408,
+      "name": "FUN_00402390",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4203408, "end": 4203415, "items": [1, 4, 2]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4203424,
+      "name": "FUN_004023a0",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4203424, "end": 4203648, "items": [4, 1, 6, 2, 2, 1, 2, 2, 6, 2, 2, 5, 2, 3, 2, 3, 5, 2, 3, 2, 2, 2, 2, 5, 2, 5, 2, 2, 3, 2, 3, 2, 3, 2, 3, 4, 6, 2, 2, 1, 2, 2, 2, 1, 6, 2, 2, 2, 3, 5, 2, 2, 3, 2, 2, 3, 5, 2, 2, 2, 2, 2, 6, 2, 6, 2, 2, 2, 4, 1, 1, 3, 4, 4, 1, 1, 3, 4, 1, 1, 2, 4, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4203648,
+      "name": "_malloc",
+      "default_name": false,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4203648, "end": 4203666, "items": [6, 4, 5, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4203666]
+    },
+    {
+      "entry": 4203666,
+      "name": "__nh_malloc",
+      "default_name": false,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4203666, "end": 4203710, "items": [5, 2, 4, 5, 2, 1, 2, 4, 2, 4, 5, 2, 1, 2, 2, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4203710, 4208166]
+    },
+    {
+      "entry": 4203710,
+      "name": "FUN_004024be",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4203710, "end": 4203764, "items": [1, 4, 6, 2, 1, 5, 2, 1, 2, 2, 2, 2, 1, 3, 3, 1, 2, 6, 6, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4205641]
+    },
+    {
+      "entry": 4203776,
+      "name": "_strlen",
+      "default_name": false,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4203776, "end": 4203899, "items": [4, 6, 2, 2, 1, 2, 2, 6, 2, 5, 2, 5, 2, 3, 2, 3, 5, 2, 3, 2, 2, 2, 2, 5, 2, 5, 2, 2, 3, 4, 2, 1, 3, 4, 2, 1, 3, 4, 2, 1, 3, 4, 2, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4203904,
+      "name": "FUN_00402580",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4203904, "end": 4203995, "items": [1, 2, 1, 1, 3, 3, 3, 2, 2, 2, 2, 2, 2, 6, 6, 2, 3, 3, 3, 2, 2, 7, 2, 5, 3, 2, 3, 2, 7, 7]},
+        {"start": 4203996, "end": 4204003, "items": [7]},
+        {"start": 4204016, "end": 4204057, "items": [2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 7]},
+        {"start": 4204060, "end": 4204095, "items": [2, 2, 2, 3, 3, 3, 3, 3, 3, 2, 2, 7]},
+        {"start": 4204096, "end": 4204121, "items": [2, 2, 2, 1, 3, 1, 3, 2, 2, 7]},
+        {"start": 4204156, "end": 4204230, "items": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 7, 2, 2, 7]},
+        {"start": 4204248, "end": 4204255, "items": [3, 1, 1, 1, 1]},
+        {"start": 4204256, "end": 4204267, "items": [2, 2, 3, 1, 1, 1, 1]},
+        {"start": 4204268, "end": 4204285, "items": [2, 2, 3, 3, 3, 1, 1, 1, 1]},
+        {"start": 4204288, "end": 4204311, "items": [2, 2, 3, 3, 3, 3, 3, 1, 1, 1, 1]},
+        {"start": 4204312, "end": 4204350, "items": [4, 4, 6, 2, 3, 3, 3, 2, 1, 2, 1, 7]},
+        {"start": 4204352, "end": 4204361, "items": [2, 7]},
+        {"start": 4204364, "end": 4204395, "items": [2, 5, 3, 2, 3, 2, 7, 7]},
+        {"start": 4204408, "end": 4204437, "items": [3, 2, 3, 1, 3, 1, 3, 2, 1, 2, 1, 7]},
+        {"start": 4204440, "end": 4204479, "items": [3, 2, 3, 3, 3, 3, 3, 3, 3, 2, 1, 2, 1, 7]},
+        {"start": 4204480, "end": 4204529, "items": [3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 6, 1, 2, 1, 7]},
+        {"start": 4204564, "end": 4204638, "items": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 7, 2, 2, 7]},
+        {"start": 4204656, "end": 4204663, "items": [3, 1, 1, 1, 1]},
+        {"start": 4204664, "end": 4204677, "items": [3, 3, 3, 1, 1, 1, 1]},
+        {"start": 4204680, "end": 4204699, "items": [3, 3, 3, 3, 3, 1, 1, 1, 1]},
+        {"start": 4204700, "end": 4204725, "items": [3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1]}
+      ],
+      "computed_jumps": {"4203957": [4204248, 4204256, 4204268, 4204288], "4203981": [4204016, 4204060, 4204096], "4203988": [4204248, 4204256, 4204268, 4204288], "4203996": [4204223, 4204204, 4204196, 4204188, 4204180, 4204172, 4204164, 4204156], "4204050": [4204248, 4204256, 4204268, 4204288], "4204088": [4204248, 4204256, 4204268, 4204288], "4204114": [4204248, 4204256, 4204268, 4204288], "4204223": [4204248, 4204256, 4204268, 4204288], "4204343": [4204656, 4204664, 4204680, 4204700], "4204354": [4204631, 4204612, 4204604, 4204596, 4204588, 4204580, 4204572, 4204564], "4204381": [4204408, 4204440, 4204480], "4204388": [4204656, 4204664, 4204680, 4204700], "4204430": [4204656, 4204664, 4204680, 4204700], "4204472": [4204656, 4204664, 4204680, 4204700], "4204522": [4204656, 4204664, 4204680, 4204700], "4204631": [4204656, 4204664, 4204680, 4204700]},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4204725,
+      "name": "FUN_004028b5",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4204725, "end": 4204787, "items": [5, 2, 6, 6, 2, 5, 2, 1, 7, 7, 2, 5, 10, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4204787,
+      "name": "FUN_004028f3",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4204787, "end": 4204830, "items": [5, 3, 5, 3, 2, 2, 4, 3, 6, 2, 3, 2, 2, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4204830,
+      "name": "FUN_0040291e",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4204830, "end": 4205641, "items": [1, 2, 3, 3, 3, 1, 1, 3, 2, 3, 3, 3, 1, 3, 2, 3, 6, 1, 3, 7, 3, 3, 3, 3, 3, 2, 3, 2, 1, 1, 3, 2, 2, 3, 4, 4, 2, 3, 3, 2, 5, 2, 4, 2, 4, 2, 2, 3, 2, 2, 3, 5, 2, 3, 4, 2, 7, 2, 2, 3, 3, 4, 4, 3, 4, 4, 3, 3, 3, 2, 3, 1, 3, 2, 2, 1, 3, 3, 3, 6, 3, 3, 3, 2, 3, 1, 1, 2, 3, 2, 3, 2, 3, 2, 3, 3, 1, 2, 2, 2, 2, 2, 3, 3, 3, 2, 3, 3, 2, 5, 2, 4, 2, 4, 2, 2, 3, 2, 2, 3, 5, 2, 3, 4, 2, 7, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 3, 6, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 4, 3, 3, 2, 4, 2, 4, 2, 5, 2, 2, 3, 2, 5, 2, 2, 4, 2, 2, 4, 2, 3, 5, 2, 3, 3, 3, 5, 2, 7, 2, 3, 3, 2, 4, 2, 6, 5, 2, 6, 6, 6, 3, 3, 5, 5, 1, 1, 2, 6, 5, 5, 2, 3, 5, 6, 3, 8, 5, 3, 3, 5, 3, 4, 2, 4, 5, 4, 2, 1, 2, 3, 2, 5, 3, 2, 6, 6, 5, 6, 3, 3, 2, 5, 2, 4, 1, 3, 1, 1, 5, 3, 3, 6, 6, 2, 3, 6, 6, 2, 3, 5, 6, 1, 1, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4208208]
+    },
+    {
+      "entry": 4205641,
+      "name": "FUN_00402c49",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4205641, "end": 4206418, "items": [1, 2, 3, 5, 6, 1, 1, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 3, 2, 3, 2, 4, 3, 2, 3, 3, 2, 2, 3, 3, 5, 2, 2, 3, 2, 3, 2, 3, 2, 2, 2, 3, 3, 3, 2, 3, 2, 2, 2, 3, 2, 3, 2, 3, 2, 2, 2, 3, 2, 2, 2, 3, 2, 4, 2, 3, 3, 2, 3, 2, 2, 2, 3, 2, 4, 2, 3, 2, 2, 2, 5, 2, 2, 3, 2, 1, 5, 1, 3, 2, 3, 3, 2, 2, 5, 6, 3, 2, 3, 3, 2, 7, 4, 3, 2, 2, 2, 6, 3, 3, 3, 4, 3, 2, 3, 2, 6, 3, 3, 3, 2, 2, 2, 2, 3, 2, 2, 6, 7, 3, 4, 2, 2, 7, 2, 3, 1, 2, 2, 2, 1, 2, 3, 4, 2, 3, 2, 3, 3, 1, 3, 2, 2, 1, 2, 6, 3, 3, 2, 3, 2, 5, 2, 2, 3, 4, 2, 3, 4, 4, 2, 2, 3, 3, 2, 2, 3, 5, 2, 3, 4, 7, 2, 2, 2, 3, 2, 3, 3, 3, 2, 3, 3, 3, 4, 3, 3, 3, 3, 6, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 2, 4, 3, 3, 2, 2, 4, 4, 2, 5, 2, 2, 2, 5, 2, 2, 3, 4, 2, 2, 4, 4, 2, 3, 5, 2, 3, 3, 7, 3, 5, 2, 2, 3, 2, 2, 2, 4, 2, 3, 3, 2, 3, 2, 4, 3, 2, 2, 3, 2, 2, 6, 2, 3, 6, 2, 7, 3, 2, 3, 1, 1, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4206418, 4206595]
+    },
+    {
+      "entry": 4206418,
+      "name": "FUN_00402f52",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4206418, "end": 4206595, "items": [5, 6, 1, 1, 2, 2, 2, 4, 3, 1, 6, 1, 6, 6, 2, 2, 7, 5, 5, 6, 5, 2, 3, 6, 3, 6, 2, 3, 2, 2, 5, 5, 1, 6, 2, 3, 2, 3, 1, 6, 6, 2, 2, 4, 2, 3, 6, 3, 3, 2, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4206595,
+      "name": "FUN_00403003",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4206595, "end": 4206846, "items": [1, 2, 1, 3, 1, 1, 1, 3, 3, 2, 2, 2, 2, 1, 2, 2, 2, 6, 1, 7, 3, 3, 3, 3, 1, 2, 2, 2, 3, 3, 5, 5, 1, 6, 2, 2, 3, 5, 6, 2, 2, 3, 4, 7, 6, 7, 2, 6, 3, 10, 5, 3, 2, 2, 3, 3, 5, 2, 1, 3, 3, 3, 3, 3, 5, 7, 3, 2, 2, 2, 3, 3, 2, 3, 5, 2, 2, 2, 3, 2, 1, 1, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4206846,
+      "name": "FUN_004030fe",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4206846, "end": 4206983, "items": [1, 2, 6, 1, 1, 2, 5, 6, 2, 2, 2, 6, 5, 1, 2, 2, 5, 2, 5, 1, 2, 5, 1, 5, 2, 5, 5, 2, 2, 2, 2, 2, 2, 5, 2, 2, 1, 2, 2, 4, 4, 4, 1, 6, 1, 1, 1, 1, 2, 2]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4206992,
+      "name": "_strncpy",
+      "default_name": false,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4206992, "end": 4207246, "items": [4, 1, 2, 2, 1, 1, 2, 4, 6, 4, 2, 3, 2, 2, 2, 1, 2, 1, 1, 2, 2, 2, 6, 2, 2, 3, 2, 3, 2, 2, 1, 2, 1, 2, 2, 1, 2, 4, 1, 1, 1, 1, 6, 2, 2, 1, 1, 6, 6, 2, 2, 3, 2, 2, 1, 1, 2, 1, 1, 4, 1, 1, 2, 3, 1, 2, 5, 2, 2, 3, 2, 2, 3, 5, 2, 2, 2, 2, 2, 6, 2, 6, 2, 2, 2, 6, 2, 2, 6, 2, 2, 2, 2, 3, 2, 1, 2, 2, 2, 3, 1, 2, 3, 2, 4, 1, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4207246,
+      "name": "FUN_0040328e",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4207246, "end": 4207518, "items": [1, 2, 2, 5, 5, 6, 1, 7, 3, 1, 1, 1, 3, 2, 6, 2, 1, 1, 2, 1, 1, 5, 5, 1, 1, 6, 2, 2, 6, 2, 1, 1, 1, 5, 1, 1, 6, 2, 6, 10, 3, 2, 3, 3, 5, 1, 1, 3, 5, 3, 2, 3, 3, 3, 3, 3, 3, 6, 5, 3, 6, 3, 2, 5, 3, 1, 1, 3, 3, 3, 2, 2, 3, 1, 1, 3, 6, 2, 3, 2, 6, 3, 3, 3, 2, 5, 3, 2, 3, 4, 2]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4207794, 4209040]
+    },
+    {
+      "entry": 4207518,
+      "name": "FUN_0040339e",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 2147483647,
+      "calling_convention": "unknown",
+      "ranges": [
+        {"start": 4207518, "end": 4207522, "items": [2, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4207522,
+      "name": "FUN_004033a2",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 2147483647,
+      "calling_convention": "unknown",
+      "ranges": [
+        {"start": 4207522, "end": 4207698, "items": [3, 2, 3, 4, 3, 3, 2, 1, 3, 3, 3, 2, 3, 6, 2, 2, 1, 1, 1, 3, 3, 3, 6, 2, 3, 2, 2, 4, 2, 3, 6, 3, 2, 3, 3, 1, 3, 3, 3, 6, 2, 6, 2, 3, 3, 7, 1, 1, 1, 1, 1, 7, 3, 3, 2, 5, 3, 2, 3, 4, 2]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4209040]
+    },
+    {
+      "entry": 4207698,
+      "name": "FUN_00403452",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 2147483647,
+      "calling_convention": "unknown",
+      "ranges": [
+        {"start": 4207698, "end": 4207702, "items": [2, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4207702,
+      "name": "FUN_00403456",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 2147483647,
+      "calling_convention": "unknown",
+      "ranges": [
+        {"start": 4207702, "end": 4207794, "items": [3, 2, 2, 4, 3, 2, 2, 1, 1, 3, 3, 3, 3, 6, 2, 2, 3, 1, 1, 2, 1, 1, 2, 3, 3, 1, 1, 5, 3, 6, 2, 2, 6, 2, 5]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4207794,
+      "name": "FUN_004034b2",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4207794, "end": 4207837, "items": [4, 4, 2, 1, 3, 2, 3, 2, 1, 2, 1, 2, 2, 3, 1, 2, 4, 1, 2, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4207837,
+      "name": "FUN_004034dd",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4207837, "end": 4208086, "items": [1, 2, 2, 5, 5, 6, 1, 7, 3, 1, 1, 1, 3, 5, 2, 2, 2, 3, 1, 2, 1, 1, 5, 1, 6, 2, 2, 2, 2, 3, 1, 1, 5, 1, 1, 6, 2, 6, 2, 1, 5, 3, 2, 3, 2, 2, 5, 3, 3, 3, 3, 1, 6, 5, 3, 6, 3, 2, 5, 3, 1, 1, 3, 3, 3, 2, 2, 3, 1, 1, 3, 6, 3, 2, 2, 3, 3, 2, 3, 2, 5, 3, 2, 3, 1, 1, 1, 5, 3, 2]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": [4209040, 4209088]
+    },
+    {
+      "entry": 4208086,
+      "name": "FUN_004035d6",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 2147483647,
+      "calling_convention": "unknown",
+      "ranges": [
+        {"start": 4208086, "end": 4208090, "items": [2, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4208090,
+      "name": "FUN_004035da",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 2147483647,
+      "calling_convention": "unknown",
+      "ranges": [
+        {"start": 4208090, "end": 4208166, "items": [3, 2, 2, 4, 2, 2, 3, 1, 3, 3, 2, 3, 6, 2, 2, 3, 1, 1, 3, 6, 2, 2, 3, 3, 7, 1, 1, 1, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4208166,
+      "name": "FUN_00403626",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4208166, "end": 4208193, "items": [5, 2, 2, 4, 2, 2, 1, 2, 2, 1, 1, 2, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4208208,
+      "name": "FUN_00403650",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4208208, "end": 4208299, "items": [1, 2, 1, 1, 3, 3, 3, 2, 2, 2, 2, 2, 2, 6, 6, 2, 3, 3, 3, 2, 2, 7, 2, 5, 3, 2, 3, 2, 7, 7]},
+        {"start": 4208300, "end": 4208307, "items": [7]},
+        {"start": 4208320, "end": 4208361, "items": [2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 7]},
+        {"start": 4208364, "end": 4208399, "items": [2, 2, 2, 3, 3, 3, 3, 3, 3, 2, 2, 7]},
+        {"start": 4208400, "end": 4208425, "items": [2, 2, 2, 1, 3, 1, 3, 2, 2, 7]},
+        {"start": 4208460, "end": 4208534, "items": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 7, 2, 2, 7]},
+        {"start": 4208552, "end": 4208559, "items": [3, 1, 1, 1, 1]},
+        {"start": 4208560, "end": 4208571, "items": [2, 2, 3, 1, 1, 1, 1]},
+        {"start": 4208572, "end": 4208589, "items": [2, 2, 3, 3, 3, 1, 1, 1, 1]},
+        {"start": 4208592, "end": 4208615, "items": [2, 2, 3, 3, 3, 3, 3, 1, 1, 1, 1]},
+        {"start": 4208616, "end": 4208654, "items": [4, 4, 6, 2, 3, 3, 3, 2, 1, 2, 1, 7]},
+        {"start": 4208656, "end": 4208665, "items": [2, 7]},
+        {"start": 4208668, "end": 4208699, "items": [2, 5, 3, 2, 3, 2, 7, 7]},
+        {"start": 4208712, "end": 4208741, "items": [3, 2, 3, 1, 3, 1, 3, 2, 1, 2, 1, 7]},
+        {"start": 4208744, "end": 4208783, "items": [3, 2, 3, 3, 3, 3, 3, 3, 3, 2, 1, 2, 1, 7]},
+        {"start": 4208784, "end": 4208833, "items": [3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 6, 1, 2, 1, 7]},
+        {"start": 4208868, "end": 4208942, "items": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 7, 2, 2, 7]},
+        {"start": 4208960, "end": 4208967, "items": [3, 1, 1, 1, 1]},
+        {"start": 4208968, "end": 4208981, "items": [3, 3, 3, 1, 1, 1, 1]},
+        {"start": 4208984, "end": 4209003, "items": [3, 3, 3, 3, 3, 1, 1, 1, 1]},
+        {"start": 4209004, "end": 4209029, "items": [3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1]}
+      ],
+      "computed_jumps": {"4208261": [4208552, 4208560, 4208572, 4208592], "4208285": [4208320, 4208364, 4208400], "4208292": [4208552, 4208560, 4208572, 4208592], "4208300": [4208527, 4208508, 4208500, 4208492, 4208484, 4208476, 4208468, 4208460], "4208354": [4208552, 4208560, 4208572, 4208592], "4208392": [4208552, 4208560, 4208572, 4208592], "4208418": [4208552, 4208560, 4208572, 4208592], "4208527": [4208552, 4208560, 4208572, 4208592], "4208647": [4208960, 4208968, 4208984, 4209004], "4208658": [4208935, 4208916, 4208908, 4208900, 4208892, 4208884, 4208876, 4208868], "4208685": [4208712, 4208744, 4208784], "4208692": [4208960, 4208968, 4208984, 4209004], "4208734": [4208960, 4208968, 4208984, 4209004], "4208776": [4208960, 4208968, 4208984, 4209004], "4208826": [4208960, 4208968, 4208984, 4209004], "4208935": [4208960, 4208968, 4208984, 4209004]},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4209040,
+      "name": "FUN_00403990",
+      "default_name": true,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4209040, "end": 4209087, "items": [1, 5, 4, 2, 6, 5, 2, 5, 2, 2, 2, 2, 2, 2, 3, 1, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4209088,
+      "name": "_memset",
+      "default_name": false,
+      "thunk": false,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 0,
+      "calling_convention": "__cdecl",
+      "ranges": [
+        {"start": 4209088, "end": 4209176, "items": [4, 4, 2, 2, 2, 4, 1, 2, 3, 2, 2, 3, 2, 2, 2, 1, 1, 2, 2, 3, 2, 2, 3, 2, 2, 3, 3, 2, 2, 2, 2, 2, 1, 1, 2, 4, 1, 1, 4, 1]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    },
+    {
+      "entry": 4209176,
+      "name": "RtlUnwind",
+      "default_name": true,
+      "thunk": true,
+      "noreturn": false,
+      "external": false,
+      "stack_purge": 16,
+      "calling_convention": "__stdcall",
+      "ranges": [
+        {"start": 4209176, "end": 4209182, "items": [6]}
+      ],
+      "computed_jumps": {},
+      "computed_calls": {},
+      "callees": []
+    }
+  ],
+  "unclaimed": [
+    {"start": 4198474, "end": 4198480, "kind": "padding", "referenced": false},
+    {"start": 4198557, "end": 4198560, "kind": "padding", "referenced": false},
+    {"start": 4198589, "end": 4198592, "kind": "padding", "referenced": false},
+    {"start": 4198691, "end": 4198704, "kind": "padding", "referenced": false},
+    {"start": 4198804, "end": 4198816, "kind": "padding", "referenced": false},
+    {"start": 4199096, "end": 4199099, "kind": "undefined", "referenced": false},
+    {"start": 4199134, "end": 4199135, "kind": "undefined", "referenced": false},
+    {"start": 4201606, "end": 4201611, "kind": "undefined", "referenced": false},
+    {"start": 4201611, "end": 4201615, "kind": "padding", "referenced": false},
+    {"start": 4201615, "end": 4201621, "kind": "undefined", "referenced": false},
+    {"start": 4201621, "end": 4201622, "kind": "padding", "referenced": false},
+    {"start": 4201622, "end": 4201637, "kind": "undefined", "referenced": false},
+    {"start": 4201637, "end": 4201640, "kind": "padding", "referenced": false},
+    {"start": 4201640, "end": 4201647, "kind": "undefined", "referenced": false},
+    {"start": 4201647, "end": 4201648, "kind": "padding", "referenced": false},
+    {"start": 4201648, "end": 4201650, "kind": "undefined", "referenced": false},
+    {"start": 4201674, "end": 4201676, "kind": "padding", "referenced": false},
+    {"start": 4201676, "end": 4201684, "kind": "undefined", "referenced": false},
+    {"start": 4203401, "end": 4203408, "kind": "padding", "referenced": false},
+    {"start": 4203415, "end": 4203418, "kind": "undefined", "referenced": false},
+    {"start": 4203418, "end": 4203422, "kind": "padding", "referenced": false},
+    {"start": 4203422, "end": 4203424, "kind": "undefined", "referenced": false},
+    {"start": 4203764, "end": 4203776, "kind": "padding", "referenced": false},
+    {"start": 4203899, "end": 4203904, "kind": "padding", "referenced": false},
+    {"start": 4203995, "end": 4203996, "kind": "padding", "referenced": false},
+    {"start": 4204003, "end": 4204004, "kind": "padding", "referenced": false},
+    {"start": 4204004, "end": 4204016, "kind": "data", "referenced": true},
+    {"start": 4204057, "end": 4204059, "kind": "undefined", "referenced": false},
+    {"start": 4204059, "end": 4204060, "kind": "padding", "referenced": false},
+    {"start": 4204095, "end": 4204096, "kind": "padding", "referenced": false},
+    {"start": 4204121, "end": 4204123, "kind": "undefined", "referenced": false},
+    {"start": 4204123, "end": 4204124, "kind": "padding", "referenced": false},
+    {"start": 4204124, "end": 4204156, "kind": "data", "referenced": true},
+    {"start": 4204230, "end": 4204232, "kind": "undefined", "referenced": false},
+    {"start": 4204232, "end": 4204248, "kind": "data", "referenced": true},
+    {"start": 4204255, "end": 4204256, "kind": "padding", "referenced": false},
+    {"start": 4204267, "end": 4204268, "kind": "padding", "referenced": false},
+    {"start": 4204285, "end": 4204287, "kind": "undefined", "referenced": false},
+    {"start": 4204287, "end": 4204288, "kind": "padding", "referenced": false},
+    {"start": 4204311, "end": 4204312, "kind": "padding", "referenced": false},
+    {"start": 4204350, "end": 4204352, "kind": "undefined", "referenced": false},
+    {"start": 4204361, "end": 4204363, "kind": "undefined", "referenced": false},
+    {"start": 4204363, "end": 4204364, "kind": "padding", "referenced": false},
+    {"start": 4204395, "end": 4204396, "kind": "padding", "referenced": false},
+    {"start": 4204396, "end": 4204408, "kind": "data", "referenced": true},
+    {"start": 4204437, "end": 4204439, "kind": "undefined", "referenced": false},
+    {"start": 4204439, "end": 4204440, "kind": "padding", "referenced": false},
+    {"start": 4204479, "end": 4204480, "kind": "padding", "referenced": false},
+    {"start": 4204529, "end": 4204531, "kind": "undefined", "referenced": false},
+    {"start": 4204531, "end": 4204532, "kind": "padding", "referenced": false},
+    {"start": 4204532, "end": 4204564, "kind": "data", "referenced": false},
+    {"start": 4204638, "end": 4204640, "kind": "undefined", "referenced": false},
+    {"start": 4204640, "end": 4204656, "kind": "data", "referenced": true},
+    {"start": 4204663, "end": 4204664, "kind": "padding", "referenced": false},
+    {"start": 4204677, "end": 4204679, "kind": "undefined", "referenced": false},
+    {"start": 4204679, "end": 4204680, "kind": "padding", "referenced": false},
+    {"start": 4204699, "end": 4204700, "kind": "padding", "referenced": false},
+    {"start": 4206983, "end": 4206992, "kind": "padding", "referenced": false},
+    {"start": 4208193, "end": 4208208, "kind": "padding", "referenced": false},
+    {"start": 4208299, "end": 4208300, "kind": "padding", "referenced": false},
+    {"start": 4208307, "end": 4208308, "kind": "padding", "referenced": false},
+    {"start": 4208308, "end": 4208320, "kind": "data", "referenced": true},
+    {"start": 4208361, "end": 4208363, "kind": "undefined", "referenced": false},
+    {"start": 4208363, "end": 4208364, "kind": "padding", "referenced": false},
+    {"start": 4208399, "end": 4208400, "kind": "padding", "referenced": false},
+    {"start": 4208425, "end": 4208427, "kind": "undefined", "referenced": false},
+    {"start": 4208427, "end": 4208428, "kind": "padding", "referenced": false},
+    {"start": 4208428, "end": 4208460, "kind": "data", "referenced": true},
+    {"start": 4208534, "end": 4208536, "kind": "undefined", "referenced": false},
+    {"start": 4208536, "end": 4208552, "kind": "data", "referenced": true},
+    {"start": 4208559, "end": 4208560, "kind": "padding", "referenced": false},
+    {"start": 4208571, "end": 4208572, "kind": "padding", "referenced": false},
+    {"start": 4208589, "end": 4208591, "kind": "undefined", "referenced": false},
+    {"start": 4208591, "end": 4208592, "kind": "padding", "referenced": false},
+    {"start": 4208615, "end": 4208616, "kind": "padding", "referenced": false},
+    {"start": 4208654, "end": 4208656, "kind": "undefined", "referenced": false},
+    {"start": 4208665, "end": 4208667, "kind": "undefined", "referenced": false},
+    {"start": 4208667, "end": 4208668, "kind": "padding", "referenced": false},
+    {"start": 4208699, "end": 4208700, "kind": "padding", "referenced": false},
+    {"start": 4208700, "end": 4208712, "kind": "data", "referenced": true},
+    {"start": 4208741, "end": 4208743, "kind": "undefined", "referenced": false},
+    {"start": 4208743, "end": 4208744, "kind": "padding", "referenced": false},
+    {"start": 4208783, "end": 4208784, "kind": "padding", "referenced": false},
+    {"start": 4208833, "end": 4208835, "kind": "undefined", "referenced": false},
+    {"start": 4208835, "end": 4208836, "kind": "padding", "referenced": false},
+    {"start": 4208836, "end": 4208868, "kind": "data", "referenced": false},
+    {"start": 4208942, "end": 4208944, "kind": "undefined", "referenced": false},
+    {"start": 4208944, "end": 4208960, "kind": "data", "referenced": true},
+    {"start": 4208967, "end": 4208968, "kind": "padding", "referenced": false},
+    {"start": 4208981, "end": 4208983, "kind": "undefined", "referenced": false},
+    {"start": 4208983, "end": 4208984, "kind": "padding", "referenced": false},
+    {"start": 4209003, "end": 4209004, "kind": "padding", "referenced": false},
+    {"start": 4209029, "end": 4209040, "kind": "padding", "referenced": false},
+    {"start": 4209087, "end": 4209088, "kind": "padding", "referenced": false},
+    {"start": 4209182, "end": 4210688, "kind": "padding", "referenced": false}
+  ]
+}

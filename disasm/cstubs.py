@@ -7,7 +7,7 @@ Run by the build (see CMakeLists.txt) whenever what it reads changes:
 Every routine is called as ``sub_xxx(app, cpu)`` -- by translated code, and
 through the address table. That entry point is generated here. For a routine
 still in assembly it runs the translation, ``asm_sub_xxx``. For one the
-project has decompiled (src/game/decomp/registry.json), it unpacks the
+project has decompiled (src/<name>/decomp/registry.json), it unpacks the
 arguments from the emulated stack and registers and calls the C++ function:
 
     void Application::sub_407690(WinApplication* app, x86::CPU& cpu)
@@ -27,7 +27,7 @@ which packs the arguments into the CPU and runs the translation:
     }
 
 Where each argument and the result live comes from Ghidra
-(src/game/ghidra/prototypes.json, written by ExportDecompiled.java): the
+(src/<name>/ghidra/prototypes.json, written by ExportDecompiled.java): the
 convention names alone are not enough to go on in this binary. Since all of
 this is generated at build time, renaming a function, changing its signature
 or decompiling it in Ghidra needs an export and a build, never the
@@ -91,6 +91,9 @@ class CFunctions(object):
     def write(self, path, application_name, entries):
         """Write the entry point of every routine in ``entries``, and the C++
         side of every function Ghidra knows, to ``path``."""
+        # The decompiled functions are in the namespace of the program they
+        # came from (ExportDecompiled.java), as is everything generated for it.
+        self.namespace = application_name
         for entry in sorted(self.owned):
             if entry not in entries:
                 raise CFunctionError('0x%08x is decompiled (%s) but the disassembler has no '
@@ -194,7 +197,7 @@ class CFunctions(object):
             start = self._variadic_offset(proto)
             args += ['x86::reg32(app->getMemory<x86::reg32>(cpu.esp + 0x%x))' % (start + 4 * i)
                      for i in range(VARIADIC_DWORDS)]
-        call = 'game::%s(%s)' % (proto['name'], ', '.join(args))
+        call = '%s::%s(%s)' % (self.namespace, proto['name'], ', '.join(args))
         lines = ['', '// %s' % self.owned[proto['entry']]['file'],
                  # Declared here too, so the stub does not depend on functions.h
                  # declaring it (an older export left variadic ones out).
@@ -288,14 +291,17 @@ def main():
     parser = argparse.ArgumentParser(description='Generate the entry points of the translated '
                                      'routines and the stubs to and from decompiled C++.')
     parser.add_argument('routines', help='the routine list the disassembler writes')
-    parser.add_argument('registry', help='src/game/decomp/registry.json')
-    parser.add_argument('prototypes', help='src/game/ghidra/prototypes.json')
+    parser.add_argument('registry', help='src/<name>/decomp/registry.json')
+    parser.add_argument('prototypes', help='src/<name>/ghidra/prototypes.json')
     parser.add_argument('output', help='the .cpp to write')
+    parser.add_argument('--name', help='the program (game, menu, black); by default '
+                        'what the routine list is named after')
     args = parser.parse_args()
+    name = args.name or os.path.basename(args.routines).split('.')[0]
     with open(args.routines) as f:
         entries = set(json.load(f))
     try:
-        CFunctions(args.registry, args.prototypes).write(args.output, 'game', entries)
+        CFunctions(args.registry, args.prototypes).write(args.output, name, entries)
     except CFunctionError as e:
         sys.exit('cstubs: %s' % e)
 

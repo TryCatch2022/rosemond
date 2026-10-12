@@ -23,4 +23,5 @@ namespace win32::winmm
     using ::mmioRead;
     using ::mmioSeek;
     using ::mmioSetInfo;
+    using ::PlaySoundA;
 }

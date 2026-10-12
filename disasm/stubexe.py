@@ -172,12 +172,15 @@ def _entry_stub(image_base, slots, code_dll, entry_symbol):
             + b'\xcc')
 
 
-def build(path, image_base, segments, code_dll, entry_symbol):
+def build(path, image_base, segments, code_dll, entry_symbol, resources=None):
     """Write the stub executable.
 
     ``segments`` is what get_placed_segments() returns; an entry with no payload
     becomes an uninitialised section the loader zero-fills, so a bss tail costs
-    nothing in the file.
+    nothing in the file. ``resources`` is the original binary's resource
+    directory, (rva, size), when it had one: the segment holding it is among
+    those placed, so pointing the stub's directory at it is all LoadIcon,
+    PlaySound(SND_RESOURCE) and the like on the stub's module need.
     """
     sections = []
     for symbol, pe_section, address, size, writable, data in segments:
@@ -260,6 +263,8 @@ def build(path, image_base, segments, code_dll, entry_symbol):
     directories = [(0, 0)] * 16
     directories[1] = (imports_rva, descriptors_size)
     directories[12] = (iat_rva, iat_size)
+    if resources:
+        directories[2] = resources
     optional += b''.join(struct.pack('<II', rva, size) for rva, size in directories)
     assert len(optional) == SIZE_OF_OPTIONAL_HEADER
 

@@ -1,16 +1,18 @@
-// Move functions of game.exe from translated assembly to decompiled C++.
+// Move functions of game.exe, menu.exe or black.exe from translated assembly to
+// decompiled C++. Which one is the program the script runs on; everything goes
+// under src/<program> (src/game, src/menu, src/black), in namespace <program>.
 //
 // Each run does two things:
 //
 //  1. For every function asked for, writes Ghidra's decompilation of it to
-//     src/game/decomp/<name>_<address>.cpp and records it in
-//     src/game/decomp/registry.json. From then on the disassembler emits a stub
+//     src/<program>/decomp/<name>_<address>.cpp and records it in
+//     src/<program>/decomp/registry.json. From then on the disassembler emits a stub
 //     for that address instead of translating its body. The .cpp belongs to the
 //     project: a later run overwrites it only while it is still what the last
 //     export wrote. Once edited, the GUI asks first; headless, the fresh
 //     decompilation goes to <file>.ghidra beside it, unless --force is given.
 //
-//  2. Regenerates, wholesale, what stays Ghidra's: src/game/ghidra/types.h
+//  2. Regenerates, wholesale, what stays Ghidra's: src/<program>/ghidra/types.h
 //     (structures, unions, enums, typedefs), globals.h (every defined data item
 //     as a reference to its address in the loaded image), functions.h (a C++
 //     prototype for every function) and prototypes.json (where each function's
@@ -116,14 +118,19 @@ import ghidra.program.model.symbol.Symbol;
 
 public class ExportDecompiled extends GhidraScript {
 
+    // The program's name as the build knows it ("game" for game.exe, "menu"
+    // for MENU.EXE), which is also the namespace of everything generated.
+    private String program;
     // Where the files go, relative to the repository root.
-    private static final String OWNED_DIR = "src/game/decomp";
-    private static final String GENERATED_DIR = "src/game/ghidra";
-    private static final String REGISTRY = OWNED_DIR + "/registry.json";
+    private String OWNED_DIR;
+    private String GENERATED_DIR;
+    private String REGISTRY;
+    private String NAMES;
 
-    // Memory blocks whose data items are globals. The PE headers and the TEB
-    // block Ghidra adds are not the game's data.
-    private static final Set<String> SKIPPED_BLOCKS = new HashSet<>(Arrays.asList("Headers", "tdb"));
+    // Memory blocks whose data items are globals. The PE headers, the resource
+    // tree (only reached through the resource API) and the TEB block Ghidra
+    // adds are not the program's data.
+    private static final Set<String> SKIPPED_BLOCKS = new HashSet<>(Arrays.asList("Headers", ".rsrc", "tdb"));
 
     private static final Set<String> CALLING_CONVENTIONS = new HashSet<>(Arrays.asList(
         "__cdecl", "__stdcall", "__fastcall", "__thiscall", "__vectorcall", "__pascal", "__regcall"));
@@ -143,7 +150,7 @@ public class ExportDecompiled extends GhidraScript {
         "volatile", "wchar_t", "while", "xor", "xor_eq",
         "min", "max", "near", "far", "small", "hyper", "interface", "pascal", "cdecl", "IN", "OUT",
         "OPTIONAL", "CALLBACK", "WINAPI", "CONST", "VOID", "TRUE", "FALSE", "NULL", "errno",
-        "game", "win32", "x86", "ghidra", "std"));
+        "game", "menu", "black", "win32", "x86", "ghidra", "std"));
 
     // Ghidra builtins ghidra_compat.h (or C++ itself) gives a definition.
     private static final Set<String> COMPAT_TYPES = new HashSet<>(Arrays.asList(
@@ -181,6 +188,11 @@ public class ExportDecompiled extends GhidraScript {
         // to the repository's, or a junction on Windows) still finds the
         // repository, not the home.
         root = getSourceFile().getFile(false).toPath().toRealPath().getParent().getParent().toFile();
+        program = currentProgram.getName().toLowerCase().replaceFirst("\\.exe$", "");
+        OWNED_DIR = "src/" + program + "/decomp";
+        GENERATED_DIR = "src/" + program + "/ghidra";
+        REGISTRY = OWNED_DIR + "/registry.json";
+        NAMES = GENERATED_DIR + "/names.json";
         dtm = currentProgram.getDataTypeManager();
 
         List<Function> targets = new ArrayList<>();
@@ -336,7 +348,7 @@ public class ExportDecompiled extends GhidraScript {
         return s;
     }
 
-    // Assigns every name the generated headers declare in namespace game. The
+    // Assigns every name the generated headers declare in the namespace. The
     // order decides who keeps a contested name: types, then functions, then
     // globals, then enum constants. A name more than one item wants is given
     // to none of them; each gets its address (or a counter) appended instead.
@@ -620,7 +632,7 @@ public class ExportDecompiled extends GhidraScript {
         for (String n : names) {
             out.append("#ifdef ").append(n).append("\n#undef ").append(n).append("\n#endif\n");
         }
-        out.append("\nnamespace game\n{\n\n");
+        out.append("\nnamespace ").append(program).append("\n{\n\n");
         out.append("#pragma pack(push, 1)\n\n");
         for (DataType dt : userTypes) {
             if (dt instanceof Structure) {
@@ -798,7 +810,7 @@ public class ExportDecompiled extends GhidraScript {
         out.append("// The image's sections are mapped at the addresses the game was linked\n"
             + "// for, so each of these refers to the very bytes translated code reads and\n"
             + "// writes at that address.\n\n");
-        out.append("namespace game\n{\n\n");
+        out.append("namespace ").append(program).append("\n{\n\n");
         for (Data d : globalData()) {
             String name = globalNames.get(d.getAddress());
             out.append(globalDefinition("inline ", d.getDataType(), name, d.getLength(),
@@ -983,11 +995,11 @@ public class ExportDecompiled extends GhidraScript {
         StringBuilder out = new StringBuilder();
         out.append(header("functions.h", "a C++ prototype for every function of the image"));
         out.append("#ifndef GHIDRA_FUNCTIONS_H_\n#define GHIDRA_FUNCTIONS_H_\n\n#include \"types.h\"\n\n");
-        out.append("// Each is defined either by a decompiled function in src/game/decomp, or by\n"
-            + "// a stub that runs the translated routine (game.cstubs.cpp). The calling\n"
+        out.append("// Each is defined either by a decompiled function in " + OWNED_DIR + ", or by\n"
+            + "// a stub that runs the translated routine (" + program + ".cstubs.cpp). The calling\n"
             + "// convention is not part of it: only the stubs need to know where the\n"
             + "// original code kept the arguments, and that is in prototypes.json.\n\n");
-        out.append("namespace game\n{\n\n");
+        out.append("namespace ").append(program).append("\n{\n\n");
         JsonArray all = new JsonArray();
         for (Function f : currentProgram.getFunctionManager().getFunctions(true)) {
             Prototype p = prototype(f);
@@ -1168,7 +1180,7 @@ public class ExportDecompiled extends GhidraScript {
             + "// export only renames in it what was renamed in Ghidra. Its signature still\n"
             + "// belongs to Ghidra (functions.h, and the stub translated code calls it\n"
             + "// through), so change that in Ghidra.\n\n");
-        out.append("#include <decomp.h>\n\nnamespace game\n{\n\n");
+        out.append("#include <decomp.h>\n\nnamespace ").append(program).append("\n{\n\n");
         out.append(code.trim()).append("\n\n}\n");
 
         // The file is the project's once written, so it is only replaced while
@@ -1450,8 +1462,6 @@ public class ExportDecompiled extends GhidraScript {
     // ------------------------------------------------------------------
     // Renames
     // ------------------------------------------------------------------
-
-    private static final String NAMES = GENERATED_DIR + "/names.json";
 
     // The C++ name of everything that has an identity Ghidra keeps across a
     // rename: functions and globals by address, types by their universal ID.

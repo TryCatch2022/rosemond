@@ -107,7 +107,11 @@ def _load_exe(path, rebase_address):
             sections.append((None, s.VirtualAddress + image_base, s.SizeOfRawData, s.Name.rstrip(b'\x00').replace(b'.', b'_'), False, False, max(s.Misc_VirtualSize, s.SizeOfRawData)))
     entry_point = nfs2exe.OPTIONAL_HEADER.AddressOfEntryPoint + image_base
     exported_symbols = [(image_base+h['RVA'],h['Name']) for h in nfs2exe.dump_dict().get('Exported symbols', [])[1:]]
-    return (sections, entry_point, dlls, exported_symbols)
+    resource_data = nfs2exe.OPTIONAL_HEADER.DATA_DIRECTORY[2]
+    # Where the resource tree is, as an address: the stub executable carries
+    # the section it is in, and points its own resource directory at it.
+    resources = (resource_data.VirtualAddress + image_base, resource_data.Size) if resource_data.Size else None
+    return (sections, entry_point, dlls, exported_symbols, resources)
 
 
 def _reduce(subroutines, found_subroutines, merge_hints):
@@ -153,7 +157,7 @@ def _reduce(subroutines, found_subroutines, merge_hints):
 class Module:
     def __init__(self, application_name, exe_path, rebase_address):
         self.application_name = application_name
-        self.sections, self.entry_point, self.dll_imports, self.exported_symbols = _load_exe(exe_path, rebase_address)
+        self.sections, self.entry_point, self.dll_imports, self.exported_symbols, self.resources = _load_exe(exe_path, rebase_address)
         self.subroutines = []
         for data, address, length, name, ro, code, virtual_length in self.sections:
             print('%s section 0x%08x - 0x%08x' % (name, address, address + length))
@@ -237,9 +241,15 @@ class Module:
         image_base = self.sections[0][1] & ~0xfffff
         stub = self.stub_name()
 
+        # The entries of the resource tree are RVAs too, which stay right
+        # because every segment keeps its address and the image its base.
+        resources = None
+        if self.resources:
+            resources = (self.resources[0] - image_base, self.resources[1])
+
         sections, entry, size = stubexe.build(
             '%s/%s' % (directory, stub), image_base, self.get_placed_segments(),
-            self.code_dll_name(), self.entry_symbol())
+            self.code_dll_name(), self.entry_symbol(), resources)
 
         top = self.get_image_top()
         with open('%s/%s.link.cmake' % (directory, self.application_name), 'w') as out:

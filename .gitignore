@@ -1,2 +1,12 @@
 **/*.pyc
 /build*/
+# Ghidra: what is one person's, or one session's, rather than the project's.
+# The programs and their analysis (<project>.rep/idata, project.prp, the .gpr)
+# are shared; the lock while a project is open, scratch files, the window
+# layout and per-user data (bookmarks, view state) are not. Ghidra recreates
+# what is missing when the project is opened.
+*.lock
+*.lock~
+**/*.rep/idata/**/*.ps
+**/*.rep/projectState
+**/*.rep/user/

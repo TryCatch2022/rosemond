@@ -2,6 +2,7 @@
 
     python decompile.py 0x407690 0x4098a0   # decompile these, refresh the rest
     python decompile.py                     # only refresh the generated headers
+    python decompile.py -t menu 0x401000    # the same for menu.exe (or black)
 
 Each decompiled function is written with the instructions it came from in
 comments above each line, to check the C against; --no-asm leaves them out.
@@ -11,9 +12,9 @@ Runs ghidra_scripts/ExportDecompiled.java headless against the Ghidra project
 between translated and decompiled code are generated at build time from what
 the export writes. What is written where:
 
-    src/game/decomp/<name>_<address>.cpp   the decompiled function; yours to edit
-    src/game/decomp/registry.json          which functions are decompiled
-    src/game/ghidra/*                      types, globals, prototypes; Ghidra's
+    src/<target>/decomp/<name>_<address>.cpp   the decompiled function; yours to edit
+    src/<target>/decomp/registry.json          which functions are decompiled
+    src/<target>/ghidra/*                      types, globals, prototypes; Ghidra's
 
 Every export also brings the decompiled files up to date: one still as the
 last export wrote it is written again; in an edited one, whatever was renamed
@@ -34,12 +35,20 @@ import sys
 
 GHIDRA_HOME = os.environ.get('GHIDRA_HOME', '/opt/ghidra_12.1.4_PUBLIC')
 PROJECT = 'ghidra project/RosemondHill_Decomp'
-PROGRAM = 'game.exe'
+# target: the program's name in the project. ExportDecompiled.java writes to
+# src/<target>, which it works out from that name.
+PROGRAMS = {
+    'game': 'game.exe',
+    'black': 'black.exe',
+    'menu': 'MENU.EXE',
+}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
     parser.add_argument('addresses', nargs='*', help='entry points to decompile (0x...)')
+    parser.add_argument('-t', '--target', default='game', choices=sorted(PROGRAMS),
+                        help='the program to export (default: %(default)s)')
     parser.add_argument('--no-asm', action='store_true',
                         help='leave the machine code out of the decompiled files')
     parser.add_argument('--force', action='store_true',
@@ -66,7 +75,7 @@ def main():
         sys.exit('no %s under %s; point --ghidra or GHIDRA_HOME at the Ghidra installation'
                  % (launcher, args.ghidra))
     command = [headless, project_dir, project_name,
-               '-process', PROGRAM, '-noanalysis', '-readOnly',
+               '-process', PROGRAMS[args.target], '-noanalysis', '-readOnly',
                '-scriptPath', os.path.join(root, 'ghidra_scripts'),
                '-postScript', 'ExportDecompiled.java'] + args.addresses + (
                    ['--no-asm'] if args.no_asm else []) + (['--force'] if args.force else [])

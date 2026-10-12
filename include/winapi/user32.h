@@ -10,6 +10,7 @@ namespace win32::user32
     using ::GetFocus;
     using ::GetKeyboardState;
     using ::GetMessageA;
+    using ::GetSystemMetrics;
     using ::LoadCursorA;
     using ::LoadIconA;
     using ::LoadImageA;
@@ -23,7 +24,10 @@ namespace win32::user32
     using ::ReleaseDC;
     using ::SetCursor;
     using ::SetCursorPos;
+    using ::SetTimer;
+    using ::SetWindowPos;
     using ::ShowWindow;
+    using ::SystemParametersInfoA;
     using ::ToAscii;
     using ::TranslateMessage;
     using ::UpdateWindow;
