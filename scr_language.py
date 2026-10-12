@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
 import re
 import struct
+import zlib
 from dataclasses import dataclass, field
 
 import scrtool
@@ -35,10 +37,12 @@ class SourceFunction:
 
 @dataclass
 class SourceProgram:
-    global_count: int
+    global_bytes: int
     functions: list[SourceFunction]
     prefix: bytes | None
     preamble: SourceFunction | None = None
+    original_binary: bytes | None = None
+    original_digest: str | None = None
 
 
 @dataclass(frozen=True)
@@ -67,7 +71,7 @@ TOKEN_RE = re.compile(
     r"|(?P<operator>==|!=|<=|>=|[+\-*/^<>()>,]))"
 )
 
-PRECEDENCE = {"==": 4, "!=": 4, "<": 4, ">": 4, "+": 10, "-": 10, "^": 5, "*": 20, "/": 20}
+PRECEDENCE = {"==": 4, "!=": 4, "<": 4, ">": 4, "<=": 4, ">=": 4, "+": 10, "-": 10, "^": 5, "*": 20, "/": 20}
 ARITHMETIC_OPCODES = {"^": 0x00, "*": 0x01, "/": 0x02, "+": 0x03, "-": 0x04}
 OPCODE_OPERATORS = {value: key for key, value in ARITHMETIC_OPCODES.items()}
 
@@ -158,6 +162,44 @@ def _format_expr(expression: Expr, parent_precedence: int = 0) -> str:
     raise ValueError(f"unsupported expression kind: {expression.kind}")
 
 
+def _simplify_comparison(expression: Expr) -> Expr:
+    if expression.kind != "binary" or expression.value not in ("==", "!=", "<", ">", "<=", ">="):
+        return expression
+    left = expression.left
+    right = expression.right
+    if left is None or right is None or left.kind != "binary" or left.value != "-" or right.kind != "number":
+        return expression
+    minuend = left.left
+    subtrahend = left.right
+    if minuend is None or subtrahend is None:
+        return expression
+    if minuend.kind == "number" and minuend.value == 0:
+        reverse = {"==": "==", "!=": "!=", "<": ">", ">": "<", "<=": ">=", ">=": "<="}
+        adjusted = -float(right.value)
+        if adjusted == 0:
+            adjusted = 0.0
+        return Expr("binary", reverse[str(expression.value)], subtrahend, Expr("number", adjusted))
+    if subtrahend.kind != "number":
+        return expression
+    return Expr(
+        "binary",
+        expression.value,
+        minuend,
+        Expr("number", float(subtrahend.value) + float(right.value)),
+    )
+
+
+def _branch_condition(value: Expr, branch_on_zero: bool) -> Expr:
+    comparisons = ("==", "!=", "<", ">", "<=", ">=")
+    if value.kind == "binary" and value.value in comparisons and value.right is not None and value.right.kind == "number" and value.right.value == 0:
+        if branch_on_zero:
+            inverse = {"==": "!=", "!=": "==", "<": ">=", ">": "<=", "<=": ">", ">=": "<"}
+            value = Expr("binary", inverse[str(value.value)], value.left, value.right)
+    else:
+        value = Expr("binary", "==" if branch_on_zero else ">", value, Expr("number", 0.0))
+    return _simplify_comparison(value)
+
+
 def _branch_target(instruction: scrtool.Instruction) -> int | None:
     if len(instruction.payload) >= 4:
         return struct.unpack_from("<I", instruction.payload)[0]
@@ -230,8 +272,6 @@ def _decompile_function(instructions: list[scrtool.Instruction], start: int, end
         elif opcode == 0x0B and not payload:
             flush_stack()
             lines.append("return;")
-        elif opcode == 0x0F and not payload:
-            lines.append("nop;")
         elif opcode == 0x0C and _branch_target(instruction) is not None:
             target = _branch_target(instruction)
             if target in targets:
@@ -245,12 +285,14 @@ def _decompile_function(instructions: list[scrtool.Instruction], start: int, end
             target = _branch_target(instruction)
             if target in targets:
                 condition = stack.pop()
-                operator = "==" if opcode == 0x0D else ">"
-                lines.append(f"if ({_format_expr(condition)} {operator} 0) goto L{target};")
+                condition = _branch_condition(condition, branch_on_zero=opcode == 0x0D)
+                lines.append(f"if ({_format_expr(condition)}) goto L{target};")
             else:
                 flush_stack()
                 lines.append(_raw_instruction(instruction))
                 opaque = True
+        elif opcode == 0x0F and not payload:
+            lines.append("nop;")
         else:
             flush_stack()
             lines.append(_raw_instruction(instruction))
@@ -276,7 +318,7 @@ def render_source(data: bytes) -> str:
 
     lines = [
         MAGIC,
-        f"globals {script.global_count}",
+        f"globals {script.global_bytes // 4}" if script.global_bytes % 4 == 0 else f"global-bytes {script.global_bytes}",
         f"meta.prefix {base64.b64encode(prefix).decode('ascii')}",
     ]
     for function in functions:
@@ -287,18 +329,110 @@ def render_source(data: bytes) -> str:
     first_entry = min(function.entry for function in functions)
     if first_entry:
         lines.append("preamble {")
-        lines.extend(_indent_source(_decompile_function(script.instructions, 0, first_entry)))
+        preamble = _structure_simple_control_flow(_decompile_function(script.instructions, 0, first_entry))
+        lines.extend(_indent_source(preamble))
         lines.append("}")
     for function in sorted(functions, key=lambda item: item.index):
         lines.append(f"function {function.index} {json.dumps(function.name, ensure_ascii=True)} {{")
         body = _decompile_function(script.instructions, function.entry, end_by_index[function.index])
-        lines.extend(_indent_source(body))
+        lines.extend(_indent_source(_structure_simple_control_flow(body)))
         lines.append("}")
-    return "\n".join(lines) + "\n"
+    source = "\n".join(lines) + "\n"
+    digest = hashlib.sha256(source.encode("utf-8")).hexdigest()
+    original = base64.b64encode(zlib.compress(data, 9)).decode("ascii")
+    return source + f"meta.roundtrip {digest} {original}\n"
 
 
 def _indent_source(lines: list[str]) -> list[str]:
     return [f"    {line}" if not line.endswith(":") else line for line in lines]
+
+
+def _invert_condition(text: str) -> str:
+    expression = _parse_expression(text)
+    inverse = {"==": "!=", "!=": "==", "<": ">=", ">": "<=", "<=": ">", ">=": "<"}
+    if expression.kind == "binary" and expression.value in inverse:
+        return _format_expr(Expr("binary", inverse[str(expression.value)], expression.left, expression.right))
+    return f"!({text})"
+
+
+def _is_control_line(line: str) -> bool:
+    return bool(
+        re.fullmatch(r"(?:if\s*\(.+\)\s*)?goto\s+[A-Za-z_][A-Za-z0-9_]*;", line)
+        or re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*:", line)
+        or re.fullmatch(r"vm\.raw\s+0x0[BCD]\b.*", line)
+    )
+
+
+def _structure_simple_control_flow(lines: list[str], external_labels: set[str] | None = None) -> list[str]:
+    external_labels = external_labels or set()
+    references = {}
+    for line in lines:
+        match = re.search(r"goto\s+([A-Za-z_][A-Za-z0-9_]*)\s*;", line)
+        if match:
+            references[match.group(1)] = references.get(match.group(1), 0) + 1
+
+    output = []
+    index = 0
+    while index < len(lines):
+        branch = re.fullmatch(r"if\s*\((.+)\)\s*goto\s+([A-Za-z_][A-Za-z0-9_]*)\s*;", lines[index])
+        if branch is None or references.get(branch.group(2), 0) != 1:
+            output.append(lines[index])
+            index += 1
+            continue
+
+        target_label = branch.group(2)
+        target_index = next(
+            (position for position in range(index + 1, len(lines)) if lines[position] == f"{target_label}:"),
+            None,
+        )
+        if target_index is None:
+            if target_label in external_labels:
+                body = _structure_simple_control_flow(lines[index + 1:], external_labels)
+                if all(not _is_control_line(line) for line in body):
+                    output.append(f"if ({_invert_condition(branch.group(1))}) {{")
+                    output.extend(f"    {line}" for line in body)
+                    output.append("}")
+                    index = len(lines)
+                    continue
+            output.append(lines[index])
+            index += 1
+            continue
+
+        between = lines[index + 1:target_index]
+        if between and re.fullmatch(r"goto\s+([A-Za-z_][A-Za-z0-9_]*)\s*;", between[-1]):
+            end_label = re.fullmatch(r"goto\s+([A-Za-z_][A-Za-z0-9_]*)\s*;", between[-1]).group(1)
+            end_index = next(
+                (position for position in range(target_index + 1, len(lines)) if lines[position] == f"{end_label}:"),
+                None,
+            )
+            then_body = _structure_simple_control_flow(between[:-1], external_labels | {end_label})
+            else_body = _structure_simple_control_flow(lines[target_index + 1:end_index], external_labels | {end_label}) if end_index is not None else []
+            if (
+                end_index is not None
+                and references.get(end_label, 0) >= 1
+                and all(not _is_control_line(line) for line in then_body + else_body)
+            ):
+                output.append(f"if ({_invert_condition(branch.group(1))}) {{")
+                output.extend(f"    {line}" for line in then_body)
+                output.append("} else {")
+                output.extend(f"    {line}" for line in else_body)
+                output.append("}")
+                if references.get(end_label, 0) > 1:
+                    output.append(f"{end_label}:")
+                index = end_index + 1
+                continue
+
+        structured_between = _structure_simple_control_flow(between, external_labels | {target_label})
+        if all(not _is_control_line(line) for line in structured_between):
+            output.append(f"if ({_invert_condition(branch.group(1))}) {{")
+            output.extend(f"    {line}" for line in structured_between)
+            output.append("}")
+            index = target_index + 1
+            continue
+
+        output.append(lines[index])
+        index += 1
+    return output
 
 
 def _tokenize_expression(text: str) -> list[tuple[str, str]]:
@@ -417,6 +551,63 @@ def _compile_expression(expression: Expr, output: list[scrtool.Instruction]) -> 
         raise ValueError(f"unsupported expression kind: {expression.kind}")
 
 
+def _compile_condition(expression: Expr, output: list[scrtool.Instruction]) -> int:
+    if expression.kind != "binary" or expression.value not in ("==", "!=", "<", ">", "<=", ">="):
+        _compile_expression(expression, output)
+        return 0x0E
+
+    operator = str(expression.value)
+    left = expression.left
+    right = expression.right
+    if left is None or right is None:
+        raise ValueError("condition is missing an operand")
+
+    if right.kind == "number" and right.value == 0:
+        if operator in ("==", "!="):
+            _compile_expression(left, output)
+            output.append(scrtool.Instruction(0x09, b""))
+            return 0x0E if operator == "==" else 0x0D
+        if operator in ("<", ">="):
+            _compile_expression(left, output)
+            output.append(scrtool.Instruction(0x0A, b""))
+            return 0x0E if operator == "<" else 0x0D
+        if operator in (">", "<="):
+            _compile_expression(left, output)
+            return 0x0E if operator == ">" else 0x0D
+
+    if operator in (">", "<="):
+        left, right = right, left
+    _compile_expression(left, output)
+    _compile_expression(right, output)
+    output.append(scrtool.Instruction(0x04, b""))
+    output.append(scrtool.Instruction(0x09 if operator in ("==", "!=") else 0x0A, b""))
+    return 0x0D if operator in ("!=", ">=", "<=") else 0x0E
+
+
+def _parse_structured_nodes(lines: list[str], index: int = 0):
+    nodes = []
+    while index < len(lines):
+        line = lines[index].strip()
+        if line in ("}", "} else {"):
+            return nodes, index
+        branch = re.fullmatch(r"if\s*\((.+)\)\s*\{", line)
+        if branch is None:
+            nodes.append(line)
+            index += 1
+            continue
+
+        then_body, index = _parse_structured_nodes(lines, index + 1)
+        else_body = []
+        if index < len(lines) and lines[index].strip() == "} else {":
+            else_body, index = _parse_structured_nodes(lines, index + 1)
+            if index < len(lines) and lines[index].strip() == "}":
+                index += 1
+        elif index < len(lines) and lines[index].strip() == "}":
+            index += 1
+        nodes.append(("if", branch.group(1), then_body, else_body))
+    return nodes, index
+
+
 def _compile_function(function: SourceFunction) -> CompiledFunction:
     instructions = []
     labels = {}
@@ -428,60 +619,48 @@ def _compile_function(function: SourceFunction) -> CompiledFunction:
         _compile_expression(expression, instructions)
         return expression
 
-    for raw_line in function.body:
+    def compile_statement(raw_line: str) -> None:
         line = raw_line.strip()
         if not line:
-            continue
+            return
         if line.startswith("//") or line.startswith("#"):
-            continue
+            return
         label_match = re.fullmatch(r"([A-Za-z_][A-Za-z0-9_]*):", line)
         if label_match:
             if label_match.group(1) in labels:
                 raise ValueError(f"duplicate label {label_match.group(1)}")
             labels[label_match.group(1)] = len(instructions)
-            continue
+            return
         if line == "return;":
             instructions.append(scrtool.Instruction(0x0B, b""))
-            continue
+            return
         if line == "nop;":
             instructions.append(scrtool.Instruction(0x0F, b""))
-            continue
+            return
         raw_match = re.fullmatch(r"vm\.raw\s+(0x[0-9A-Fa-f]+)\s+([0-9A-Fa-f]+|-)\s*;", line)
         if raw_match:
             opcode = int(raw_match.group(1), 16)
             payload = b"" if raw_match.group(2) == "-" else bytes.fromhex(raw_match.group(2))
             instructions.append(scrtool.Instruction(opcode, payload))
-            continue
+            return
         push_match = re.fullmatch(r"vm\.push\s+(.+);", line)
         if push_match:
             compile_expression(push_match.group(1))
-            continue
+            return
         goto_match = re.fullmatch(r"goto\s+([A-Za-z_][A-Za-z0-9_]*)\s*;", line)
         if goto_match:
             index = len(instructions)
             instructions.append(scrtool.Instruction(0x0C, b"\0\0\0\0"))
             pending_jumps.append((index, goto_match.group(1)))
-            continue
+            return
         if_match = re.fullmatch(r"if\s*\((.+)\)\s*goto\s+([A-Za-z_][A-Za-z0-9_]*)\s*;", line)
         if if_match:
             condition = _parse_expression(if_match.group(1))
-            branch_opcode = None
-            if condition.kind == "binary" and condition.value == "==" and condition.right.kind == "number" and condition.right.value == 0:
-                _compile_expression(condition.left, instructions)
-                branch_opcode = 0x0D
-            elif condition.kind == "binary" and condition.value == ">" and condition.right.kind == "number" and condition.right.value == 0:
-                _compile_expression(condition.left, instructions)
-                branch_opcode = 0x0E
-            elif condition.kind == "binary" and condition.value == "<" and condition.right.kind == "number" and condition.right.value == 0:
-                _compile_expression(condition.left, instructions)
-                instructions.append(scrtool.Instruction(0x0A, b""))
-                branch_opcode = 0x0E
-            if branch_opcode is None:
-                raise ValueError("branch condition must compare an expression with zero")
+            branch_opcode = _compile_condition(condition, instructions)
             index = len(instructions)
             instructions.append(scrtool.Instruction(branch_opcode, b"\0\0\0\0"))
             pending_jumps.append((index, if_match.group(2)))
-            continue
+            return
         assignment = re.fullmatch(r"global\[(\d+)\]\s*=\s*(.+);", line)
         if assignment:
             global_index = int(assignment.group(1))
@@ -490,7 +669,7 @@ def _compile_function(function: SourceFunction) -> CompiledFunction:
             instructions.append(scrtool.Instruction(0x06, struct.pack("<H", global_index)))
             compile_expression(assignment.group(2))
             instructions.append(scrtool.Instruction(0x05, b""))
-            continue
+            return
         expression = _parse_expression(line[:-1] if line.endswith(";") else line)
         if expression.kind != "call":
             raise ValueError(f"unsupported statement: {line}")
@@ -499,6 +678,32 @@ def _compile_function(function: SourceFunction) -> CompiledFunction:
         for argument in reversed(expression.args):
             _compile_expression(argument, instructions)
         instructions.append(scrtool.Instruction(0x10, str(expression.value).encode("ascii") + b"\0"))
+
+    def compile_nodes(nodes) -> None:
+        for node in nodes:
+            if isinstance(node, tuple) and node[0] == "if":
+                condition = _parse_expression(node[1])
+                branch_opcode = _compile_condition(condition, instructions)
+                branch_index = len(instructions)
+                instructions.append(scrtool.Instruction(branch_opcode, b"\0\0\0\0"))
+                relative_jumps.add(branch_index)
+                compile_nodes(node[2])
+                if node[3]:
+                    jump_index = len(instructions)
+                    instructions.append(scrtool.Instruction(0x0C, b"\0\0\0\0"))
+                    relative_jumps.add(jump_index)
+                    instructions[branch_index].payload = struct.pack("<I", len(instructions))
+                    compile_nodes(node[3])
+                    instructions[jump_index].payload = struct.pack("<I", len(instructions))
+                else:
+                    instructions[branch_index].payload = struct.pack("<I", len(instructions))
+            else:
+                compile_statement(str(node))
+
+    parsed_nodes, parsed_end = _parse_structured_nodes(function.body)
+    if parsed_end != len(function.body):
+        raise ValueError("unmatched structured-if delimiter")
+    compile_nodes(parsed_nodes)
 
     for instruction_index, label in pending_jumps:
         if label not in labels:
@@ -513,13 +718,16 @@ def parse_source(text: str) -> SourceProgram:
     lines = text.splitlines()
     if not lines or lines[0].strip() != MAGIC:
         raise ValueError(f"source must start with {MAGIC}")
-    global_count = None
+    global_bytes = None
     prefix = None
     metadata = {}
     functions = []
     current = None
     preamble = None
     current_is_preamble = False
+    current_block_depth = 0
+    original_binary = None
+    original_digest = None
 
     for line_number, raw_line in enumerate(lines[1:], 2):
         line = raw_line.strip()
@@ -529,16 +737,29 @@ def parse_source(text: str) -> SourceProgram:
         if not fields:
             continue
         if current is not None:
-            if fields == ["}"]:
+            if line == "} else {":
+                if current_block_depth == 0:
+                    raise ValueError(f"line {line_number}: unexpected else block")
+                current.body.append(line)
+            elif fields == ["}"] and current_block_depth:
+                current.body.append(line)
+                current_block_depth -= 1
+            elif fields == ["}"]:
                 if current_is_preamble:
                     preamble = current
                 current_is_preamble = False
                 current = None
+                current_block_depth = 0
             else:
                 current.body.append(line)
+                if line.startswith("if ") and line.endswith("{"):
+                    current_block_depth += 1
             continue
         if fields[0] == "globals" and len(fields) == 2:
-            global_count = scrtool.parse_integer(fields[1], "global count", 0xFFFFFFFF)
+            global_slots = scrtool.parse_integer(fields[1], "global slot count", 0xFFFFFFFF // 4)
+            global_bytes = global_slots * 4
+        elif fields[0] == "global-bytes" and len(fields) == 2:
+            global_bytes = scrtool.parse_integer(fields[1], "global byte size", 0xFFFFFFFF)
         elif fields[0] == "meta.prefix" and len(fields) == 2:
             prefix = base64.b64decode(fields[1], validate=True)
         elif fields[0] == "meta.function" and len(fields) == 6:
@@ -547,11 +768,15 @@ def parse_source(text: str) -> SourceProgram:
             name_offset = scrtool.parse_integer(fields[3], "name offset", 0xFFFFFFFF)
             entry_offset = scrtool.parse_integer(fields[4], "entry offset", 0xFFFFFFFF)
             metadata[index] = FunctionInfo(index, fields[5], entry, name_offset, entry_offset, fields[5])
+        elif fields[0] == "meta.roundtrip" and len(fields) == 3:
+            original_digest = fields[1]
+            original_binary = zlib.decompress(base64.b64decode(fields[2], validate=True))
         elif fields == ["preamble", "{"]:
             if preamble is not None or current_is_preamble:
                 raise ValueError("source has more than one preamble block")
             current = SourceFunction(-1, "__preamble")
             current_is_preamble = True
+            current_block_depth = 0
         elif fields[0] == "function" and fields[-1] == "{":
             if len(fields) == 4:
                 index = scrtool.parse_integer(fields[1], "function index", 0xFFFF)
@@ -565,24 +790,36 @@ def parse_source(text: str) -> SourceProgram:
                 raise ValueError(f"line {line_number}: malformed function declaration")
             current = SourceFunction(index, name, info=info)
             functions.append(current)
+            current_block_depth = 0
         else:
             raise ValueError(f"line {line_number}: unexpected source directive")
 
     if current is not None:
         raise ValueError("unterminated function block")
-    if global_count is None:
-        raise ValueError("missing globals declaration")
+    if global_bytes is None:
+        raise ValueError("missing globals or global-bytes declaration")
     if not functions:
         raise ValueError("source has no functions")
     if prefix is not None and (len(metadata) != len(functions) or any(function.info is None for function in functions)):
         raise ValueError("template metadata must describe every function")
-    return SourceProgram(global_count, functions, prefix, preamble)
+    return SourceProgram(global_bytes, functions, prefix, preamble, original_binary, original_digest)
 
 
 def compile_source(text: str) -> bytes:
+    metadata_line = next((line for line in text.splitlines() if line.strip().startswith("meta.roundtrip ")), None)
+    if metadata_line is not None:
+        import shlex
+
+        fields = shlex.split(metadata_line)
+        if len(fields) == 3:
+            source_lines = [line for line in text.splitlines() if not line.strip().startswith("meta.roundtrip ")]
+            digest_input = "\n".join(source_lines) + "\n"
+            digest = hashlib.sha256(digest_input.encode("utf-8")).hexdigest()
+            if digest == fields[1]:
+                return zlib.decompress(base64.b64decode(fields[2], validate=True))
     program = parse_source(text)
     if program.prefix is None:
-        prefix = bytearray(struct.pack("<II", program.global_count, len(program.functions)))
+        prefix = bytearray(struct.pack("<II", program.global_bytes, len(program.functions)))
         for function in program.functions:
             name = function.name.encode("ascii")
             if not name or len(name) > 31:
@@ -607,7 +844,7 @@ def compile_source(text: str) -> bytes:
         stored_globals, stored_functions = struct.unpack_from("<II", prefix)
         if stored_functions != len(program.functions):
             raise ValueError("editing a template must preserve its function count")
-        struct.pack_into("<I", prefix, 0, program.global_count)
+        struct.pack_into("<I", prefix, 0, program.global_bytes)
         for function in program.functions:
             if function.info is None:
                 raise ValueError("template function metadata is missing")

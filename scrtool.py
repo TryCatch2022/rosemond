@@ -40,7 +40,7 @@ class Instruction:
 
 @dataclass
 class Script:
-    global_count: int
+    global_bytes: int
     descriptors: list[bytes]
     gap: bytes
     instructions: list[Instruction]
@@ -103,7 +103,7 @@ def decode_binary(data: bytes) -> Script:
     if len(data) < 8:
         raise ValueError("file is shorter than the 8-byte script header")
 
-    global_count, function_count = struct.unpack_from("<II", data)
+    global_bytes, function_count = struct.unpack_from("<II", data)
     descriptor_end = 8 + function_count * DESCRIPTOR_SIZE
     if descriptor_end > len(data):
         raise ValueError("function descriptor table extends past end of file")
@@ -114,7 +114,7 @@ def decode_binary(data: bytes) -> Script:
     ]
     count_offset, instructions = find_stream(data, descriptor_end)
     return Script(
-        global_count=global_count,
+        global_bytes=global_bytes,
         descriptors=descriptors,
         gap=data[descriptor_end:count_offset],
         instructions=instructions,
@@ -143,7 +143,7 @@ def instruction_text(instruction: Instruction) -> str:
 def render_text(script: Script) -> str:
     lines = [
         MAGIC,
-        f"header {script.global_count} {len(script.descriptors)}",
+        f"header {script.global_bytes} {len(script.descriptors)}",
         f"gap {script.gap.hex() or '-'}",
     ]
     for index, descriptor in enumerate(script.descriptors):
@@ -171,7 +171,7 @@ def parse_integer(value: str, field: str, maximum: int) -> int:
 
 def parse_text(source: str) -> Script:
     magic_seen = False
-    global_count = None
+    global_bytes = None
     expected_function_count = None
     gap = None
     expected_instruction_count = None
@@ -196,7 +196,7 @@ def parse_text(source: str) -> Script:
         command = fields[0]
         try:
             if command == "header" and len(fields) == 3:
-                global_count = parse_integer(fields[1], "global count", 0xFFFFFFFF)
+                global_bytes = parse_integer(fields[1], "global byte size", 0xFFFFFFFF)
                 expected_function_count = parse_integer(fields[2], "function count", 0xFFFFFFFF)
             elif command == "gap" and len(fields) == 2:
                 gap = b"" if fields[1] == "-" else bytes.fromhex(fields[1])
@@ -238,7 +238,7 @@ def parse_text(source: str) -> Script:
         except (ValueError, OverflowError, UnicodeEncodeError, struct.error) as error:
             raise ValueError(f"line {line_number}: {error}") from error
 
-    if not magic_seen or global_count is None or expected_function_count is None:
+    if not magic_seen or global_bytes is None or expected_function_count is None:
         raise ValueError("missing text format header")
     if gap is None or expected_instruction_count is None:
         raise ValueError("missing gap or stream directive")
@@ -269,11 +269,11 @@ def parse_text(source: str) -> Script:
             mutable[name_offset:name_offset + len(encoded_name)] = encoded_name
             descriptors[index] = bytes(mutable)
 
-    return Script(global_count, descriptors, gap, instructions)
+    return Script(global_bytes, descriptors, gap, instructions)
 
 
 def encode_binary(script: Script) -> bytes:
-    output = bytearray(struct.pack("<II", script.global_count, len(script.descriptors)))
+    output = bytearray(struct.pack("<II", script.global_bytes, len(script.descriptors)))
     for descriptor in script.descriptors:
         if len(descriptor) != DESCRIPTOR_SIZE:
             raise ValueError("invalid descriptor size")
