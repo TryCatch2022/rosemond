@@ -250,8 +250,10 @@ arithmetic becomes expressions, and global assignments look like
 carry dependable global-variable names. Labels are used for branches that
 cannot be safely structured. Instructions the decompiler cannot interpret are
 preserved as `vm.raw` directives; the encoder also preserves the original
-container metadata for decoded scripts. New scripts can be authored without a
-metadata template:
+container metadata for decoded scripts. In source, `globals N` counts 32-bit
+float slots; the binary header stores their byte size (`N * 4`). Use
+`global-bytes N` only for a nonstandard byte size. New scripts can be authored
+without a metadata template:
 
 ```text
 ROSEMOND-SCRIPT 1
